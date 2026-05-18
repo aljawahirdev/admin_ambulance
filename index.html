@@ -1,87 +1,2519 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-      <link rel="icon" type="image/png" href="https://drive.google.com/thumbnail?id=1mN39uinRmOQGj04B5OfC9ZTPtlXyF1mb&sz=256">
   <base target="_top">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>النظام المتكامل لإدارة الخدمات الإسعافية والنقل الطبي - لوحة التحكم</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    :root{--primary:#2986B0;--primary-light:#7ED6D1;--accent:#F59E0B;--dark:#222;--bg:#F5F5F5;--muted:#64748b;--border:#e5e7eb;--danger:#b91c1c;--success:#166534}*{box-sizing:border-box;font-family:Cairo,Tahoma,Arial,sans-serif}body{margin:0;background:var(--bg);color:var(--dark)}.sidebar{position:fixed;right:0;top:0;width:280px;height:100vh;background:linear-gradient(180deg,#2986B0,#1d5f7d 65%,#222);color:#fff;padding:22px;overflow-y:auto;box-shadow:0 0 25px #0002}.logo{width:112px;height:112px;object-fit:cover;border-radius:50%;display:block;margin:0 auto 16px;border:4px solid #ffffff40;background:white}.sidebar h2{text-align:center;margin:0 0 6px;font-size:22px;font-weight:800}.subtitle{text-align:center;color:#ffffffd0;font-size:13px;margin-bottom:18px}.admin-badge{background:#ffffff1a;border:1px solid #ffffff26;border-radius:14px;padding:10px;margin-bottom:14px;text-align:center}.sidebar button{width:100%;padding:13px 15px;margin-bottom:10px;background:#ffffff17;color:white;border:1px solid #ffffff20;border-radius:15px;cursor:pointer;font-size:15px;font-weight:800;text-align:right}.sidebar button:hover,.sidebar button.current{background:var(--accent);transform:translateX(-4px)}.main{margin-right:300px;padding:26px}.topbar{background:#fff;padding:18px 22px;border-radius:22px;margin-bottom:22px;display:flex;justify-content:space-between;align-items:center;gap:16px;box-shadow:0 8px 22px #0000000f}.topbar h1{margin:0;font-size:26px}.status{color:var(--muted);font-size:12px;margin-top:4px}.content{display:none;animation:fade .25s ease}.active{display:block}@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px;margin-bottom:22px}.card,.box{background:#fff;border-radius:22px;padding:22px;box-shadow:0 8px 22px #0000000f;border:1px solid #2986b014;margin-bottom:22px}.card{border-top:5px solid var(--primary)}.card h3{color:var(--muted);font-size:14px;margin:0 0 9px}.value{font-size:27px;font-weight:800;color:var(--accent)}input,select{width:100%;padding:13px 14px;margin-top:10px;border:1px solid #cbd5e1;border-radius:14px;font-size:15px;background:white}.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px 14px}.submit,.print-btn{width:100%;padding:14px;margin-top:15px;border:0;border-radius:14px;background:linear-gradient(135deg,#2986B0,#7ED6D1);color:#fff;font-size:16px;font-weight:800;cursor:pointer}.secondary{background:linear-gradient(135deg,#F59E0B,#A86417)}.danger{background:#fee2e2!important;color:var(--danger)!important}.actions{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:12px 0}.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;background:#fff;border-radius:16px;overflow:hidden}th,td{padding:12px;border-bottom:1px solid var(--border);text-align:center;font-size:14px}th{background:#2986B0;color:white}tr:nth-child(even){background:#f8fafc}.ok{background:#dcfce7;color:#166534;padding:10px;border-radius:12px;margin-top:12px}.error{background:#fee2e2;color:#b91c1c;padding:10px;border-radius:12px;margin-top:12px}.login-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#2986B0,#7ED6D1)}.login-card{width:min(440px,92vw);background:white;border-radius:26px;padding:28px;box-shadow:0 22px 55px #0003;text-align:center}.app-shell{display:none}.edit-note{display:none;margin-top:12px;padding:10px 12px;border-radius:12px;background:#fff7ed;color:#A86417;font-weight:800}.edit-note.active{display:block}.inline-actions{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}.mini{padding:8px 12px;border:0;border-radius:10px;color:white;background:var(--primary);font-weight:800;cursor:pointer}.brand-header{display:none;align-items:center;gap:12px;margin-bottom:16px}.brand-header img{width:70px;height:70px;border-radius:50%}.brand-title{font-weight:800;font-size:20px}.brand-subtitle{color:#64748b}.print-note{color:#64748b}.receipt{max-width:760px;margin:auto;line-height:1.9}.receipt h2{text-align:center}.receipt-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 18px}.signature{display:flex;justify-content:space-between;margin-top:50px;font-weight:800}@media print{.sidebar,.topbar,.no-print,.submit,.print-btn,.actions,.mini{display:none!important}.main{margin:0;padding:0}.content{display:none}.content.active,.print-target{display:block}.box,.card{box-shadow:none;border:0;padding:8px;margin-bottom:8px}.brand-header{display:flex!important}body{background:white;font-size:10px}h1{font-size:18px!important}h2{font-size:15px!important}h3{font-size:13px!important}table{font-size:9px!important}th,td{padding:4px!important;font-size:9px!important}.brand-header img{width:45px!important;height:45px!important}.brand-title{font-size:15px!important}}@media(max-width:800px){.sidebar{position:relative;width:100%;height:auto}.main{margin-right:0;padding:16px}.topbar{display:block}}
+    :root {
+      --primary: #0f766e;
+      --primary-light: #14b8a6;
+      --primary-dark: #0d5c56;
+      --accent: #F59E0B;
+      --dark: #1e293b;
+      --bg: #f0fdfa;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --danger: #dc2626;
+      --danger-light: #fee2e2;
+      --success: #166534;
+      --success-light: #dcfce7;
+      --warning: #f59e0b;
+      --warning-light: #fef3c7;
+      --burial: #6b7280;
+      --burial-light: #f3f4f6;
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+    }
+    * {
+      box-sizing: border-box;
+      font-family: 'Cairo', Tahoma, Arial, sans-serif;
+    }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--dark);
+    }
+
+    /* شاشة تسجيل الدخول */
+    .login-screen {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #0f766e, #14b8a6, #0d9488);
+    }
+    .login-card {
+      width: min(440px, 92vw);
+      background: white;
+      border-radius: 32px;
+      padding: 32px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      text-align: center;
+    }
+    .login-card .logo {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto 16px;
+      border: 4px solid #fff;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      background: white;
+    }
+    .login-card h1 {
+      margin-bottom: 8px;
+      color: var(--primary);
+      font-size: 24px;
+    }
+    .login-card input {
+      width: 100%;
+      padding: 14px;
+      margin-top: 12px;
+      border: 2px solid #e2e8f0;
+      border-radius: 16px;
+      font-size: 15px;
+      transition: all 0.2s;
+    }
+    .login-card input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(15,118,110,0.1);
+    }
+    .login-card button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 18px;
+      background: linear-gradient(135deg, #0f766e, #14b8a6);
+      border: none;
+      border-radius: 16px;
+      color: white;
+      font-weight: 800;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .login-card button:hover {
+      transform: translateY(-2px);
+    }
+
+    /* واجهة الإدارة */
+    .app-shell {
+      display: none;
+    }
+
+    /* القائمة الجانبية */
+    .sidebar {
+      position: fixed;
+      right: 0;
+      top: 0;
+      width: 290px;
+      height: 100vh;
+      background: linear-gradient(180deg, #0f766e, #0d5c56 65%, #1e293b);
+      color: #fff;
+      padding: 20px;
+      overflow-y: auto;
+      z-index: 100;
+      box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+    }
+    .sidebar::-webkit-scrollbar {
+      width: 5px;
+    }
+    .sidebar::-webkit-scrollbar-track {
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+    }
+    .sidebar::-webkit-scrollbar-thumb {
+      background: var(--accent);
+      border-radius: 10px;
+    }
+    .sidebar .logo {
+      width: 90px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto 16px;
+      border: 3px solid rgba(255,255,255,0.3);
+      background: white;
+    }
+    .sidebar h2 {
+      text-align: center;
+      margin: 0 0 4px;
+      font-size: 18px;
+      font-weight: 800;
+    }
+    .sidebar .subtitle {
+      text-align: center;
+      color: rgba(255,255,255,0.8);
+      font-size: 11px;
+      margin-bottom: 20px;
+    }
+    .admin-badge {
+      background: rgba(255,255,255,0.15);
+      border-radius: 16px;
+      padding: 10px;
+      margin-bottom: 16px;
+      text-align: center;
+      font-size: 13px;
+    }
+    .sidebar button {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 8px;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 700;
+      text-align: right;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .sidebar button:hover,
+    .sidebar button.current {
+      background: var(--accent);
+      transform: translateX(-4px);
+    }
+    .sidebar button.current {
+      background: linear-gradient(135deg, var(--accent), #d97706);
+    }
+
+    /* المحتوى الرئيسي */
+    .main {
+      margin-right: 310px;
+      padding: 24px;
+    }
+    .topbar {
+      background: white;
+      padding: 16px 24px;
+      border-radius: 24px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      box-shadow: var(--shadow);
+    }
+    .topbar h1 {
+      margin: 0;
+      font-size: 22px;
+      color: var(--primary);
+    }
+    .status {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 4px;
+    }
+    .content {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+    .content.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* البطاقات */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .stat-card {
+      background: white;
+      border-radius: 24px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+      border-right: 4px solid var(--primary);
+      transition: transform 0.2s;
+    }
+    .stat-card:hover {
+      transform: translateY(-3px);
+    }
+    .stat-card h3 {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 0 0 8px;
+      font-weight: 600;
+    }
+    .stat-value {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--primary);
+    }
+    .stat-sub {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 5px;
+    }
+
+    .card, .box {
+      background: white;
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+    .card h2, .box h2 {
+      margin: 0 0 16px;
+      font-size: 18px;
+      color: var(--dark);
+      border-right: 4px solid var(--primary);
+      padding-right: 12px;
+    }
+
+    /* النماذج */
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 2px solid var(--border);
+      border-radius: 14px;
+      font-size: 14px;
+      background: white;
+      transition: all 0.2s;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(15,118,110,0.1);
+    }
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      margin-top: 16px;
+      border: none;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #0f766e, #14b8a6);
+      color: white;
+      font-size: 16px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(15,118,110,0.3);
+    }
+    .secondary-btn {
+      background: linear-gradient(135deg, #64748b, #475569);
+    }
+    .danger-btn {
+      background: linear-gradient(135deg, #dc2626, #b91c1c);
+    }
+    .warning-btn {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+    }
+
+    /* الجداول */
+    .table-wrapper {
+      overflow-x: auto;
+      border-radius: 16px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    th, td {
+      padding: 12px 10px;
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+      vertical-align: middle;
+    }
+    th {
+      background: var(--primary);
+      color: white;
+      font-weight: 700;
+      position: sticky;
+      top: 0;
+    }
+    tr:hover {
+      background: #f8fafc;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .badge-success { background: var(--success-light); color: var(--success); }
+    .badge-danger { background: var(--danger-light); color: var(--danger); }
+    .badge-warning { background: var(--warning-light); color: var(--warning); }
+    .badge-burial { background: var(--burial-light); color: var(--burial); }
+    .badge-primary { background: #e0f2fe; color: #0284c7; }
+
+    .mini-btn {
+      padding: 6px 10px;
+      border: none;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      margin: 2px;
+    }
+    .mini-primary { background: var(--primary); color: white; }
+    .mini-danger { background: var(--danger); color: white; }
+    .mini-success { background: var(--success); color: white; }
+    .mini-warning { background: var(--warning); color: white; }
+
+    /* علامات */
+    .service-icon {
+      font-size: 18px;
+      margin-left: 6px;
+    }
+    .edit-note {
+      display: none;
+      background: var(--warning-light);
+      padding: 10px;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      color: #92400e;
+      font-size: 13px;
+    }
+    .info-msg {
+      background: #e0f2fe;
+      padding: 12px;
+      border-radius: 12px;
+      margin-top: 12px;
+      color: #0369a1;
+    }
+    .success-msg {
+      background: var(--success-light);
+      padding: 12px;
+      border-radius: 12px;
+      margin-top: 12px;
+      color: var(--success);
+    }
+    .error-msg {
+      background: var(--danger-light);
+      padding: 12px;
+      border-radius: 12px;
+      margin-top: 12px;
+      color: var(--danger);
+    }
+
+    /* علامات التبويب داخل الصفحات */
+    .sub-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 8px;
+    }
+    .sub-tab {
+      padding: 8px 16px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .sub-tab.active {
+      background: var(--primary);
+      color: white;
+    }
+    .sub-content {
+      display: none;
+    }
+    .sub-content.active {
+      display: block;
+    }
+
+    /* استجابة للشاشات الصغيرة */
+    @media (max-width: 900px) {
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+      }
+      .main {
+        margin-right: 0;
+        padding: 16px;
+      }
+      .sidebar button {
+        display: inline-block;
+        width: auto;
+        margin: 5px;
+      }
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 500px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* الطباعة */
+    @media print {
+      .sidebar, .topbar, .submit-btn, .mini-btn, .no-print {
+        display: none !important;
+      }
+      .main {
+        margin: 0;
+        padding: 0;
+      }
+      .content {
+        display: none;
+      }
+      .content.active {
+        display: block;
+      }
+      .card, .box {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
+      }
+    }
   </style>
 </head>
 <body>
-<div id="loginScreen" class="login-screen"><div class="login-card"><img class="logo brand-logo"><h1>دخول الإدارة</h1><p>جمعية الجواهر بقمار<br>منصة احترافية لتسيير حجوزات سيارات الإسعاف والمواعيد</p><input id="loginUsername" placeholder="اسم الدخول" autocomplete="username"><input id="loginPassword" type="password" placeholder="كلمة المرور" autocomplete="current-password" onkeydown="if(event.key==='Enter')login()"><button class="submit" onclick="login()">تسجيل الدخول</button><div id="loginMsg"></div><div class="status">أول دخول افتراضي: <b>admin</b> / <b>admin123</b></div></div></div>
-<div id="appShell" class="app-shell"><div class="sidebar"><img class="logo brand-logo"><h2>جمعية الجواهر بقمار</h2><div class="subtitle">تسيير سيارات الإسعاف والحجوزات</div><div class="admin-badge" id="adminBadge">غير مسجل</div><button class="current" onclick="showTab('dashboard',this)">لوحة التحكم</button><button onclick="showTab('equipment',this)">إضافة / تعديل سيارة إسعاف</button><button onclick="showTab('loans',this)">الحجوزات والعودة</button><button onclick="showTab('inventory',this)">الفحص الدوري</button><button onclick="showTab('reports',this)">التقارير والطباعة</button><button onclick="showTab('requests',this);loadRequests()">حجوزات الموقع</button><button onclick="showTab('logs',this);loadLogs()">سجل العمليات</button><button class="super-only" onclick="showTab('admins',this);loadAdmins()">إدارة الأدمن والصلاحيات</button><button onclick="logout()">تسجيل الخروج</button></div>
-<div class="main"><div class="topbar"><div><h1>لوحة تسيير سيارات الإسعاف</h1><div class="status" id="syncStatus">النظام متصل وجاهز للعمل</div></div><button class="print-btn secondary" onclick="loadReport(true)">تحديث الآن</button></div>
-<div id="dashboard" class="content active"><div class="brand-header"><img class="brand-logo"><div><div class="brand-title">جمعية الجواهر بقمار</div><div class="brand-subtitle">ملخص سيارة الإسعاف</div></div></div><div class="cards"><div class="card"><h3>إجمالي السيارات</h3><div class="value" id="totalItems">0</div></div><div class="card"><h3>متوفرة</h3><div class="value" id="availableItems">0</div></div><div class="card"><h3>محجوزة</h3><div class="value" id="loanedItems">0</div></div><div class="card"><h3>معطلة / خارج الخدمة</h3><div class="value" id="damagedItems">0</div></div><div class="card"><h3>القيمة الإجمالية</h3><div class="value" id="totalValue">0 دج</div></div></div><div class="box"><h2>نظرة عامة حسب حالة السيارات</h2><canvas id="equipmentChart"></canvas></div><div class="actions no-print"><button class="print-btn" onclick="printSection('dashboard')">طباعة الملخص</button><button class="print-btn secondary" onclick="printTableOnly('equipment')">طباعة سجل السيارات</button><button class="print-btn secondary" onclick="printTableOnly('activeLoans')">طباعة سيارة الإسعاف المحجوزة</button></div><div class="box"><h2>سجل سيارات الإسعاف</h2><div id="dashboardEquipment" class="table-wrap"></div></div><div class="box"><h2>الحجوزات النشطة</h2><div id="dashboardLoans" class="table-wrap"></div></div></div>
-<div id="equipment" class="content"><div class="box"><h2>إضافة سيارة إسعاف</h2><div class="form-grid"><input id="eqInventoryNo" placeholder="رقم السيارة / اللوحة"><input id="eqName" placeholder="اسم / نوع سيارة الإسعاف"><input id="eqCategory" list="categoryList" placeholder="الصنف / نوع الخدمة"><datalist id="categoryList"><option value="إعلام آلي"><option value="أثاث"><option value="أجهزة صوت"><option value="لوازم نشاط"><option value="مطبخ"><option value="رياضة"><option value="أخرى"></datalist><input id="eqQuantity" type="number" placeholder="الكمية" value="1"><select id="eqCondition"><option value="متوفر">متوفرة</option><option value="محجوز">محجوزة</option><option>معطل</option><option>تالف</option><option>مفقود</option></select><input id="eqLocation" placeholder="المكان"><input id="eqAcquiredDate" type="date"><input id="eqValue" type="number" placeholder="القيمة بالدج"><input id="eqNotes" placeholder="ملاحظات"></div><div id="eqEditNote" class="edit-note">وضع التعديل مفعل: سيتم تحديث سيارة الإسعاف المحدد.</div><button id="eqSaveBtn" class="submit" onclick="saveEquipment()">حفظ السيارة</button><button id="eqCancelBtn" class="submit secondary" style="display:none" onclick="cancelEquipmentEdit()">إلغاء التعديل</button><div id="eqMsg"></div></div></div>
-<div id="loans" class="content"><div class="box"><h2>تسجيل حجز</h2><div class="form-grid"><select id="loanItem"></select><input id="loanBorrower" placeholder="اسم طالب الحجز"><input id="loanContact" placeholder="الهاتف / العنوان"><select id="loanIdentityType"><option value="">نوع الهوية</option><option>بطاقة التعريف الوطنية</option><option>رخصة سياقة</option><option>جواز سفر</option><option>بطاقة طالب</option><option>أخرى</option></select><input id="loanIdentityNo" placeholder="رقم الهوية"><input id="loanIdentityIssuer" placeholder="الهوية الصادرة عن الجهة"><input id="loanIdentityIssueDate" type="date" title="تاريخ إصدار الهوية"><input id="loanPatientName" placeholder="اسم المريض"><input id="loanRelationship" placeholder="صلة القرابة"><label class="status">صورة الهوية من الأمام (اختياري)</label><input id="loanIdFrontImage" type="file" accept="image/*"><label class="status">صورة الهوية من الخلف (اختياري، لا تطلب لجواز السفر)</label><input id="loanIdBackImage" type="file" accept="image/*"><input id="loanCity" placeholder="المدينة"><input id="loanDate" type="date"><input id="loanExpected" type="date"><input id="loanNotes" placeholder="ملاحظات"></div><button class="submit" onclick="saveLoan()">حفظ الإعارة</button><div id="loanMsg"></div></div><div class="box"><h2>الحجوزات النشطة</h2><div id="activeLoansTable" class="table-wrap"></div></div></div>
-<div id="inventory" class="content"><div class="box"><h2>تسجيل عملية جرد</h2><div class="form-grid"><select id="auditItem"></select><input id="auditDate" type="date"><select id="auditCondition"><option value="متوفر">متوفرة</option><option value="محجوز">محجوزة</option><option>معطل</option><option>تالف</option><option>مفقود</option></select><input id="auditLocation" placeholder="المكان أثناء الجرد"><select id="auditResult"><option>مطابق</option><option>اختلاف حالة</option><option>اختلاف مكان</option><option>مفقود</option><option>يحتاج صيانة</option></select><select id="auditUpdate"><option value="false">لا تحدث بطاقة سيارة الإسعاف</option><option value="true">حدث بطاقة سيارة الإسعاف</option></select><input id="auditNotes" placeholder="ملاحظات"></div><button class="submit" onclick="saveAudit()">حفظ الجرد</button><div id="auditMsg"></div></div><div class="box"><h2>آخر عمليات الجرد</h2><div id="auditsTable" class="table-wrap"></div></div></div>
-<div id="requests" class="content"><div class="box"><h2>حجوزات سيارات الإسعاف من الموقع الخارجي</h2><p class="status">يمكن للأدمن أو المحرر تأكيد الحجز، وعند التأكيد يتم تحديث حالة سيارة الإسعاف تلقائيًا وتحويله إلى حجز نشط.</p><button class="submit secondary" onclick="loadRequests()">تحديث الحجوزات</button><div id="requestsTable" class="table-wrap"></div><div id="requestsMsg"></div></div></div>
-<div id="logs" class="content"><div class="box"><h2>سجل جميع العمليات</h2><p class="status">كل الإضافات والتعديلات والطلبات والتأكيد والرفض تسجل هنا.</p><button class="submit secondary" onclick="loadLogs()">تحديث السجل</button><div id="logsTable" class="table-wrap"></div><div id="logsMsg"></div></div></div>
-<div id="reports" class="content"><div class="box"><div class="brand-header"><img class="brand-logo"><div><div class="brand-title">جمعية الجواهر بقمار</div><div class="brand-subtitle">تقرير سيارة الإسعاف والجرد والإعارة</div></div></div><h2>التقارير والطباعة</h2><div class="actions no-print"><button class="submit" onclick="printTableOnly('equipment')">طباعة سجل السيارات</button><button class="submit secondary" onclick="printTableOnly('loans')">طباعة سجل الإعارات</button><button class="submit secondary" onclick="printTableOnly('audits')">طباعة سجل الجرد</button></div><div id="reportArea"></div></div></div>
-<div id="admins" class="content super-only"><div class="box"><h2>إضافة أدمن وتحديد الصلاحيات</h2><p class="status">إضافة الأدمن وتحديد الصلاحيات تتم من هذه الصفحة فقط، وتظهر للأدمن كامل الصلاحيات فقط.</p><div class="form-grid"><input id="adminName" placeholder="اسم الأدمن"><input id="adminUsername" placeholder="اسم الدخول"><input id="adminPassword" type="password" placeholder="كلمة المرور"><select id="adminRole"><option value="super">ادمن جميع الصلاحيات</option><option value="editor">محرر تعديل</option><option value="viewer">مشاهد - طباعة التقارير فقط</option></select></div><button class="submit" onclick="addAdminUser()">إضافة الأدمن</button><div id="adminMsg"></div></div><div class="box"><h2>قائمة الأدمن</h2><div id="adminsTable" class="table-wrap"></div></div></div>
-</div></div>
+
+<!-- شاشة تسجيل الدخول -->
+<div id="loginScreen" class="login-screen">
+  <div class="login-card">
+    <img class="logo" src="https://drive.google.com/thumbnail?id=1mN39uinRmOQGj04B5OfC9ZTPtlXyF1mb&sz=256">
+    <h1>  جمعية الجواهر بقمار</h1>
+    <p style="color: #64748b; margin-bottom: 20px;">النظام المتكامل لإدارة الخدمات الإسعافية والنقل الطبي</p>
+    <input id="loginUsername" placeholder="اسم المستخدم" autocomplete="username">
+    <input id="loginPassword" type="password" placeholder="كلمة المرور" autocomplete="current-password" onkeydown="if(event.key==='Enter')login()">
+    <button onclick="login()"> تسجيل الدخول</button>
+    <div id="loginMsg"></div>
+    <div style="margin-top: 20px; font-size: 12px; color: #94a3b8;">
+      الدخول التجريبي: <strong>admin</strong> / <strong>admin123</strong>
+    </div>
+  </div>
+</div>
+
+<!-- واجهة الإدارة -->
+<div id="appShell" class="app-shell">
+  <!-- القائمة الجانبية -->
+  <div class="sidebar">
+    <img class="logo" src="https://drive.google.com/thumbnail?id=1mN39uinRmOQGj04B5OfC9ZTPtlXyF1mb&sz=256">
+    <h2>جمعية الجواهر</h2>
+    <div class="subtitle">النظام المتكامل للخدمات الإسعافية</div>
+    <div class="admin-badge" id="adminBadge">جاري التحميل...</div>
+    
+    <button class="current" onclick="showTab('dashboard',this)">
+      <span>📊</span> لوحة التحكم
+    </button>
+    <button onclick="showTab('equipment',this)">
+      <span>🚑</span> سيارات الإسعاف
+    </button>
+    <button onclick="showTab('drivers',this); loadDrivers()">
+      <span>👨‍✈️</span> السائقين
+    </button>
+    <button onclick="showTab('medicalStaff',this); loadMedicalStaff()">
+      <span>👨‍⚕️</span> الطاقم الطبي
+    </button>
+    <button onclick="showTab('missions',this); loadMissions()">
+      <span>📋</span> التكاليف والمهمات
+    </button>
+    <button onclick="showTab('burialServices',this); loadBurialServices()">
+      <span>⚰️</span> خدمات نقل الجثة
+    </button>
+    <button onclick="showTab('loans',this)">
+      <span>📝</span> الحجوزات
+    </button>
+    <button onclick="showTab('pricing',this); loadPricingRules()">
+      <span>💰</span> التسعير
+    </button>
+    <button onclick="showTab('inventory',this)">
+      <span>📦</span> الجرد الدوري
+    </button>
+    <button onclick="showTab('requests',this); loadRequests()">
+      <span>📨</span> طلبات الموقع
+    </button>
+    <button onclick="showTab('reports',this)">
+      <span>📄</span> التقارير
+    </button>
+    <button onclick="showTab('logs',this); loadLogs()">
+      <span>📜</span> سجل العمليات
+    </button>
+    <button class="super-only" onclick="showTab('admins',this); loadAdmins()">
+      <span>👑</span> إدارة الأدمن
+    </button>
+    <button onclick="logout()">
+      <span>🚪</span> تسجيل الخروج
+    </button>
+  </div>
+
+  <!-- المحتوى الرئيسي -->
+  <div class="main">
+    <div class="topbar">
+      <div>
+        <h1>🏥 نظام إدارة الخدمات الإسعافية والنقل الطبي</h1>
+        <div class="status" id="syncStatus">✓ النظام جاهز للعمل</div>
+      </div>
+      <button class="submit-btn secondary-btn" style="width: auto; padding: 10px 20px;" onclick="refreshAllData()">🔄 تحديث الكل</button>
+    </div>
+
+    <!-- ==================== لوحة التحكم ==================== -->
+    <div id="dashboard" class="content active">
+      <div class="stats-grid" id="statsGrid"></div>
+      
+      <div class="card">
+        <h2>📈 حالة الأسطول</h2>
+        <canvas id="fleetChart" style="max-height: 280px; width: 100%;"></canvas>
+      </div>
+      
+      <div class="box no-print">
+        <h2>🖨️ تقارير سريعة</h2>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <button class="submit-btn secondary-btn" style="width: auto;" onclick="printSection('dashboard')">📄 طباعة الملخص</button>
+          <button class="submit-btn secondary-btn" style="width: auto;" onclick="printTableOnly('equipment')">🚑 طباعة سجل السيارات</button>
+          <button class="submit-btn secondary-btn" style="width: auto;" onclick="printTableOnly('activeLoans')">📝 طباعة الحجوزات النشطة</button>
+          <button class="submit-btn secondary-btn" style="width: auto;" onclick="printTableOnly('missions')">📋 طباعة التكاليف</button>
+          <button class="submit-btn secondary-btn" style="width: auto;" onclick="printTableOnly('burialServices')">⚰️ طباعة خدمات نقل الجثة</button>
+        </div>
+      </div>
+      
+      <div class="card">
+        <h2>🚑 آخر الحجوزات النشطة</h2>
+        <div id="dashboardLoans" class="table-wrapper"></div>
+      </div>
+      
+      <div class="card">
+        <h2>📋 آخر التكاليف والمهمات</h2>
+        <div id="dashboardMissions" class="table-wrapper"></div>
+      </div>
+    </div>
+
+    <!-- ==================== سيارات الإسعاف ==================== -->
+    <div id="equipment" class="content">
+      <div class="card">
+        <h2>➕ إضافة / تعديل سيارة إسعاف</h2>
+        <div id="eqEditNote" class="edit-note">✏️ وضع التعديل مفعل</div>
+        <div class="form-grid">
+          <input id="eqInventoryNo" placeholder="رقم اللوحة / الجرد *">
+          <input id="eqName" placeholder="اسم / نوع السيارة *">
+          <input id="eqCategory" list="categoryList" placeholder="الصنف">
+          <datalist id="categoryList"></datalist>
+          <select id="eqAmbulanceType">
+            <option value="سيارة إسعاف عادية">🚑 سيارة إسعاف عادية</option>
+            <option value="سيارة إسعاف عناية مركزة">🚑 سيارة إسعاف عناية مركزة</option>
+            <option value="سيارة نقل الجثث">⚰️ سيارة نقل الجثث</option>
+            <option value="حافلة صغيرة">🚐 حافلة صغيرة</option>
+          </select>
+          <input id="eqCapacity" placeholder="سعة التحميل">
+          <select id="eqEquippedForBurial">
+            <option value="لا">مجهزة لنقل الجثث؟ لا</option>
+            <option value="نعم">مجهزة لنقل الجثث؟ نعم</option>
+          </select>
+          <input id="eqQuantity" type="number" placeholder="الكمية" value="1">
+          <select id="eqCondition">
+            <option value="متوفر">🟢 متوفرة</option>
+            <option value="محجوز">🟠 محجوزة</option>
+            <option value="معطل">🔴 معطلة</option>
+            <option value="تالف">💀 تالفة</option>
+          </select>
+          <input id="eqLocation" placeholder="المكان / المستودع">
+          <input id="eqAcquiredDate" type="date">
+          <input id="eqValue" type="number" placeholder="القيمة بالدج">
+          <input id="eqNotes" placeholder="ملاحظات">
+        </div>
+        <button id="eqSaveBtn" class="submit-btn" onclick="saveEquipment()">💾 حفظ السيارة</button>
+        <button id="eqCancelBtn" class="submit-btn secondary-btn" style="display:none" onclick="cancelEquipmentEdit()">❌ إلغاء التعديل</button>
+        <div id="eqMsg"></div>
+      </div>
+      <div class="card">
+        <h2>📋 قائمة سيارات الإسعاف</h2>
+        <div id="equipmentTable" class="table-wrapper"></div>
+      </div>
+    </div>
+
+    <!-- ==================== السائقين ==================== -->
+    <div id="drivers" class="content">
+      <div class="sub-tabs">
+        <div class="sub-tab active" onclick="showDriverSubTab('list')">📋 قائمة السائقين</div>
+        <div class="sub-tab" onclick="showDriverSubTab('add')">➕ إضافة سائق جديد</div>
+      </div>
+      <div id="driverListTab" class="sub-content active">
+        <div class="card">
+          <h2>📋 قائمة السائقين</h2>
+          <div id="driversTable" class="table-wrapper"></div>
+        </div>
+      </div>
+      <div id="driverAddTab" class="sub-content">
+        <div class="card">
+          <h2>➕ إضافة سائق جديد</h2>
+          <div class="form-grid">
+            <input id="driverName" placeholder="الاسم الكامل *">
+            <input id="driverLicense" placeholder="رقم الرخصة *">
+            <input id="driverPhone" placeholder="رقم الهاتف *">
+            <input id="driverEmergencyPhone" placeholder="رقم الطوارئ">
+            <input id="driverAddress" placeholder="العنوان">
+            <input id="driverBirthDate" type="date">
+            <input id="driverLicenseExpiryDate" type="date">
+            <input id="driverSpecialization" placeholder="التخصص">
+            <input id="driverExperience" type="number" placeholder="سنوات الخبرة">
+            <select id="driverStatus">
+              <option value="نشط">🟢 نشط</option>
+              <option value="غير نشط">🔴 غير نشط</option>
+              <option value="في إجازة">🟡 في إجازة</option>
+            </select>
+            <textarea id="driverNotes" placeholder="ملاحظات"></textarea>
+          </div>
+          <button class="submit-btn" onclick="addDriver()">➕ إضافة سائق</button>
+          <div id="driverMsg"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== الطاقم الطبي ==================== -->
+    <div id="medicalStaff" class="content">
+      <div class="sub-tabs">
+        <div class="sub-tab active" onclick="showStaffSubTab('list')">📋 قائمة الطاقم الطبي</div>
+        <div class="sub-tab" onclick="showStaffSubTab('add')">➕ إضافة عضو جديد</div>
+      </div>
+      <div id="staffListTab" class="sub-content active">
+        <div class="card">
+          <h2>📋 قائمة الطاقم الطبي</h2>
+          <div id="medicalStaffTable" class="table-wrapper"></div>
+        </div>
+      </div>
+      <div id="staffAddTab" class="sub-content">
+        <div class="card">
+          <h2>➕ إضافة عضو طاقم طبي</h2>
+          <div class="form-grid">
+            <input id="staffName" placeholder="الاسم الكامل *">
+            <select id="staffSpecialty">
+              <option value="طبيب">👨‍⚕️ طبيب</option>
+              <option value="ممرض">💉 ممرض</option>
+              <option value="مسعف">🚑 مسعف</option>
+              <option value="فني">🔧 فني</option>
+            </select>
+            <input id="staffPhone" placeholder="رقم الهاتف *">
+            <input id="staffEmergencyPhone" placeholder="رقم الطوارئ">
+            <input id="staffRegistrationNo" placeholder="رقم التسجيل المهني">
+            <input id="staffRegistrationAuthority" placeholder="جهة التسجيل">
+            <input id="StaffBirthDate" type="date">
+            <input id="staffExperience" type="number" placeholder="سنوات الخبرة">
+            <input id="staffQualifications" placeholder="المؤهلات">
+            <select id="staffStatus">
+              <option value="نشط">🟢 نشط</option>
+              <option value="غير نشط">🔴 غير نشط</option>
+            </select>
+            <textarea id="staffNotes" placeholder="ملاحظات"></textarea>
+          </div>
+          <button class="submit-btn" onclick="addMedicalStaff()">➕ إضافة عضو</button>
+          <div id="staffMsg"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== التكاليف والمهمات الطبية ==================== -->
+    <div id="missions" class="content">
+      <div class="card">
+        <h2>➕ إنشاء تكليف مهمة طبية جديدة</h2>
+        <div class="form-grid">
+          <select id="missionItem" required onchange="updateMissionEstimate()"></select>
+          <select id="missionDriver" required></select>
+          <select id="missionStaff" required></select>
+          <input id="missionPatientName" placeholder="اسم المريض *" required>
+          <input id="missionRelationship" placeholder="صلة القرابة">
+          <select id="missionPatientCondition">
+            <option value="مستقر">🟢 مستقر</option>
+            <option value="طارئ">🟠 طارئ</option>
+            <option value="عناية مركزة">🔴 عناية مركزة</option>
+          </select>
+          <input id="missionCompanionName" placeholder="اسم المرافق">
+          <input id="missionCompanionPhone" placeholder="هاتف المرافق">
+          <input id="missionCompanionRelation" placeholder="صلة المرافق">
+          <select id="missionTripType" required onchange="toggleMissionState(); updateMissionEstimate()">
+            <option value="">نوع النقل</option>
+            <option value="داخل الولاية">🚑 داخل الولاية</option>
+            <option value="خارج الولاية">🚑 خارج الولاية</option>
+          </select>
+          <div id="missionStateDiv" style="display:none"><input id="missionDestinationState" placeholder="الولاية المتجه إليها" onchange="updateMissionEstimate()"></div>
+          <div id="missionDistanceDiv" style="display:none"><input id="missionDistanceKm" type="number" placeholder="المسافة (كم)" onchange="updateMissionEstimate()"></div>
+          <input id="missionDestination" placeholder="الوجهة / المستشفى">
+          <input id="missionDepartureDate" type="date" required>
+          <input id="missionExpectedReturnDate" type="date">
+          <select id="missionExtraServices" onchange="updateMissionEstimate()">
+            <option value="0">خدمات إضافية</option>
+            <option value="500">+ أكسجين (500 دج)</option>
+            <option value="400">+ كرسي متحرك (400 دج)</option>
+            <option value="600">+ ممرض مرافق (600 دج)</option>
+          </select>
+          <input id="missionPaidAmount" type="number" placeholder="المبلغ المدفوع" value="0">
+          <textarea id="missionNotes" placeholder="ملاحظات"></textarea>
+        </div>
+        <div id="missionCostPreview" class="info-msg" style="display:none">💰 <strong>التكلفة التقديرية:</strong> <span id="missionEstimatedCost">0</span> دج</div>
+        <button class="submit-btn" onclick="createMission()">📋 إنشاء التكليف</button>
+        <div id="missionMsg"></div>
+      </div>
+      <div class="card">
+        <h2>📋 قائمة التكاليف والمهمات الطبية</h2>
+        <div id="missionsTable" class="table-wrapper"></div>
+      </div>
+    </div>
+
+    <!-- ==================== خدمات نقل الجثة ==================== -->
+    <div id="burialServices" class="content">
+      <div class="card">
+        <h2>⚰️ إنشاء خدمة نقل جثة جديدة</h2>
+        <div class="form-grid">
+          <select id="burialItem" required onchange="updateBurialEstimate()"></select>
+          <select id="burialDriver" required></select>
+          <select id="burialStaff"></select>
+          <input id="burialDeceasedName" placeholder="اسم المتوفى *" required>
+          <input id="burialCauseOfDeath" placeholder="سبب الوفاة">
+          <input id="burialPlaceOfDeath" placeholder="مكان الوفاة">
+          <input id="burialBurialPlace" placeholder="مكان الدفن *" required>
+          <input id="burialApplicantName" placeholder="اسم مقدم الطلب">
+          <input id="burialApplicantRelation" placeholder="صلة مقدم الطلب بالمتوفى">
+          <input id="burialDateOfDeath" type="date">
+          <input id="burialDate" type="date">
+          <select id="burialTripType" required onchange="toggleBurialState(); updateBurialEstimate()">
+            <option value="">نوع النقل</option>
+            <option value="داخل الولاية">⚰️ داخل الولاية</option>
+            <option value="خارج الولاية">⚰️ خارج الولاية</option>
+          </select>
+          <div id="burialStateDiv" style="display:none"><input id="burialDestinationState" placeholder="الولاية المتجه إليها" onchange="updateBurialEstimate()"></div>
+          <div id="burialDistanceDiv" style="display:none"><input id="burialDistanceKm" type="number" placeholder="المسافة (كم)" onchange="updateBurialEstimate()"></div>
+          <input id="burialPaidAmount" type="number" placeholder="المبلغ المدفوع" value="0">
+          <textarea id="burialNotes" placeholder="ملاحظات"></textarea>
+        </div>
+        <div id="burialCostPreview" class="info-msg" style="display:none">💰 <strong>التكلفة التقديرية لنقل الجثة:</strong> <span id="burialEstimatedCost">0</span> دج</div>
+        <button class="submit-btn warning-btn" onclick="createBurialService()">⚰️ إنشاء خدمة نقل جثة</button>
+        <div id="burialMsg"></div>
+      </div>
+      <div class="card">
+        <h2>📋 قائمة خدمات نقل الجثة</h2>
+        <div id="burialServicesTable" class="table-wrapper"></div>
+      </div>
+    </div>
+
+    <!-- ==================== الحجوزات ==================== -->
+    <div id="loans" class="content">
+      <div class="card">
+        <h2>📝 تسجيل حجز جديد</h2>
+        <div class="form-grid">
+          <select id="loanItem"></select>
+          <select id="loanServiceType" onchange="toggleLoanServiceFields()">
+            <option value="medical">🚑 نقل طبي</option>
+            <option value="burial">⚰️ نقل جثة</option>
+          </select>
+          <input id="loanBorrower" placeholder="اسم طالب الحجز *">
+          <input id="loanContact" placeholder="رقم الهاتف *">
+          <div id="loanMedicalFields">
+            <input id="loanPatientName" placeholder="اسم المريض">
+            <input id="loanRelationship" placeholder="صلة القرابة">
+          </div>
+          <div id="loanBurialFields" style="display:none">
+            <input id="loanDeceasedName" placeholder="اسم المتوفى">
+            <input id="loanCauseOfDeath" placeholder="سبب الوفاة">
+            <input id="loanBurialPlace" placeholder="مكان الدفن">
+          </div>
+          <input id="loanCity" placeholder="المدينة">
+          <input id="loanDate" type="date">
+          <input id="loanExpected" type="date">
+          <textarea id="loanNotes" placeholder="ملاحظات"></textarea>
+        </div>
+        <button class="submit-btn" onclick="saveLoan()">💾 حفظ الحجز</button>
+        <div id="loanMsg"></div>
+      </div>
+      <div class="card">
+        <h2>📋 الحجوزات النشطة</h2>
+        <div id="activeLoansTable" class="table-wrapper"></div>
+      </div>
+      <div class="card">
+        <h2>📋 سجل الحجوزات السابقة</h2>
+        <div id="allLoansTable" class="table-wrapper"></div>
+      </div>
+    </div>
+
+    <!-- ==================== التسعير ==================== -->
+    <div id="pricing" class="content">
+      <div class="card">
+        <h2>💰 إدارة قواعد التسعير</h2>
+        <div class="form-grid">
+          <input id="pricingService" placeholder="اسم الخدمة *">
+          <input id="pricingBasePrice" type="number" placeholder="السعر الأساسي (دج) *">
+          <input id="pricingPricePerKm" type="number" placeholder="السعر لكل كيلومتر">
+          <input id="pricingExtraPrice" type="number" placeholder="سعر الخدمات الإضافية">
+          <textarea id="pricingNotes" placeholder="ملاحظات"></textarea>
+        </div>
+        <button class="submit-btn" onclick="addPricingRule()">➕ إضافة قاعدة تسعير</button>
+        <div id="pricingMsg"></div>
+      </div>
+      <div class="card">
+        <h2>📋 قواعد التسعير الحالية</h2>
+        <div id="pricingRulesTable" class="table-wrapper"></div>
+      </div>
+    </div>
+
+    <!-- ==================== الجرد الدوري ==================== -->
+    <div id="inventory" class="content">
+      <div class="card">
+        <h2>📦 تسجيل عملية جرد</h2>
+        <div class="form-grid">
+          <select id="auditItem"></select>
+          <input id="auditDate" type="date">
+          <select id="auditCondition">
+            <option value="متوفر">🟢 متوفرة</option>
+            <option value="محجوز">🟠 محجوزة</option>
+            <option value="معطل">🔴 معطلة</option>
+            <option value="تالف">💀 تالفة</option>
+          </select>
+          <input id="auditLocation" placeholder="المكان أثناء الجرد">
+          <select id="auditResult">
+            <option>✅ مطابق</option>
+            <option>⚠️ اختلاف حالة</option>
+            <option>📍 اختلاف مكان</option>
+            <option>❌ مفقود</option>
+          </select>
+          <select id="auditUpdate">
+            <option value="false">لا تحدث حالة السيارة</option>
+            <option value="true">تحديث حالة السيارة</option>
+          </select>
+          <textarea id="auditNotes" placeholder="ملاحظات"></textarea>
+        </div>
+        <button class="submit-btn" onclick="saveAudit()">💾 حفظ الجرد</button>
+        <div id="auditMsg"></div>
+      </div>
+      <div class="card">
+        <h2>📋 سجل عمليات الجرد</h2>
+        <div id="auditsTable" class="table-wrapper"></div>
+      </div>
+    </div>
+
+    <!-- ==================== طلبات الموقع ==================== -->
+    <div id="requests" class="content">
+      <div class="card">
+        <h2>📨 طلبات الحجز من الموقع الخارجي</h2>
+        <p style="color: #64748b; margin-bottom: 16px;">يمكن للأدمن تأكيد أو رفض الطلب. عند التأكيد، يتم تحديث حالة السيارة تلقائياً.</p>
+        <button class="submit-btn secondary-btn" style="width: auto;" onclick="loadRequests()">🔄 تحديث الطلبات</button>
+        <div id="requestsTable" class="table-wrapper" style="margin-top: 20px;"></div>
+        <div id="requestsMsg"></div>
+      </div>
+    </div>
+
+    <!-- ==================== التقارير ==================== -->
+    <div id="reports" class="content">
+      <div class="card">
+        <h2>📄 التقارير والطباعة</h2>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px;">
+          <button class="submit-btn secondary-btn" onclick="printTableOnly('equipment')">🚑 سجل السيارات</button>
+          <button class="submit-btn secondary-btn" onclick="printTableOnly('loans')">📝 سجل الحجوزات</button>
+          <button class="submit-btn secondary-btn" onclick="printTableOnly('activeLoans')">📝 الحجوزات النشطة</button>
+          <button class="submit-btn secondary-btn" onclick="printTableOnly('audits')">📦 سجل الجرد</button>
+          <button class="submit-btn secondary-btn" onclick="printTableOnly('missions')">📋 التكاليف الطبية</button>
+          <button class="submit-btn secondary-btn" onclick="printTableOnly('burialServices')">⚰️ خدمات نقل الجثة</button>
+          <button class="submit-btn secondary-btn" onclick="printTableOnly('drivers')">👨‍✈️ السائقين</button>
+          <button class="submit-btn secondary-btn" onclick="printTableOnly('medicalStaff')">👨‍⚕️ الطاقم الطبي</button>
+        </div>
+        <div id="reportArea"></div>
+      </div>
+    </div>
+
+    <!-- ==================== سجل العمليات ==================== -->
+    <div id="logs" class="content">
+      <div class="card">
+        <h2>📜 سجل جميع العمليات</h2>
+        <button class="submit-btn secondary-btn" style="width: auto;" onclick="loadLogs()">🔄 تحديث السجل</button>
+        <div id="logsTable" class="table-wrapper" style="margin-top: 20px;"></div>
+        <div id="logsMsg"></div>
+      </div>
+    </div>
+
+    <!-- ==================== إدارة الأدمن ==================== -->
+    <div id="admins" class="content super-only">
+      <div class="card">
+        <h2>👑 إضافة أدمن جديد</h2>
+        <div class="form-grid">
+          <input id="adminName" placeholder="اسم الأدمن *">
+          <input id="adminUsername" placeholder="اسم المستخدم *">
+          <input id="adminPassword" type="password" placeholder="كلمة المرور *">
+          <select id="adminRole">
+            <option value="super">👑 أدمن كامل الصلاحيات</option>
+            <option value="editor">✏️ محرر</option>
+            <option value="viewer">👁️ مشاهد فقط</option>
+          </select>
+        </div>
+        <button class="submit-btn" onclick="addAdminUser()">➕ إضافة أدمن</button>
+        <div id="adminMsg"></div>
+      </div>
+      <div class="card">
+        <h2>📋 قائمة الأدمن</h2>
+        <div id="adminsTable" class="table-wrapper"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
-const APPS_SCRIPT_WEB_APP_URL='https://script.google.com/macros/s/AKfycbzG8grLM0eOfpIwQhoBSHZ-fhOd1EBh9052AxQaIRNDL0jVcVHhOQotBF5HC6odGY07Ag/exec';
-let sessionToken=localStorage.getItem('equipment_session_token')||'',currentAdmin=JSON.parse(localStorage.getItem('equipment_current_admin')||'null'),currentReport=null,equipmentEditId=null,equipmentChart=null;
-async function apiRequest(action,args){if(!APPS_SCRIPT_WEB_APP_URL||APPS_SCRIPT_WEB_APP_URL.includes('ضع_رابط'))throw new Error('يرجى وضع رابط Google Apps Script Web App داخل ملف index.html');const res=await fetch(APPS_SCRIPT_WEB_APP_URL,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action,args:args||[]})});const json=await res.json();if(!json.ok)throw new Error(json.error||'خطأ غير معروف');return json.data}
-const google={script:{run:new Proxy({},{get(t,prop){if(prop==='withSuccessHandler')return cb=>new Proxy({},{get(tt,p2){if(p2==='withFailureHandler')return eb=>new Proxy({},{get(ttt,act){return(...args)=>apiRequest(act,args).then(cb).catch(eb)}});return(...args)=>apiRequest(p2,args).then(cb)}});if(prop==='withFailureHandler')return eb=>new Proxy({},{get(tt,act){return(...args)=>apiRequest(act,args).catch(eb)}});return(...args)=>apiRequest(prop,args).catch(console.error)}})}};
-function showTab(id,btn){if(id==='admins'&&!isSuper()){alert('إدارة الأدمن والصلاحيات متاحة للأدمن كامل الصلاحيات فقط');return}document.querySelectorAll('.content').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.sidebar button').forEach(x=>x.classList.remove('current'));if(btn)btn.classList.add('current')}
-function setMsg(id,text,type){document.getElementById(id).innerHTML=`<div class="${type}">${text}</div>`}function setStatus(t){syncStatus.textContent=t}function esc(v){return String(v||'').replace(/[&<>"]/g,s=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[s]))}function money(v){return Number(v||0).toLocaleString('ar-DZ')+' دج'}function today(){return new Date().toISOString().slice(0,10)}function canEdit(){return currentAdmin&&(currentAdmin.role==='super'||currentAdmin.role==='editor')}function isSuper(){return currentAdmin&&currentAdmin.role==='super'}
-function login(){setMsg('loginMsg','جاري تسجيل الدخول...','ok');google.script.run.withSuccessHandler(res=>{sessionToken=res.token;currentAdmin=res.admin;localStorage.setItem('equipment_session_token',sessionToken);localStorage.setItem('equipment_current_admin',JSON.stringify(currentAdmin));loginScreen.style.display='none';appShell.style.display='block';applyRoleUI();renderReport(res.report)}).withFailureHandler(e=>setMsg('loginMsg','خطأ: '+e.message,'error')).loginAdmin({username:loginUsername.value,password:loginPassword.value})}
-function logout(){google.script.run.withSuccessHandler(()=>{localStorage.removeItem('equipment_session_token');localStorage.removeItem('equipment_current_admin');location.reload()}).logoutAdmin(sessionToken)}
-function applyRoleUI(){adminBadge.textContent=currentAdmin.name+' | '+currentAdmin.roleLabel;document.querySelectorAll('.super-only').forEach(x=>x.style.display=isSuper()?'block':'none');document.querySelectorAll('#equipment .submit,#loans .submit,#inventory .submit').forEach(x=>x.style.display=canEdit()?'block':'none')}
-function loadReport(manual){if(manual)setStatus('جاري التحديث...');google.script.run.withSuccessHandler(r=>renderReport(r)).withFailureHandler(e=>setStatus('خطأ: '+e.message)).getEquipmentReport()}
-function renderReport(r){currentReport=r;setStatus('آخر تحديث: '+new Date().toLocaleString('ar-DZ'));document.querySelectorAll('.brand-logo').forEach(i=>i.src=r.identity.logoUrl);totalItems.textContent=r.totals.total;availableItems.textContent=r.totals.available;loanedItems.textContent=r.totals.loaned;damagedItems.textContent=r.totals.damaged;totalValue.textContent=money(r.totals.value);dashboardEquipment.innerHTML=equipmentTable(r.equipment,true);dashboardLoans.innerHTML=loansTable(r.activeLoans,true);activeLoansTable.innerHTML=loansTable(r.activeLoans,true);auditsTable.innerHTML=auditsTableHtml(r.audits);reportArea.innerHTML='<h3>سجل سيارات الإسعاف</h3>'+equipmentTable(r.equipment,false)+'<h3>سجل الإعارات</h3>'+loansTable(r.loans,false)+'<h3>سجل الجرد</h3>'+auditsTableHtml(r.audits);fillItemSelects(r.equipment);fillCategoryList(r.equipment);drawChart(r); if(document.getElementById('logsTable')&&r.logs) logsTable.innerHTML=logsTableHtml(r.logs)}
-function fillItemSelects(items){const opts='<option value="">اختر سيارة الإسعاف</option>'+items.map(x=>`<option value="${esc(x.id)}">${esc(x.inventoryNo)} - ${esc(x.name)} (${esc(x.condition)})</option>`).join('');loanItem.innerHTML=opts;auditItem.innerHTML=opts}
-function fillCategoryList(items){const defaults=[
-    'عتاد الحركة والتنقل',
-    'عتاد المرضى طريحي الفراش',
-    'عتاد التنفس والعلاج',
-    'عتاد إعادة التأهيل',
-    'عتاد الحمام والرعاية المنزلية',
-    'لوازم طبية واستهلاكية',
-    'أجهزة القياس والمراقبة',
-    'عتاد الأطفال وذوي الاحتياجات',
-    'الصيانة والتعقيم',
-    'أخرى'
-];const cats=[...new Set(defaults.concat((items||[]).map(x=>x.category).filter(Boolean)))];categoryList.innerHTML=cats.map(c=>`<option value="${esc(c)}">`).join('')}
-function equipmentTable(rows,editable){if(!rows.length)return'<p>لا توجد بيانات.</p>';return`<table><tr><th>رقم السيارة / اللوحة</th><th>سيارة الإسعاف</th><th>الصنف</th><th>الكمية</th><th>الحالة</th><th>المكان</th><th>القيمة</th><th>ملاحظات</th>${editable&&canEdit()?'<th>إجراءات</th>':''}</tr>`+rows.map(r=>`<tr><td>${esc(r.inventoryNo)}</td><td>${esc(r.name)}</td><td>${esc(r.category)}</td><td>${r.quantity}</td><td>${esc(r.condition)}</td><td>${esc(r.location)}</td><td>${money(r.value)}</td><td>${esc(r.notes)}</td>${editable&&canEdit()?`<td><button class="mini" onclick='editEquipment(${JSON.stringify(r).replace(/'/g,"&#39;")})'>تعديل</button></td>`:''}</tr>`).join('')+'</table>'}
-function loansTable(rows,withReturn){if(!rows.length)return'<p>لا توجد إعارات نشطة.</p>';return`<table><tr><th>رقم السيارة / اللوحة</th><th>سيارة الإسعاف</th><th>المستعير</th><th>الهوية</th><th>إصدار الهوية</th><th>المريض / القرابة</th><th>صور الهوية</th><th>المدينة</th><th>تاريخ الإعارة</th><th>الإرجاع المتوقع</th><th>الإرجاع الفعلي</th><th>سلم بواسطة</th><th>أرجع إلى</th><th>الحالة</th><th>ملاحظات</th><th>طباعة</th>${withReturn&&canEdit()?'<th>إرجاع</th>':''}</tr>`+rows.map(r=>`<tr><td>${esc(r.inventoryNo)}</td><td>${esc(r.itemName)}</td><td>${esc(r.borrower)}<br>${esc(r.contact)}</td><td>${esc(r.identityType)}<br>${esc(r.identityNo)}</td><td>${esc(r.identityIssuer)}<br>${esc(r.identityIssueDate)}</td><td>${esc(r.patientName)}<br>${esc(r.relationship)}</td><td>${r.idFrontImage?'أمام':''}${r.idBackImage?' / خلف':''}</td><td>${esc(r.city)}</td><td>${esc(r.loanDate)}</td><td>${esc(r.expectedReturnDate)}</td><td>${esc(r.actualReturnDate)}</td><td>${esc(r.deliveredBy)}</td><td>${esc(r.returnedTo)}</td><td>${esc(r.status)}</td><td>${esc(r.notes)}</td><td><button class="mini" onclick='printLoanReceipt(${JSON.stringify(r).replace(/'/g,"&#39;")},"delivery")'>وصل استلام</button> ${r.status==='تم الإرجاع'?`<button class="mini" onclick='printLoanReceipt(${JSON.stringify(r).replace(/'/g,"&#39;")},"return")'>وصل إرجاع</button>`:''}</td>${withReturn&&canEdit()?`<td><button class="mini" onclick="returnLoanNow('${esc(r.id)}')">تم الإرجاع</button></td>`:''}</tr>`).join('')+'</table>'}
-function auditsTableHtml(rows){if(!rows.length)return'<p>لا توجد عمليات جرد.</p>';return`<table><tr><th>التاريخ</th><th>رقم السيارة / اللوحة</th><th>سيارة الإسعاف</th><th>الحالة المسجلة</th><th>الحالة الفعلية</th><th>المكان الفعلي</th><th>النتيجة</th><th>ملاحظات</th></tr>`+rows.map(r=>`<tr><td>${esc(r.auditDate)}</td><td>${esc(r.inventoryNo)}</td><td>${esc(r.itemName)}</td><td>${esc(r.registeredCondition)}</td><td>${esc(r.actualCondition)}</td><td>${esc(r.actualLocation)}</td><td>${esc(r.result)}</td><td>${esc(r.notes)}</td></tr>`).join('')+'</table>'}
-function saveEquipment(){const data={id:equipmentEditId,inventoryNo:eqInventoryNo.value,name:eqName.value,category:eqCategory.value,quantity:eqQuantity.value,condition:eqCondition.value,location:eqLocation.value,acquiredDate:eqAcquiredDate.value,value:eqValue.value,notes:eqNotes.value};const action=equipmentEditId?'updateEquipment':'addEquipment';google.script.run.withSuccessHandler(r=>{setMsg('eqMsg',equipmentEditId?'تم تعديل سيارة الإسعاف':'تم حفظ السيارة','ok');clearEquipmentForm();renderReport(r)}).withFailureHandler(e=>setMsg('eqMsg','خطأ: '+e.message,'error'))[action](data,sessionToken)}
-function editEquipment(r){equipmentEditId=r.id;eqInventoryNo.value=r.inventoryNo;eqName.value=r.name;eqCategory.value=r.category;eqQuantity.value=r.quantity;eqCondition.value=r.condition;eqLocation.value=r.location;eqAcquiredDate.value=r.acquiredDate;eqValue.value=r.value;eqNotes.value=r.notes;eqEditNote.classList.add('active');eqSaveBtn.textContent='تحديث سيارة الإسعاف';eqCancelBtn.style.display='block';showTab('equipment',document.querySelectorAll('.sidebar button')[1])}
-function clearEquipmentForm(){equipmentEditId=null;['eqInventoryNo','eqName','eqLocation','eqAcquiredDate','eqValue','eqNotes'].forEach(id=>document.getElementById(id).value='');eqQuantity.value=1;eqCondition.value='متوفر';eqEditNote.classList.remove('active');eqSaveBtn.textContent='حفظ السيارة';eqCancelBtn.style.display='none'}function cancelEquipmentEdit(){clearEquipmentForm()}
-function readImageInput(id){return new Promise(resolve=>{const input=document.getElementById(id);const file=input&&input.files&&input.files[0];if(!file){resolve('');return}const reader=new FileReader();reader.onload=()=>resolve(reader.result||'');reader.onerror=()=>resolve('');reader.readAsDataURL(file)})}
-async function saveLoan(){const data={itemId:loanItem.value,borrower:loanBorrower.value,contact:loanContact.value,identityType:loanIdentityType.value,identityNo:loanIdentityNo.value,identityIssuer:loanIdentityIssuer.value,identityIssueDate:loanIdentityIssueDate.value,patientName:loanPatientName.value,relationship:loanRelationship.value,idFrontImage:await readImageInput('loanIdFrontImage'),idBackImage:await readImageInput('loanIdBackImage'),city:loanCity.value,loanDate:loanDate.value,expectedReturnDate:loanExpected.value,notes:loanNotes.value};google.script.run.withSuccessHandler(r=>{setMsg('loanMsg','تم تسجيل الإعارة','ok');['loanBorrower','loanContact','loanIdentityType','loanIdentityNo','loanIdentityIssuer','loanIdentityIssueDate','loanPatientName','loanRelationship','loanIdFrontImage','loanIdBackImage','loanCity','loanDate','loanExpected','loanNotes'].forEach(id=>document.getElementById(id).value='');loanDate.value=today();renderReport(r)}).withFailureHandler(e=>setMsg('loanMsg','خطأ: '+e.message,'error')).addLoan(data,sessionToken)}
-function returnLoanNow(id){const d=prompt('تاريخ الإرجاع الفعلي:',today());if(!d)return;google.script.run.withSuccessHandler(r=>renderReport(r)).withFailureHandler(e=>alert(e.message)).returnLoan(id,d,'',sessionToken)}
-function saveAudit(){const data={itemId:auditItem.value,auditDate:auditDate.value,actualCondition:auditCondition.value,actualLocation:auditLocation.value,result:auditResult.value,updateItem:auditUpdate.value,notes:auditNotes.value};google.script.run.withSuccessHandler(r=>{setMsg('auditMsg','تم حفظ عملية الجرد','ok');auditNotes.value='';renderReport(r)}).withFailureHandler(e=>setMsg('auditMsg','خطأ: '+e.message,'error')).addInventoryAudit(data,sessionToken)}
-function loadAdmins(){if(!isSuper())return;google.script.run.withSuccessHandler(renderAdmins).withFailureHandler(e=>setMsg('adminMsg','خطأ: '+e.message,'error')).listAdmins(sessionToken)}
-function addAdminUser(){if(!isSuper()){setMsg('adminMsg','إضافة المستخدمين محصورة في إدارة الأدمن والصلاحيات وللأدمن كامل الصلاحيات فقط','error');return}google.script.run.withSuccessHandler(list=>{setMsg('adminMsg','تمت إضافة الأدمن','ok');adminName.value='';adminUsername.value='';adminPassword.value='';renderAdmins(list)}).withFailureHandler(e=>setMsg('adminMsg','خطأ: '+e.message,'error')).addAdmin({name:adminName.value,username:adminUsername.value,password:adminPassword.value,role:adminRole.value},sessionToken)}
-function renderAdmins(list){adminsTable.innerHTML='<table><tr><th>الاسم</th><th>الدخول</th><th>الصلاحية</th><th>نشط</th><th>إجراء</th></tr>'+list.map(a=>`<tr><td><input id="n_${a.id}" value="${esc(a.name)}"></td><td><input id="u_${a.id}" value="${esc(a.username)}"></td><td><select id="r_${a.id}"><option value="super" ${a.role==='super'?'selected':''}>ادمن جميع الصلاحيات</option><option value="editor" ${a.role==='editor'?'selected':''}>محرر تعديل</option><option value="viewer" ${a.role==='viewer'?'selected':''}>مشاهد</option></select></td><td><select id="a_${a.id}"><option value="true" ${a.active?'selected':''}>نعم</option><option value="false" ${!a.active?'selected':''}>لا</option></select><input id="p_${a.id}" type="password" placeholder="كلمة مرور جديدة اختياري"></td><td><button class="mini" onclick="saveAdminPermissions('${a.id}')">حفظ</button> <button class="mini danger" onclick="deleteAdminUser('${a.id}')">حذف</button></td></tr>`).join('')+'</table>'}
-function saveAdminPermissions(id){google.script.run.withSuccessHandler(res=>{if(res.currentAdmin){currentAdmin=res.currentAdmin;applyRoleUI()}renderAdmins(res.admins)}).withFailureHandler(e=>alert(e.message)).updateAdmin({id:id,name:document.getElementById('n_'+id).value,username:document.getElementById('u_'+id).value,password:document.getElementById('p_'+id).value,role:document.getElementById('r_'+id).value,active:document.getElementById('a_'+id).value},sessionToken)}function deleteAdminUser(id){if(!confirm('حذف هذا الحساب؟'))return;google.script.run.withSuccessHandler(renderAdmins).withFailureHandler(e=>alert(e.message)).deleteAdmin(id,sessionToken)}
+// ==================== الإعدادات الأساسية ====================
+const APPS_SCRIPT_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbwuqeteGRYApZ8RGXzq1vHxrrdKeLitqadIGn6ZdyraH-kAZ_Y5icG4eKW_PKYt72Xx0w/exec';
 
-function requestsTableHtml(rows){if(!rows||!rows.length)return'<p>لا توجد حجوزات.</p>';return`<table><tr><th>رقم الحجز</th><th>سيارة الإسعاف</th><th>طالب الحجز</th><th>المريض</th><th>الهوية</th><th>المواعيد</th><th>صور الهوية</th><th>الحالة</th><th>إجراء</th></tr>`+rows.map(r=>`<tr><td>${esc(r.requestNo)}</td><td>${esc(r.inventoryNo)}<br>${esc(r.itemName)}</td><td>${esc(r.borrower)}<br>${esc(r.contact)}<br>${esc(r.address)}</td><td>${esc(r.patientName)}<br>${esc(r.relationship)}</td><td>${esc(r.identityType)}<br>${esc(r.identityNo)}<br>${esc(r.identityIssuer)}<br>${esc(r.identityIssueDate)}</td><td>الموعد: ${esc(r.loanDate)}<br>العودة: ${esc(r.expectedReturnDate)}</td><td>${r.idFrontUrl?`<a href="${esc(r.idFrontUrl)}" target="_blank">الأمام</a>`:''} ${r.idBackUrl?`<a href="${esc(r.idBackUrl)}" target="_blank">الخلف</a>`:''}</td><td>${esc(r.status)}</td><td>${r.status==='قيد الانتظار'&&canEdit()?`<button class="mini" onclick="approveRequest('${esc(r.requestNo)}')">تأكيد</button> <button class="mini danger" onclick="rejectRequest('${esc(r.requestNo)}')">رفض</button>`:''}</td></tr>`).join('')+'</table>'}
-function loadRequests(){google.script.run.withSuccessHandler(list=>{requestsTable.innerHTML=requestsTableHtml(list)}).withFailureHandler(e=>setMsg('requestsMsg','خطأ: '+e.message,'error')).listPendingRequests(sessionToken)}
-function approveRequest(no){if(!confirm('تأكيد الحجز وتحديث حالة سيارة الإسعاف؟'))return;google.script.run.withSuccessHandler(r=>{setMsg('requestsMsg','تم تأكيد الحجز وتحديث الحالة','ok');renderReport(r);loadRequests()}).withFailureHandler(e=>setMsg('requestsMsg','خطأ: '+e.message,'error')).approveExternalRequest(no,sessionToken)}
-function rejectRequest(no){if(!confirm('رفض هذا الحجز؟'))return;google.script.run.withSuccessHandler(r=>{setMsg('requestsMsg','تم رفض الحجز','ok');renderReport(r);loadRequests()}).withFailureHandler(e=>setMsg('requestsMsg','خطأ: '+e.message,'error')).rejectExternalRequest(no,sessionToken)}
+let sessionToken = localStorage.getItem('equipment_session_token') || '';
+let currentAdmin = JSON.parse(localStorage.getItem('equipment_current_admin') || 'null');
+let currentReport = null;
+let equipmentEditId = null;
+let fleetChart = null;
 
+// ==================== دوال مساعدة ====================
+function esc(str) {
+  if (!str) return '';
+  return String(str).replace(/[&<>]/g, function(m) {
+    if (m === '&') return '&amp;';
+    if (m === '<') return '&lt;';
+    if (m === '>') return '&gt;';
+    return m;
+  });
+}
 
-function logsTableHtml(rows){if(!rows||!rows.length)return'<p>لا توجد عمليات مسجلة.</p>';return`<table><tr><th>التاريخ</th><th>العملية</th><th>المنفذ</th><th>الدور</th><th>المرجع</th><th>التفاصيل</th></tr>`+rows.map(r=>`<tr><td>${esc(r.date)}</td><td>${esc(r.action)}</td><td>${esc(r.actor)}</td><td>${esc(r.role)}</td><td>${esc(r.ref)}</td><td>${esc(r.details)}</td></tr>`).join('')+'</table>'}
-function loadLogs(){google.script.run.withSuccessHandler(list=>{logsTable.innerHTML=logsTableHtml(list)}).withFailureHandler(e=>setMsg('logsMsg','خطأ: '+e.message,'error')).listOperationLogs(sessionToken)}
-function drawChart(r){const ctx=document.getElementById('equipmentChart');if(!ctx)return;if(equipmentChart)equipmentChart.destroy();equipmentChart=new Chart(ctx,{type:'doughnut',data:{labels:['متوفرة','محجوزة','معطل/تالف'],datasets:[{data:[r.totals.available,r.totals.loaned,r.totals.damaged],backgroundColor:['#7ED6D1','#F59E0B','#b91c1c']}]},options:{responsive:true,plugins:{legend:{position:'bottom'}}}})}
+function money(value) {
+  return Number(value || 0).toLocaleString('ar-DZ') + ' دج';
+}
 
-function getBrandLogo(){return (currentReport&&currentReport.identity&&currentReport.identity.logoUrl)||document.querySelector('.brand-logo')?.src||''}
-function getBrandName(){return (currentReport&&currentReport.identity&&currentReport.identity.name)||'جمعية الجواهر بقمار'}
-function printableBrandHeader(title,sub){return `<div class="print-brand"><img src="${getBrandLogo()}"><div><h1>${title}</h1><p>${getBrandName()} - ${sub||'نظام تسيير سيارات الإسعاف والحجوزات'}</p></div></div>`}
-function printLoanReceipt(r,type){const cached=type==='return'?r.returnReceiptNo:r.deliveryReceiptNo;if(cached){printLoanReceiptWithNo(r,type,cached);return}google.script.run.withSuccessHandler(no=>{if(type==='return')r.returnReceiptNo=no;else r.deliveryReceiptNo=no;printLoanReceiptWithNo(r,type,no)}).withFailureHandler(e=>alert('تعذر توليد رقم الوصل: '+e.message)).getLoanReceiptNumber(r.id,type,sessionToken)}
-function printLoanReceiptWithNo(r,type,receiptNo){const isReturn=type==='return';const title=isReturn?'وصل إرجاع سيارة الإسعاف':'وصل استلام سيارة الإسعاف';const adminLabel=isReturn?'حساب المسؤول عن الاستلام':'حساب المسؤول عن التسليم';const adminName=isReturn?(r.returnedTo||''):(r.deliveredBy||'');const dateLabel=isReturn?'تاريخ الإرجاع':'تاريخ الإعارة';const dateValue=isReturn?(r.actualReturnDate||''):r.loanDate;const logo=getBrandLogo();const org=getBrandName();const w=window.open('','','width=900,height=700');w.document.write(`<html lang="ar" dir="rtl"><head><title>${title}</title><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet"><style>@page{size:A4;margin:8mm}*{box-sizing:border-box}body{font-family:Cairo,Tahoma,Arial;margin:0;background:#fff;color:#1e293b;font-size:11px}.receipt{width:100%;max-width:190mm;margin:0 auto;border:1px solid #dbe4ee;border-radius:10px;padding:10px;line-height:1.45}.top{display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #2986B0;padding-bottom:8px;margin-bottom:10px;gap:10px;background:linear-gradient(90deg,#eff6ff,#fff);border-radius:8px 8px 0 0}.logo{width:56px;height:56px;border-radius:50%;border:2px solid #e2e8f0;object-fit:cover;background:white}.title h1{margin:0;color:#0f172a;font-size:20px}.title p{margin:2px 0 0;color:#64748b;font-size:10px}.badge{background:#F59E0B;color:white;padding:6px 10px;border-radius:999px;font-weight:800;font-size:10px;white-space:nowrap}.grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px}.field{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:6px 8px;min-height:42px}.label{display:block;font-size:9px;color:#64748b;margin-bottom:2px}.value{font-size:11px;font-weight:700;color:#111827;word-break:break-word}.notice{margin-top:8px;background:#fff7ed;border-right:3px solid #f59e0b;padding:7px 9px;border-radius:8px;color:#7c2d12;font-size:10px}.signatures{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:28px}.sign{border-top:1px dashed #94a3b8;padding-top:8px;text-align:center;font-weight:800;color:#334155;font-size:11px}.footer{text-align:center;margin-top:10px;font-size:9px;color:#94a3b8}.watermark{position:fixed;top:42%;left:20%;font-size:54px;color:rgba(41,134,176,.045);transform:rotate(-20deg);font-weight:800;z-index:-1}@media print{body{padding:0}.receipt{page-break-inside:avoid;break-inside:avoid}.watermark{display:block}}</style></head><body><div class="watermark">ALJAWAHIR</div><div class="receipt"><div class="top"><img class="logo" src="${logo}"><div class="title"><h1>${title}</h1><p>${org} - نظام تسيير سيارة الإسعاف والجرد</p></div><div class="badge">رقم الوصل: ${receiptNo}</div></div><div class="grid"><div class="field"><span class="label">رقم السيارة / اللوحة</span><div class="value">${esc(r.inventoryNo)}</div></div><div class="field"><span class="label">اسم / نوع سيارة الإسعاف</span><div class="value">${esc(r.itemName)}</div></div><div class="field"><span class="label">اسم طالب الحجز</span><div class="value">${esc(r.borrower)}</div></div><div class="field"><span class="label">الجهة أو الهاتف</span><div class="value">${esc(r.contact)}</div></div><div class="field"><span class="label">نوع الهوية</span><div class="value">${esc(r.identityType)}</div></div><div class="field"><span class="label">رقم الهوية</span><div class="value">${esc(r.identityNo)}</div></div><div class="field"><span class="label">الهوية الصادرة عن الجهة</span><div class="value">${esc(r.identityIssuer)}</div></div><div class="field"><span class="label">تاريخ إصدار الهوية</span><div class="value">${esc(r.identityIssueDate)}</div></div><div class="field"><span class="label">اسم المريض</span><div class="value">${esc(r.patientName)}</div></div><div class="field"><span class="label">صلة القرابة</span><div class="value">${esc(r.relationship)}</div></div><div class="field"><span class="label">المدينة</span><div class="value">${esc(r.city)}</div></div><div class="field"><span class="label">${dateLabel}</span><div class="value">${esc(dateValue)}</div></div>${!isReturn?`<div class="field"><span class="label">تاريخ الإرجاع المتوقع</span><div class="value">${esc(r.expectedReturnDate)}</div></div>`:''}<div class="field"><span class="label">${adminLabel}</span><div class="value">${esc(adminName)}</div></div></div><div class="notice"><b>إقرار:</b> أقرّ المستعير باستلام سيارة الإسعاف المذكور أعلاه بحالة جيدة، ويتحمّل مسؤولية المحافظة عليه وإرجاعه في التاريخ المحدد وفق النظام الداخلي للجمعية.</div><div class="notice"><b>ملاحظات إضافية:</b> ${esc(r.notes||'لا توجد ملاحظات إضافية')}</div><div class="signatures"><div class="sign">توقيع المستعير</div><div class="sign">ختم وتوقيع الإدارة</div></div><div class="footer">تم إنشاء هذا الوصل إلكترونيًا عبر نظام جمعية الجواهر لتسيير سيارة الإسعاف والإعارة</div></div><script>window.print()<\/script></body></html>`);w.document.close()}
-function printSection(id){document.querySelectorAll('.content').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');window.print()}function printTableOnly(type){const map={equipment:equipmentTable(currentReport.equipment,false),loans:loansTable(currentReport.loans,false),activeLoans:loansTable(currentReport.activeLoans,false),audits:auditsTableHtml(currentReport.audits)};const titles={equipment:'سجل سيارات الإسعاف',loans:'سجل الحجوزات',activeLoans:'سيارات الإسعاف المحجوزة',audits:'سجل الفحص الدوري'};const w=window.open('','','width=1000,height=700');w.document.write(`<html lang="ar" dir="rtl"><head><title>طباعة</title><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet"><style>@page{size:A4 landscape;margin:8mm}body{font-family:Cairo,Tahoma;padding:8px;font-size:10px;color:#1e293b}.print-brand{display:flex;align-items:center;gap:12px;border-bottom:3px solid #2986B0;background:linear-gradient(90deg,#eff6ff,#fff);padding:8px 10px;margin-bottom:10px}.print-brand img{width:52px;height:52px;border-radius:50%;object-fit:cover;background:#fff;border:2px solid #e2e8f0}.print-brand h1{font-size:17px;margin:0;color:#0f172a}.print-brand p{font-size:10px;margin:2px 0 0;color:#64748b}table{width:100%;border-collapse:collapse;font-size:9px}th,td{border:1px solid #ddd;padding:4px;text-align:center}th{background:#2986B0;color:white}tr:nth-child(even){background:#f8fafc}.footer{text-align:center;margin-top:8px;color:#64748b;font-size:9px}</style></head><body>${printableBrandHeader(titles[type]||'التقرير الاحترافي للعتاد','التقارير والطباعة')}${map[type]||''}<div class="footer">تم إنشاء التقرير إلكترونيًا عبر نظام جمعية الجواهر لتسيير سيارات الإسعاف والحجوزات</div></body></html>`);w.document.close();w.print()}
-window.onload=function(){document.querySelectorAll('.brand-logo').forEach(i=>i.src='https://scontent.fogx1-1.fna.fbcdn.net/v/t39.30808-6/327352070_2989580661351512_6179979542828320358_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=1d70fc&_nc_eui2=AeHb9JHku7ZSuDNWpQMw8cY3iiVEWEa9k1CKJURYRr2TUH9bCAsJ_V6KYA7P9Tpl46IxYiOOBR5SiIqLUwNUmMuv&_nc_ohc=GhA_5ai33TgQ7kNvwHXgjf-&_nc_oc=AdpzBO9J5fce0rKSLalkOy7UL7oql4IIBdVkKT4pn0M3TrWhHvFS9mneVmeVMfOihu0&_nc_zt=23&_nc_ht=scontent.fogx1-1.fna&_nc_gid=2nwWWspZn_75JEGttH7j1A&_nc_ss=7b2a8&oh=00_Af6XODE8Pg7tIj_GuX-HNg753Wg7eYvYKkpjRcDt1uQ_Qg&oe=6A07B3C8');loanDate.value=today();auditDate.value=today();if(!APPS_SCRIPT_WEB_APP_URL.includes('ضع_رابط')&&sessionToken&&currentAdmin){loginScreen.style.display='none';appShell.style.display='block';applyRoleUI();loadReport(true)}};
+function today() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+function canEdit() {
+  return currentAdmin && (currentAdmin.role === 'super' || currentAdmin.role === 'editor');
+}
+
+function isSuper() {
+  return currentAdmin && currentAdmin.role === 'super';
+}
+
+function setMsg(elementId, message, type) {
+  const el = document.getElementById(elementId);
+  if (el) {
+    el.innerHTML = `<div class="${type}-msg">${message}</div>`;
+    setTimeout(() => {
+      if (el.innerHTML.includes(message)) el.innerHTML = '';
+    }, 5000);
+  }
+}
+
+// ==================== دوال API ====================
+async function apiCall(action, args) {
+  if (!APPS_SCRIPT_WEB_APP_URL || APPS_SCRIPT_WEB_APP_URL.includes('YOUR_SCRIPT_ID')) {
+    throw new Error('⚠️ يرجى وضع رابط Google Apps Script الصحيح');
+  }
+  const response = await fetch(APPS_SCRIPT_WEB_APP_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify({ action: action, args: args || [] })
+  });
+  const result = await response.json();
+  if (!result.ok) throw new Error(result.error || 'حدث خطأ غير متوقع');
+  return result.data;
+}
+
+// ==================== تسجيل الدخول والخروج ====================
+async function login() {
+  const username = document.getElementById('loginUsername').value;
+  const password = document.getElementById('loginPassword').value;
+  
+  if (!username || !password) {
+    setMsg('loginMsg', 'يرجى إدخال اسم المستخدم وكلمة المرور', 'error');
+    return;
+  }
+  
+  setMsg('loginMsg', 'جاري تسجيل الدخول...', 'success');
+  
+  try {
+    const result = await apiCall('loginAdmin', [{ username: username, password: password }]);
+    sessionToken = result.token;
+    currentAdmin = result.admin;
+    localStorage.setItem('equipment_session_token', sessionToken);
+    localStorage.setItem('equipment_current_admin', JSON.stringify(currentAdmin));
+    
+    document.getElementById('loginScreen').style.display = 'none';
+    document.getElementById('appShell').style.display = 'block';
+    applyRoleUI();
+    await refreshAllData();
+  } catch (err) {
+    setMsg('loginMsg', '❌ ' + err.message, 'error');
+  }
+}
+
+function logout() {
+  localStorage.removeItem('equipment_session_token');
+  localStorage.removeItem('equipment_current_admin');
+  location.reload();
+}
+
+function applyRoleUI() {
+  const badge = document.getElementById('adminBadge');
+  if (badge && currentAdmin) {
+    badge.innerHTML = `👤 ${currentAdmin.name} | ${currentAdmin.roleLabel || (currentAdmin.role === 'super' ? 'أدمن كامل' : currentAdmin.role === 'editor' ? 'محرر' : 'مشاهد')}`;
+  }
+  
+  document.querySelectorAll('.super-only').forEach(el => {
+    el.style.display = isSuper() ? 'block' : 'none';
+  });
+  
+  const editButtons = document.querySelectorAll('.submit-btn, .edit-action');
+  editButtons.forEach(btn => {
+    if (!canEdit() && !btn.classList.contains('secondary-btn') && !btn.classList.contains('warning-btn')) {
+      btn.style.display = 'none';
+    }
+  });
+}
+
+// ==================== تحديث البيانات ====================
+async function refreshAllData() {
+  try {
+    const report = await apiCall('getEquipmentReport', [sessionToken]);
+    currentReport = report;
+    renderDashboard(report);
+    fillSelects(report.equipment);
+    updateSyncStatus();
+  } catch (err) {
+    console.error('خطأ في التحديث:', err);
+    document.getElementById('syncStatus').innerHTML = '⚠️ ' + err.message;
+  }
+}
+
+function updateSyncStatus() {
+  const statusEl = document.getElementById('syncStatus');
+  if (statusEl) {
+    statusEl.innerHTML = '✓ آخر تحديث: ' + new Date().toLocaleString('ar-DZ');
+  }
+}
+
+// ==================== عرض لوحة التحكم ====================
+function renderDashboard(report) {
+  if (!report) return;
+  
+  // الإحصائيات
+  const statsHtml = `
+    <div class="stat-card"><h3>🚑 إجمالي السيارات</h3><div class="stat-value">${report.totals.total}</div></div>
+    <div class="stat-card"><h3>🟢 متوفرة</h3><div class="stat-value" style="color: #166534;">${report.totals.available}</div></div>
+    <div class="stat-card"><h3>🟠 محجوزة</h3><div class="stat-value" style="color: #f59e0b;">${report.totals.loaned}</div></div>
+    <div class="stat-card"><h3>🔴 معطلة/تالفة</h3><div class="stat-value" style="color: #dc2626;">${report.totals.damaged}</div></div>
+    <div class="stat-card"><h3>💰 القيمة الإجمالية</h3><div class="stat-value">${money(report.totals.value)}</div></div>
+    <div class="stat-card"><h3>⚰️ خدمات نقل جثة</h3><div class="stat-value">${(report.burialServices || []).length}</div></div>
+  `;
+  document.getElementById('statsGrid').innerHTML = statsHtml;
+  
+  // رسم بياني
+  drawFleetChart(report.totals);
+  
+  // الحجوزات النشطة
+  const activeLoans = (report.activeLoans || []).slice(0, 10);
+  document.getElementById('dashboardLoans').innerHTML = loansTableHtml(activeLoans);
+  
+  // التكاليف الطبية
+  const missions = (report.missions || []).slice(0, 10);
+  document.getElementById('dashboardMissions').innerHTML = missionsTableHtml(missions);
+}
+
+function drawFleetChart(totals) {
+  const ctx = document.getElementById('fleetChart');
+  if (!ctx) return;
+  if (fleetChart) fleetChart.destroy();
+  
+  fleetChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['🟢 متوفرة', '🟠 محجوزة', '🔴 معطلة/تالفة'],
+      datasets: [{
+        data: [totals.available, totals.loaned, totals.damaged],
+        backgroundColor: ['#166534', '#f59e0b', '#dc2626'],
+        borderWidth: 0
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: 'bottom', rtl: true }
+      }
+    }
+  });
+}
+
+// ==================== دوال عرض الجداول ====================
+function loansTableHtml(loans) {
+  if (!loans || !loans.length) return '<p style="text-align:center; padding:20px;">لا توجد حجوزات نشطة</p>';
+  
+  return `<table>
+    <thead>
+      <tr><th>رقم الجرد</th><th>السيارة</th><th>المستعير</th><th>المريض/المتوفى</th><th>نوع الخدمة</th><th>تاريخ الحجز</th><th>الحالة</th><th></th></tr>
+    </thead>
+    <tbody>
+      ${loans.map(loan => `
+        <tr>
+          <td>${esc(loan.inventoryNo)}</td>
+          <td>${esc(loan.itemName)}</td>
+          <td>${esc(loan.borrower)}</td>
+          <td>${esc(loan.patientName || loan.deceasedName || '-')}</td>
+          <td>${loan.serviceType === 'burial' ? '<span class="badge badge-burial">⚰️ نقل جثة</span>' : '<span class="badge badge-primary">🚑 نقل طبي</span>'}</td>
+          <td>${loan.loanDate || '-'}</td>
+          <td><span class="badge badge-warning">${esc(loan.status)}</span></td>
+          <td>${canEdit() ? `<button class="mini-btn mini-success" onclick="returnLoanNow('${loan.id}')">✅ إرجاع</button>` : ''}</td>
+        </tr>
+      `).join('')}
+    </tbody>
+  </table>`;
+}
+
+function missionsTableHtml(missions) {
+  if (!missions || !missions.length) return '<p style="text-align:center; padding:20px;">لا توجد تكاليف طبية</p>';
+  
+  return `<table>
+    <thead>
+      <tr><th>رقم التكليف</th><th>التاريخ</th><th>السيارة</th><th>السائق</th><th>المريض</th><th>نوع النقل</th><th>التكلفة</th><th>الحالة</th><th></th></tr>
+    </thead>
+    <tbody>
+      ${missions.map(m => `
+        <tr>
+          <td>${esc(m.missionNo)}</td>
+          <td>${m.date || '-'}</td>
+          <td>${esc(m.itemName)}</td>
+          <td>${esc(m.driverName)}</td>
+          <td>${esc(m.patientName)}</td>
+          <td>${esc(m.tripType)}</td>
+          <td>${money(m.totalCost)}</td>
+          <td><span class="badge ${m.status === 'قيد التنفيذ' ? 'badge-warning' : 'badge-success'}">${esc(m.status)}</span></td>
+          <td><button class="mini-btn mini-primary" onclick="printMission('${m.missionNo}')">🖨️ طباعة</button></td>
+        </tr>
+      `).join('')}
+    </tbody>
+  </table>`;
+}
+
+function burialServicesTableHtml(services) {
+  if (!services || !services.length) return '<p style="text-align:center; padding:20px;">لا توجد خدمات نقل جثة</p>';
+  
+  return `<table>
+    <thead>
+      <tr><th>رقم الخدمة</th><th>التاريخ</th><th>السيارة</th><th>السائق</th><th>المتوفى</th><th>نوع النقل</th><th>التكلفة</th><th>الحالة</th><th></th></tr>
+    </thead>
+    <tbody>
+      ${services.map(s => `
+        <tr>
+          <td>${esc(s.burialNo)}</td>
+          <td>${s.date || '-'}</td>
+          <td>${esc(s.itemName)}</td>
+          <td>${esc(s.driverName)}</td>
+          <td>${esc(s.deceasedName)}</td>
+          <td>${esc(s.tripType)}</td>
+          <td>${money(s.totalCost)}</td>
+          <td><span class="badge ${s.status === 'قيد التنفيذ' ? 'badge-warning' : 'badge-success'}">${esc(s.status)}</span></td>
+          <td><button class="mini-btn mini-primary" onclick="printBurialService('${s.burialNo}')">🖨️ طباعة</button></td>
+        </tr>
+      `).join('')}
+    </tbody>
+  </table>`;
+}
+
+function driversTableHtml(drivers) {
+  if (!drivers || !drivers.length) return '<p style="text-align:center; padding:20px;">لا توجد بيانات</p>';
+  
+  return `<table>
+    <thead>
+      <tr><th>الاسم</th><th>رقم الرخصة</th><th>الهاتف</th><th>هاتف طوارئ</th><th>التخصص</th><th>سنوات الخبرة</th><th>الحالة</th>${canEdit() ? '<th></th>' : ''}</tr>
+    </thead>
+    <tbody>
+      ${drivers.map(d => `
+        <tr>
+          <td>${esc(d.name)}</td>
+          <td>${esc(d.licenseNo)}</td>
+          <td>${esc(d.phone)}</td>
+          <td>${esc(d.emergencyPhone || '-')}</td>
+          <td>${esc(d.specialization || '-')}</td>
+          <td>${d.experienceYears || 0}</td>
+          <td><span class="badge ${d.status === 'نشط' ? 'badge-success' : 'badge-danger'}">${esc(d.status)}</span></td>
+          ${canEdit() ? `<td><button class="mini-btn mini-danger" onclick="deleteDriver('${d.id}')">🗑️ حذف</button></td>` : ''}
+        </tr>
+      `).join('')}
+    </tbody>
+  </table>`;
+}
+
+function medicalStaffTableHtml(staff) {
+  if (!staff || !staff.length) return '<p style="text-align:center; padding:20px;">لا توجد بيانات</p>';
+  
+  return `<table>
+    <thead>
+      <tr><th>الاسم</th><th>التخصص</th><th>الهاتف</th><th>رقم التسجيل</th><th>سنوات الخبرة</th><th>المؤهلات</th><th>الحالة</th>${canEdit() ? '<th></th>' : ''}</tr>
+    </thead>
+    <tbody>
+      ${staff.map(s => `
+        <tr>
+          <td>${esc(s.name)}</td>
+          <td>${esc(s.specialty)}</td>
+          <td>${esc(s.phone)}</td>
+          <td>${esc(s.registrationNo || '-')}</td>
+          <td>${s.experienceYears || 0}</td>
+          <td>${esc(s.qualifications || '-')}</td>
+          <td><span class="badge ${s.status === 'نشط' ? 'badge-success' : 'badge-danger'}">${esc(s.status)}</span></td>
+          ${canEdit() ? `<td><button class="mini-btn mini-danger" onclick="deleteMedicalStaff('${s.id}')">🗑️ حذف</button></td>` : ''}
+        </tr>
+      `).join('')}
+    </tbody>
+  </table>`;
+}
+
+// ==================== دوال الإدارة ====================
+function showTab(tabId, btn) {
+  if (tabId === 'admins' && !isSuper()) {
+    alert('⛔ إدارة الأدمن متاحة للأدمن كامل الصلاحيات فقط');
+    return;
+  }
+  
+  document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+  document.getElementById(tabId).classList.add('active');
+  
+  document.querySelectorAll('.sidebar button').forEach(b => b.classList.remove('current'));
+  if (btn) btn.classList.add('current');
+  
+  // تحميل البيانات حسب التبويب
+  if (tabId === 'equipment') loadEquipment();
+  if (tabId === 'drivers') loadDrivers();
+  if (tabId === 'medicalStaff') loadMedicalStaff();
+  if (tabId === 'missions') loadMissions();
+  if (tabId === 'burialServices') loadBurialServices();
+  if (tabId === 'loans') loadLoans();
+  if (tabId === 'pricing') loadPricingRules();
+  if (tabId === 'inventory') loadInventory();
+  if (tabId === 'requests') loadRequests();
+  if (tabId === 'logs') loadLogs();
+  if (tabId === 'admins') loadAdmins();
+}
+
+// ==================== سيارات الإسعاف ====================
+async function loadEquipment() {
+  if (!currentReport) await refreshAllData();
+  if (currentReport) {
+    document.getElementById('equipmentTable').innerHTML = equipmentTableHtml(currentReport.equipment);
+    fillCategoryList(currentReport.equipment);
+  }
+}
+
+function equipmentTableHtml(equipment) {
+  if (!equipment || !equipment.length) return '<p style="text-align:center; padding:20px;">لا توجد سيارات إسعاف</p>';
+  
+  return `<table>
+    <thead>
+      <tr><th>رقم اللوحة</th><th>الاسم</th><th>النوع</th><th>الصنف</th><th>الحالة</th><th>الموقع</th><th>القيمة</th><th>مجهزة لنقل جثة</th><th>${canEdit() ? '' : ''}</th></tr>
+    </thead>
+    <tbody>
+      ${equipment.map(e => `
+        <tr>
+          <td>${esc(e.inventoryNo)}</td>
+          <td>${esc(e.name)}</td>
+          <td>${esc(e.type || 'سيارة إسعاف عادية')}</td>
+          <td>${esc(e.category)}</td>
+          <td><span class="badge ${e.condition === 'متوفر' ? 'badge-success' : e.condition === 'محجوز' ? 'badge-warning' : 'badge-danger'}">${esc(e.condition)}</span></td>
+          <td>${esc(e.location)}</td>
+          <td>${money(e.value)}</td>
+          <td>${e.equippedForBurial === 'نعم' ? '✅ نعم' : '❌ لا'}</td>
+          ${canEdit() ? `<td><button class="mini-btn mini-primary" onclick="editEquipment(${JSON.stringify(e).replace(/[&<>]/g, '')})">✏️ تعديل</button></td>` : ''}
+        </tr>
+      `).join('')}
+    </tbody>
+  </table>`;
+}
+
+function fillSelects(equipment) {
+  const options = '<option value="">اختر سيارة الإسعاف</option>' + (equipment || []).map(e => `<option value="${e.id}">${esc(e.inventoryNo)} - ${esc(e.name)} (${e.condition})</option>`).join('');
+  if (document.getElementById('loanItem')) document.getElementById('loanItem').innerHTML = options;
+  if (document.getElementById('auditItem')) document.getElementById('auditItem').innerHTML = options;
+  if (document.getElementById('missionItem')) document.getElementById('missionItem').innerHTML = options;
+  if (document.getElementById('burialItem')) document.getElementById('burialItem').innerHTML = options;
+}
+
+function fillCategoryList(equipment) {
+  const categories = ['سيارة إسعاف عادية', 'سيارة إسعاف عناية مركزة', 'سيارة نقل الجثث', 'حافلة صغيرة'];
+  const catList = document.getElementById('categoryList');
+  if (catList) catList.innerHTML = categories.map(c => `<option value="${c}">`).join('');
+}
+
+async function saveEquipment() {
+  const data = {
+    id: equipmentEditId,
+    inventoryNo: document.getElementById('eqInventoryNo').value,
+    name: document.getElementById('eqName').value,
+    category: document.getElementById('eqCategory').value,
+    ambulanceType: document.getElementById('eqAmbulanceType').value,
+    capacity: document.getElementById('eqCapacity').value,
+    equippedForBurial: document.getElementById('eqEquippedForBurial').value,
+    quantity: parseInt(document.getElementById('eqQuantity').value) || 1,
+    condition: document.getElementById('eqCondition').value,
+    location: document.getElementById('eqLocation').value,
+    acquiredDate: document.getElementById('eqAcquiredDate').value,
+    value: parseFloat(document.getElementById('eqValue').value) || 0,
+    notes: document.getElementById('eqNotes').value
+  };
+  
+  if (!data.inventoryNo || !data.name) {
+    setMsg('eqMsg', 'يرجى إدخال رقم اللوحة واسم السيارة', 'error');
+    return;
+  }
+  
+  try {
+    const action = equipmentEditId ? 'updateEquipment' : 'addEquipment';
+    const result = await apiCall(action, [data, sessionToken]);
+    currentReport = result;
+    loadEquipment();
+    clearEquipmentForm();
+    setMsg('eqMsg', equipmentEditId ? '✓ تم تعديل السيارة بنجاح' : '✓ تم إضافة السيارة بنجاح', 'success');
+    refreshAllData();
+  } catch (err) {
+    setMsg('eqMsg', '❌ ' + err.message, 'error');
+  }
+}
+
+function editEquipment(equipment) {
+  equipmentEditId = equipment.id;
+  document.getElementById('eqInventoryNo').value = equipment.inventoryNo;
+  document.getElementById('eqName').value = equipment.name;
+  document.getElementById('eqCategory').value = equipment.category || '';
+  document.getElementById('eqAmbulanceType').value = equipment.type || 'سيارة إسعاف عادية';
+  document.getElementById('eqCapacity').value = equipment.capacity || '';
+  document.getElementById('eqEquippedForBurial').value = equipment.equippedForBurial || 'لا';
+  document.getElementById('eqQuantity').value = equipment.quantity;
+  document.getElementById('eqCondition').value = equipment.condition;
+  document.getElementById('eqLocation').value = equipment.location || '';
+  document.getElementById('eqAcquiredDate').value = equipment.acquiredDate || '';
+  document.getElementById('eqValue').value = equipment.value;
+  document.getElementById('eqNotes').value = equipment.notes || '';
+  
+  document.getElementById('eqEditNote').style.display = 'block';
+  document.getElementById('eqSaveBtn').textContent = '✏️ تحديث السيارة';
+  document.getElementById('eqCancelBtn').style.display = 'inline-block';
+}
+
+function clearEquipmentForm() {
+  equipmentEditId = null;
+  const fields = ['eqInventoryNo', 'eqName', 'eqCategory', 'eqAmbulanceType', 'eqCapacity', 'eqEquippedForBurial', 'eqLocation', 'eqAcquiredDate', 'eqValue', 'eqNotes'];
+  fields.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.value = '';
+  });
+  document.getElementById('eqQuantity').value = '1';
+  document.getElementById('eqCondition').value = 'متوفر';
+  document.getElementById('eqEditNote').style.display = 'none';
+  document.getElementById('eqSaveBtn').textContent = '💾 حفظ السيارة';
+  document.getElementById('eqCancelBtn').style.display = 'none';
+}
+
+function cancelEquipmentEdit() {
+  clearEquipmentForm();
+  setMsg('eqMsg', 'تم إلغاء التعديل', 'success');
+}
+
+// ==================== السائقين ====================
+async function loadDrivers() {
+  try {
+    const drivers = await apiCall('listDrivers', [sessionToken]);
+    document.getElementById('driversTable').innerHTML = driversTableHtml(drivers);
+  } catch (err) {
+    setMsg('driverMsg', 'خطأ: ' + err.message, 'error');
+  }
+}
+
+async function addDriver() {
+  const data = {
+    name: document.getElementById('driverName').value,
+    licenseNo: document.getElementById('driverLicense').value,
+    phone: document.getElementById('driverPhone').value,
+    emergencyPhone: document.getElementById('driverEmergencyPhone').value,
+    address: document.getElementById('driverAddress').value,
+    birthDate: document.getElementById('driverBirthDate').value,
+    licenseExpiryDate: document.getElementById('driverLicenseExpiryDate').value,
+    specialization: document.getElementById('driverSpecialization').value,
+    experienceYears: parseInt(document.getElementById('driverExperience').value) || 0,
+    status: document.getElementById('driverStatus').value,
+    notes: document.getElementById('driverNotes').value
+  };
+  
+  if (!data.name || !data.licenseNo || !data.phone) {
+    setMsg('driverMsg', 'يرجى إدخال الاسم ورقم الرخصة ورقم الهاتف', 'error');
+    return;
+  }
+  
+  try {
+    await apiCall('addDriver', [data, sessionToken]);
+    setMsg('driverMsg', '✓ تم إضافة السائق بنجاح', 'success');
+    clearDriverForm();
+    loadDrivers();
+  } catch (err) {
+    setMsg('driverMsg', '❌ ' + err.message, 'error');
+  }
+}
+
+function clearDriverForm() {
+  const fields = ['driverName', 'driverLicense', 'driverPhone', 'driverEmergencyPhone', 'driverAddress', 'driverBirthDate', 'driverLicenseExpiryDate', 'driverSpecialization', 'driverExperience', 'driverNotes'];
+  fields.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.value = '';
+  });
+  document.getElementById('driverStatus').value = 'نشط';
+}
+
+async function deleteDriver(id) {
+  if (!confirm('هل أنت متأكد من حذف هذا السائق؟')) return;
+  try {
+    await apiCall('deleteDriver', [id, sessionToken]);
+    setMsg('driverMsg', '✓ تم حذف السائق', 'success');
+    loadDrivers();
+  } catch (err) {
+    setMsg('driverMsg', '❌ ' + err.message, 'error');
+  }
+}
+
+function showDriverSubTab(tab) {
+  const listTab = document.getElementById('driverListTab');
+  const addTab = document.getElementById('driverAddTab');
+  const tabs = document.querySelectorAll('#drivers .sub-tab');
+  
+  if (tab === 'list') {
+    listTab.classList.add('active');
+    addTab.classList.remove('active');
+    tabs[0].classList.add('active');
+    tabs[1].classList.remove('active');
+    loadDrivers();
+  } else {
+    listTab.classList.remove('active');
+    addTab.classList.add('active');
+    tabs[0].classList.remove('active');
+    tabs[1].classList.add('active');
+  }
+}
+
+// ==================== الطاقم الطبي ====================
+async function loadMedicalStaff() {
+  try {
+    const staff = await apiCall('listMedicalStaff', [sessionToken]);
+    document.getElementById('medicalStaffTable').innerHTML = medicalStaffTableHtml(staff);
+  } catch (err) {
+    setMsg('staffMsg', 'خطأ: ' + err.message, 'error');
+  }
+}
+
+async function addMedicalStaff() {
+  const data = {
+    name: document.getElementById('staffName').value,
+    specialty: document.getElementById('staffSpecialty').value,
+    phone: document.getElementById('staffPhone').value,
+    emergencyPhone: document.getElementById('staffEmergencyPhone').value,
+    registrationNo: document.getElementById('staffRegistrationNo').value,
+    registrationAuthority: document.getElementById('staffRegistrationAuthority').value,
+    birthDate: document.getElementById('StaffBirthDate').value,
+    experienceYears: parseInt(document.getElementById('staffExperience').value) || 0,
+    qualifications: document.getElementById('staffQualifications').value,
+    status: document.getElementById('staffStatus').value,
+    notes: document.getElementById('staffNotes').value
+  };
+  
+  if (!data.name || !data.phone) {
+    setMsg('staffMsg', 'يرجى إدخال الاسم ورقم الهاتف', 'error');
+    return;
+  }
+  
+  try {
+    await apiCall('addMedicalStaff', [data, sessionToken]);
+    setMsg('staffMsg', '✓ تم إضافة العضو بنجاح', 'success');
+    clearStaffForm();
+    loadMedicalStaff();
+  } catch (err) {
+    setMsg('staffMsg', '❌ ' + err.message, 'error');
+  }
+}
+
+function clearStaffForm() {
+  const fields = ['staffName', 'staffPhone', 'staffEmergencyPhone', 'staffRegistrationNo', 'staffRegistrationAuthority', 'StaffBirthDate', 'staffExperience', 'staffQualifications', 'staffNotes'];
+  fields.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.value = '';
+  });
+  document.getElementById('staffSpecialty').value = 'طبيب';
+  document.getElementById('staffStatus').value = 'نشط';
+}
+
+async function deleteMedicalStaff(id) {
+  if (!confirm('هل أنت متأكد من حذف هذا العضو؟')) return;
+  try {
+    await apiCall('deleteMedicalStaff', [id, sessionToken]);
+    setMsg('staffMsg', '✓ تم حذف العضو', 'success');
+    loadMedicalStaff();
+  } catch (err) {
+    setMsg('staffMsg', '❌ ' + err.message, 'error');
+  }
+}
+
+function showStaffSubTab(tab) {
+  const listTab = document.getElementById('staffListTab');
+  const addTab = document.getElementById('staffAddTab');
+  const tabs = document.querySelectorAll('#medicalStaff .sub-tab');
+  
+  if (tab === 'list') {
+    listTab.classList.add('active');
+    addTab.classList.remove('active');
+    tabs[0].classList.add('active');
+    tabs[1].classList.remove('active');
+    loadMedicalStaff();
+  } else {
+    listTab.classList.remove('active');
+    addTab.classList.add('active');
+    tabs[0].classList.remove('active');
+    tabs[1].classList.add('active');
+  }
+}
+
+// ==================== التكاليف الطبية ====================
+async function loadMissions() {
+  try {
+    const missions = await apiCall('getMissionsList', [sessionToken]);
+    document.getElementById('missionsTable').innerHTML = missionsTableHtml(missions);
+  } catch (err) {
+    setMsg('missionMsg', 'خطأ: ' + err.message, 'error');
+  }
+}
+
+async function loadDriverAndStaffOptions() {
+  try {
+    const drivers = await apiCall('listDrivers', [sessionToken]);
+    const staff = await apiCall('listMedicalStaff', [sessionToken]);
+    
+    const driverSelect = document.getElementById('missionDriver');
+    if (driverSelect) {
+      driverSelect.innerHTML = '<option value="">اختر السائق</option>' + 
+        drivers.filter(d => d.status === 'نشط').map(d => `<option value="${d.id}">${esc(d.name)} (${d.licenseNo})</option>`).join('');
+    }
+    
+    const staffSelect = document.getElementById('missionStaff');
+    if (staffSelect) {
+      staffSelect.innerHTML = '<option value="">اختر الطاقم الطبي</option>' + 
+        staff.filter(s => s.status === 'نشط').map(s => `<option value="${s.id}">${esc(s.name)} (${s.specialty})</option>`).join('');
+    }
+  } catch (err) {
+    console.error('خطأ في تحميل الخيارات:', err);
+  }
+}
+
+function toggleMissionState() {
+  const tripType = document.getElementById('missionTripType').value;
+  const stateDiv = document.getElementById('missionStateDiv');
+  const distanceDiv = document.getElementById('missionDistanceDiv');
+  
+  if (tripType === 'خارج الولاية') {
+    stateDiv.style.display = 'block';
+    distanceDiv.style.display = 'block';
+    document.getElementById('missionDestinationState').required = true;
+    document.getElementById('missionDistanceKm').required = true;
+  } else {
+    stateDiv.style.display = 'none';
+    distanceDiv.style.display = 'none';
+    document.getElementById('missionDestinationState').required = false;
+    document.getElementById('missionDistanceKm').required = false;
+  }
+}
+
+async function updateMissionEstimate() {
+  const tripType = document.getElementById('missionTripType').value;
+  const destinationState = document.getElementById('missionDestinationState')?.value || '';
+  const distanceKm = parseFloat(document.getElementById('missionDistanceKm')?.value) || 0;
+  const extraServices = parseFloat(document.getElementById('missionExtraServices')?.value) || 0;
+  
+  if (!tripType) return;
+  
+  try {
+    const result = await apiCall('calculateTripCost', [tripType, destinationState, distanceKm, extraServices, sessionToken, 'medical']);
+    const preview = document.getElementById('missionCostPreview');
+    const costSpan = document.getElementById('missionEstimatedCost');
+    if (preview && costSpan) {
+      costSpan.textContent = result.total.toLocaleString();
+      preview.style.display = 'block';
+    }
+  } catch (err) {
+    console.error('خطأ في حساب السعر:', err);
+  }
+}
+
+async function createMission() {
+  const data = {
+    itemId: document.getElementById('missionItem').value,
+    driverId: document.getElementById('missionDriver').value,
+    medicalStaffId: document.getElementById('missionStaff').value,
+    patientName: document.getElementById('missionPatientName').value,
+    relationship: document.getElementById('missionRelationship').value,
+    patientCondition: document.getElementById('missionPatientCondition').value,
+    companionName: document.getElementById('missionCompanionName').value,
+    companionPhone: document.getElementById('missionCompanionPhone').value,
+    companionRelation: document.getElementById('missionCompanionRelation').value,
+    tripType: document.getElementById('missionTripType').value,
+    destinationState: document.getElementById('missionDestinationState')?.value || '',
+    distanceKm: parseFloat(document.getElementById('missionDistanceKm')?.value) || 0,
+    destination: document.getElementById('missionDestination').value,
+    departureDate: document.getElementById('missionDepartureDate').value,
+    expectedReturnDate: document.getElementById('missionExpectedReturnDate').value,
+    extraServicesPrice: parseFloat(document.getElementById('missionExtraServices').value) || 0,
+    paidAmount: parseFloat(document.getElementById('missionPaidAmount').value) || 0,
+    notes: document.getElementById('missionNotes').value,
+    serviceType: 'medical'
+  };
+  
+  if (!data.itemId || !data.driverId || !data.medicalStaffId || !data.patientName || !data.departureDate) {
+    setMsg('missionMsg', 'يرجى ملء جميع الحقول الإجبارية', 'error');
+    return;
+  }
+  
+  try {
+    await apiCall('createMission', [data, sessionToken]);
+    setMsg('missionMsg', '✓ تم إنشاء التكليف بنجاح', 'success');
+    clearMissionForm();
+    loadMissions();
+    refreshAllData();
+  } catch (err) {
+    setMsg('missionMsg', '❌ ' + err.message, 'error');
+  }
+}
+
+function clearMissionForm() {
+  const fields = ['missionPatientName', 'missionRelationship', 'missionCompanionName', 'missionCompanionPhone', 'missionCompanionRelation', 'missionDestination', 'missionNotes'];
+  fields.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.value = '';
+  });
+  document.getElementById('missionPaidAmount').value = '0';
+  document.getElementById('missionDepartureDate').value = today();
+  document.getElementById('missionCostPreview').style.display = 'none';
+}
+
+async function printMission(missionNo) {
+  try {
+    const mission = await apiCall('getMissionById', [missionNo, sessionToken]);
+    if (!mission) throw new Error('لم يتم العثور على التكليف');
+    printMissionReceipt(mission);
+  } catch (err) {
+    alert(err.message);
+  }
+}
+
+function printMissionReceipt(mission) {
+  const win = window.open('', '_blank');
+  win.document.write(`
+    <!DOCTYPE html>
+    <html dir="rtl" lang="ar">
+    <head>
+      <meta charset="UTF-8">
+      <title>تكليف مهمة طبية - ${mission.missionNo}</title>
+      <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+      <style>
+        body { font-family: 'Cairo', sans-serif; padding: 20px; margin: 0; }
+        .receipt { max-width: 800px; margin: auto; border: 2px solid #0f766e; border-radius: 16px; padding: 20px; }
+        .header { text-align: center; border-bottom: 2px solid #0f766e; padding-bottom: 10px; margin-bottom: 20px; }
+        .logo { width: 80px; height: 80px; border-radius: 50%; }
+        .row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #e2e8f0; }
+        .label { font-weight: 700; color: #64748b; }
+        .value { font-weight: 600; }
+        .total { background: #fef3c7; padding: 12px; border-radius: 12px; margin-top: 16px; text-align: center; }
+        .signatures { display: flex; justify-content: space-between; margin-top: 30px; }
+        .sign { border-top: 1px dashed #94a3b8; padding-top: 8px; text-align: center; width: 45%; }
+        @media print {
+          body { padding: 0; }
+          .no-print { display: none; }
+        }
+      </style>
+    </head>
+    <body>
+      <div class="receipt">
+        <div class="header">
+          <h1>تكليف مهمة طبية</h1>
+          <p>جمعية الجواهر بقمار</p>
+          <p><strong>رقم التكليف:</strong> ${mission.missionNo}</p>
+        </div>
+        <div class="row"><span class="label">التاريخ:</span><span class="value">${mission.date}</span></div>
+        <div class="row"><span class="label">سيارة الإسعاف:</span><span class="value">${esc(mission.itemName)}</span></div>
+        <div class="row"><span class="label">السائق:</span><span class="value">${esc(mission.driverName)}</span></div>
+        <div class="row"><span class="label">الطاقم الطبي:</span><span class="value">${esc(mission.medicalStaffName)}</span></div>
+        <div class="row"><span class="label">المريض:</span><span class="value">${esc(mission.patientName)}</span></div>
+        <div class="row"><span class="label">صلة القرابة:</span><span class="value">${esc(mission.relationship || '-')}</span></div>
+        <div class="row"><span class="label">المرافق:</span><span class="value">${esc(mission.companionName || '-')} ${mission.companionRelation ? '(' + mission.companionRelation + ')' : ''}</span></div>
+        <div class="row"><span class="label">نوع النقل:</span><span class="value">${esc(mission.tripType)} ${mission.destinationState ? '→ ' + mission.destinationState : ''}</span></div>
+        <div class="row"><span class="label">الوجهة:</span><span class="value">${esc(mission.destination)}</span></div>
+        <div class="row"><span class="label">تاريخ المغادرة:</span><span class="value">${mission.departureDate}</span></div>
+        <div class="total">
+          <strong>💰 التكلفة الإجمالية: ${money(mission.totalCost)}</strong><br>
+          💵 المدفوع: ${money(mission.paidAmount)}<br>
+          📍 المتبقي: ${money(mission.remainingAmount)}
+        </div>
+        <div class="signatures">
+          <div class="sign">توقيع السائق</div>
+          <div class="sign">ختم الجمعية</div>
+        </div>
+      </div>
+      <script>window.print();<\/script>
+    </body>
+    </html>
+  `);
+  win.document.close();
+}
+
+// ==================== خدمات نقل الجثة ====================
+async function loadBurialServices() {
+  try {
+    const services = await apiCall('getBurialServicesList', [sessionToken]);
+    document.getElementById('burialServicesTable').innerHTML = burialServicesTableHtml(services);
+  } catch (err) {
+    setMsg('burialMsg', 'خطأ: ' + err.message, 'error');
+  }
+}
+
+async function loadBurialDriverOptions() {
+  try {
+    const drivers = await apiCall('listDrivers', [sessionToken]);
+    const driverSelect = document.getElementById('burialDriver');
+    if (driverSelect) {
+      driverSelect.innerHTML = '<option value="">اختر السائق</option>' + 
+        drivers.filter(d => d.status === 'نشط').map(d => `<option value="${d.id}">${esc(d.name)} (${d.licenseNo})</option>`).join('');
+    }
+  } catch (err) {
+    console.error('خطأ في تحميل السائقين:', err);
+  }
+}
+
+function toggleBurialState() {
+  const tripType = document.getElementById('burialTripType').value;
+  const stateDiv = document.getElementById('burialStateDiv');
+  const distanceDiv = document.getElementById('burialDistanceDiv');
+  
+  if (tripType === 'خارج الولاية') {
+    stateDiv.style.display = 'block';
+    distanceDiv.style.display = 'block';
+    document.getElementById('burialDestinationState').required = true;
+    document.getElementById('burialDistanceKm').required = true;
+  } else {
+    stateDiv.style.display = 'none';
+    distanceDiv.style.display = 'none';
+    document.getElementById('burialDestinationState').required = false;
+    document.getElementById('burialDistanceKm').required = false;
+  }
+}
+
+async function updateBurialEstimate() {
+  const tripType = document.getElementById('burialTripType').value;
+  const destinationState = document.getElementById('burialDestinationState')?.value || '';
+  const distanceKm = parseFloat(document.getElementById('burialDistanceKm')?.value) || 0;
+  
+  if (!tripType) return;
+  
+  try {
+    const result = await apiCall('calculateTripCost', [tripType, destinationState, distanceKm, 0, sessionToken, 'burial']);
+    const preview = document.getElementById('burialCostPreview');
+    const costSpan = document.getElementById('burialEstimatedCost');
+    if (preview && costSpan) {
+      costSpan.textContent = result.total.toLocaleString();
+      preview.style.display = 'block';
+    }
+  } catch (err) {
+    console.error('خطأ في حساب السعر:', err);
+  }
+}
+
+async function createBurialService() {
+  const data = {
+    itemId: document.getElementById('burialItem').value,
+    driverId: document.getElementById('burialDriver').value,
+    medicalStaffId: document.getElementById('burialStaff').value,
+    medicalStaffName: document.getElementById('burialStaff').options[document.getElementById('burialStaff').selectedIndex]?.text || '',
+    deceasedName: document.getElementById('burialDeceasedName').value,
+    causeOfDeath: document.getElementById('burialCauseOfDeath').value,
+    placeOfDeath: document.getElementById('burialPlaceOfDeath').value,
+    burialPlace: document.getElementById('burialBurialPlace').value,
+    applicantName: document.getElementById('burialApplicantName').value,
+    applicantRelation: document.getElementById('burialApplicantRelation').value,
+    dateOfDeath: document.getElementById('burialDateOfDeath').value,
+    burialDate: document.getElementById('burialDate').value,
+    tripType: document.getElementById('burialTripType').value,
+    destinationState: document.getElementById('burialDestinationState')?.value || '',
+    distanceKm: parseFloat(document.getElementById('burialDistanceKm')?.value) || 0,
+    state: document.getElementById('burialDestinationState')?.value || '',
+    paidAmount: parseFloat(document.getElementById('burialPaidAmount').value) || 0,
+    notes: document.getElementById('burialNotes').value
+  };
+  
+  if (!data.itemId || !data.driverId || !data.deceasedName || !data.burialPlace) {
+    setMsg('burialMsg', 'يرجى ملء الحقول الإجبارية (سيارة, سائق, اسم المتوفى, مكان الدفن)', 'error');
+    return;
+  }
+  
+  try {
+    await apiCall('createBurialService', [data, sessionToken]);
+    setMsg('burialMsg', '✓ تم إنشاء خدمة نقل الجثة بنجاح', 'success');
+    clearBurialForm();
+    loadBurialServices();
+    refreshAllData();
+  } catch (err) {
+    setMsg('burialMsg', '❌ ' + err.message, 'error');
+  }
+}
+
+function clearBurialForm() {
+  const fields = ['burialDeceasedName', 'burialCauseOfDeath', 'burialPlaceOfDeath', 'burialBurialPlace', 'burialApplicantName', 'burialApplicantRelation', 'burialNotes'];
+  fields.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.value = '';
+  });
+  document.getElementById('burialPaidAmount').value = '0';
+  document.getElementById('burialCostPreview').style.display = 'none';
+}
+
+async function printBurialService(burialNo) {
+  try {
+    const service = await apiCall('getBurialServiceById', [burialNo, sessionToken]);
+    if (!service) throw new Error('لم يتم العثور على الخدمة');
+    printBurialReceipt(service);
+  } catch (err) {
+    alert(err.message);
+  }
+}
+
+function printBurialReceipt(service) {
+  const win = window.open('', '_blank');
+  win.document.write(`
+    <!DOCTYPE html>
+    <html dir="rtl" lang="ar">
+    <head>
+      <meta charset="UTF-8">
+      <title>خدمة نقل جثة - ${service.burialNo}</title>
+      <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+      <style>
+        body { font-family: 'Cairo', sans-serif; padding: 20px; margin: 0; }
+        .receipt { max-width: 800px; margin: auto; border: 2px solid #6b7280; border-radius: 16px; padding: 20px; }
+        .header { text-align: center; border-bottom: 2px solid #6b7280; padding-bottom: 10px; margin-bottom: 20px; }
+        .logo { width: 80px; height: 80px; border-radius: 50%; }
+        .row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #e2e8f0; }
+        .label { font-weight: 700; color: #64748b; }
+        .value { font-weight: 600; }
+        .total { background: #f3e8ff; padding: 12px; border-radius: 12px; margin-top: 16px; text-align: center; }
+        .signatures { display: flex; justify-content: space-between; margin-top: 30px; }
+        .sign { border-top: 1px dashed #94a3b8; padding-top: 8px; text-align: center; width: 45%; }
+        @media print {
+          body { padding: 0; }
+        }
+      </style>
+    </head>
+    <body>
+      <div class="receipt">
+        <div class="header">
+          <h1>خدمة نقل جثة</h1>
+          <p>جمعية الجواهر بقمار</p>
+          <p><strong>رقم الخدمة:</strong> ${service.burialNo}</p>
+        </div>
+        <div class="row"><span class="label">التاريخ:</span><span class="value">${service.date}</span></div>
+        <div class="row"><span class="label">سيارة الإسعاف:</span><span class="value">${esc(service.itemName)}</span></div>
+        <div class="row"><span class="label">السائق:</span><span class="value">${esc(service.driverName)}</span></div>
+        <div class="row"><span class="label">المتوفى:</span><span class="value">${esc(service.deceasedName)}</span></div>
+        <div class="row"><span class="label">سبب الوفاة:</span><span class="value">${esc(service.causeOfDeath || '-')}</span></div>
+        <div class="row"><span class="label">مكان الوفاة:</span><span class="value">${esc(service.placeOfDeath || '-')}</span></div>
+        <div class="row"><span class="label">مكان الدفن:</span><span class="value">${esc(service.burialPlace)}</span></div>
+        <div class="row"><span class="label">مقدم الطلب:</span><span class="value">${esc(service.applicantName)} (${esc(service.applicantRelation || '-')})</span></div>
+        <div class="row"><span class="label">نوع النقل:</span><span class="value">${esc(service.tripType)} ${service.state ? '→ ' + service.state : ''}</span></div>
+        <div class="row"><span class="label">المسافة:</span><span class="value">${service.distanceKm || 0} كم</span></div>
+        <div class="total">
+          <strong>💰 التكلفة الإجمالية: ${money(service.totalCost)}</strong><br>
+          💵 المدفوع: ${money(service.paidAmount)}<br>
+          📍 المتبقي: ${money(service.remainingAmount)}
+        </div>
+        <div class="signatures">
+          <div class="sign">توقيع السائق</div>
+          <div class="sign">ختم الجمعية</div>
+        </div>
+      </div>
+      <script>window.print();<\/script>
+    </body>
+    </html>
+  `);
+  win.document.close();
+}
+
+// ==================== الحجوزات ====================
+async function loadLoans() {
+  if (!currentReport) await refreshAllData();
+  if (currentReport) {
+    document.getElementById('activeLoansTable').innerHTML = loansTableHtml(currentReport.activeLoans || []);
+    document.getElementById('allLoansTable').innerHTML = loansTableHtml(currentReport.loans || []);
+  }
+}
+
+function toggleLoanServiceFields() {
+  const serviceType = document.getElementById('loanServiceType').value;
+  const medicalFields = document.getElementById('loanMedicalFields');
+  const burialFields = document.getElementById('loanBurialFields');
+  
+  if (serviceType === 'burial') {
+    medicalFields.style.display = 'none';
+    burialFields.style.display = 'block';
+    document.getElementById('loanPatientName').required = false;
+    document.getElementById('loanDeceasedName').required = true;
+  } else {
+    medicalFields.style.display = 'block';
+    burialFields.style.display = 'none';
+    document.getElementById('loanPatientName').required = true;
+    document.getElementById('loanDeceasedName').required = false;
+  }
+}
+
+async function saveLoan() {
+  const serviceType = document.getElementById('loanServiceType').value;
+  
+  const data = {
+    itemId: document.getElementById('loanItem').value,
+    borrower: document.getElementById('loanBorrower').value,
+    contact: document.getElementById('loanContact').value,
+    city: document.getElementById('loanCity').value,
+    loanDate: document.getElementById('loanDate').value,
+    expectedReturnDate: document.getElementById('loanExpected').value,
+    notes: document.getElementById('loanNotes').value,
+    serviceType: serviceType
+  };
+  
+  if (serviceType === 'medical') {
+    data.patientName = document.getElementById('loanPatientName').value;
+    data.relationship = document.getElementById('loanRelationship').value;
+  } else {
+    data.deceasedName = document.getElementById('loanDeceasedName').value;
+    data.causeOfDeath = document.getElementById('loanCauseOfDeath').value;
+    data.burialPlace = document.getElementById('loanBurialPlace').value;
+  }
+  
+  if (!data.itemId || !data.borrower || !data.contact || !data.loanDate) {
+    setMsg('loanMsg', 'يرجى ملء الحقول الإجبارية', 'error');
+    return;
+  }
+  
+  if (serviceType === 'medical' && !data.patientName) {
+    setMsg('loanMsg', 'يرجى إدخال اسم المريض', 'error');
+    return;
+  }
+  
+  if (serviceType === 'burial' && !data.deceasedName) {
+    setMsg('loanMsg', 'يرجى إدخال اسم المتوفى', 'error');
+    return;
+  }
+  
+  try {
+    await apiCall('addLoan', [data, sessionToken]);
+    setMsg('loanMsg', '✓ تم تسجيل الحجز بنجاح', 'success');
+    clearLoanForm();
+    loadLoans();
+    refreshAllData();
+  } catch (err) {
+    setMsg('loanMsg', '❌ ' + err.message, 'error');
+  }
+}
+
+function clearLoanForm() {
+  const fields = ['loanBorrower', 'loanContact', 'loanCity', 'loanNotes', 'loanPatientName', 'loanRelationship', 'loanDeceasedName', 'loanCauseOfDeath', 'loanBurialPlace'];
+  fields.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.value = '';
+  });
+  document.getElementById('loanDate').value = today();
+  document.getElementById('loanExpected').value = '';
+  document.getElementById('loanServiceType').value = 'medical';
+  toggleLoanServiceFields();
+}
+
+async function returnLoanNow(loanId) {
+  const returnDate = prompt('تاريخ الإرجاع:', today());
+  if (!returnDate) return;
+  
+  try {
+    await apiCall('returnLoan', [loanId, returnDate, '', sessionToken]);
+    setMsg('loanMsg', '✓ تم تسجيل الإرجاع بنجاح', 'success');
+    loadLoans();
+    refreshAllData();
+  } catch (err) {
+    setMsg('loanMsg', '❌ ' + err.message, 'error');
+  }
+}
+
+// ==================== التسعير ====================
+async function loadPricingRules() {
+  try {
+    const rules = await apiCall('listPricingRules', [sessionToken]);
+    document.getElementById('pricingRulesTable').innerHTML = pricingRulesTableHtml(rules);
+  } catch (err) {
+    setMsg('pricingMsg', 'خطأ: ' + err.message, 'error');
+  }
+}
+
+function pricingRulesTableHtml(rules) {
+  if (!rules || !rules.length) return '<p style="text-align:center; padding:20px;">لا توجد قواعد تسعير</p>';
+  
+  return `<table>
+    <thead>
+      <tr><th>الخدمة</th><th>السعر الأساسي</th><th>السعر/كم</th><th>خدمات إضافية</th><th>ملاحظات</th>${canEdit() ? '<th></th>' : ''}</tr>
+    </thead>
+    <tbody>
+      ${rules.map(r => `
+        <tr>
+          <td>${esc(r.service)}</td>
+          <td>${money(r.basePrice)}</td>
+          <td>${money(r.pricePerKm)}</t
+                     <td>${money(r.extraServicesPrice)}</td>
+           <td>${esc(r.notes)}</td>
+          ${canEdit() ? `<td><button class="mini-btn mini-danger" onclick="deletePricingRule('${r.id}')">🗑️ حذف</button></td>` : ''}
+        </tr>
+      `).join('')}
+    </tbody>
+  </table>`;
+}
+
+async function addPricingRule() {
+  const data = {
+    service: document.getElementById('pricingService').value,
+    basePrice: parseFloat(document.getElementById('pricingBasePrice').value) || 0,
+    pricePerKm: parseFloat(document.getElementById('pricingPricePerKm').value) || 0,
+    extraServicesPrice: parseFloat(document.getElementById('pricingExtraPrice').value) || 0,
+    notes: document.getElementById('pricingNotes').value
+  };
+  
+  if (!data.service || !data.basePrice) {
+    setMsg('pricingMsg', 'يرجى إدخال اسم الخدمة والسعر الأساسي', 'error');
+    return;
+  }
+  
+  try {
+    await apiCall('addPricingRule', [data, sessionToken]);
+    setMsg('pricingMsg', '✓ تم إضافة قاعدة التسعير بنجاح', 'success');
+    clearPricingForm();
+    loadPricingRules();
+  } catch (err) {
+    setMsg('pricingMsg', '❌ ' + err.message, 'error');
+  }
+}
+
+function clearPricingForm() {
+  const fields = ['pricingService', 'pricingNotes'];
+  fields.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.value = '';
+  });
+  document.getElementById('pricingBasePrice').value = '';
+  document.getElementById('pricingPricePerKm').value = '';
+  document.getElementById('pricingExtraPrice').value = '';
+}
+
+async function deletePricingRule(id) {
+  if (!confirm('هل أنت متأكد من حذف قاعدة التسعير هذه؟')) return;
+  try {
+    await apiCall('deletePricingRule', [id, sessionToken]);
+    setMsg('pricingMsg', '✓ تم حذف القاعدة', 'success');
+    loadPricingRules();
+  } catch (err) {
+    setMsg('pricingMsg', '❌ ' + err.message, 'error');
+  }
+}
+
+// ==================== الجرد الدوري ====================
+async function loadInventory() {
+  if (!currentReport) await refreshAllData();
+  if (currentReport) {
+    document.getElementById('auditsTable').innerHTML = auditsTableHtml(currentReport.audits || []);
+  }
+}
+
+function auditsTableHtml(audits) {
+  if (!audits || !audits.length) return '<p style="text-align:center; padding:20px;">لا توجد عمليات جرد مسجلة</p>';
+  
+  return `<table>
+    <thead>
+      <tr><th>التاريخ</th><th>رقم الجرد</th><th>السيارة</th><th>الحالة المسجلة</th><th>الحالة الفعلية</th><th>النتيجة</th><th>ملاحظات</th></tr>
+    </thead>
+    <tbody>
+      ${audits.map(a => `
+        <tr>
+          <td>${a.auditDate || '-'}</td>
+          <td>${esc(a.inventoryNo)}</td>
+          <td>${esc(a.itemName)}</td>
+          <td>${esc(a.registeredCondition)}</td>
+          <td>${esc(a.actualCondition)}</td>
+          <td><span class="badge ${a.result === 'مطابق' ? 'badge-success' : 'badge-danger'}">${esc(a.result)}</span></td>
+          <td>${esc(a.notes)}</td>
+        </tr>
+      `).join('')}
+    </tbody>
+  </table>`;
+}
+
+async function saveAudit() {
+  const data = {
+    itemId: document.getElementById('auditItem').value,
+    auditDate: document.getElementById('auditDate').value,
+    actualCondition: document.getElementById('auditCondition').value,
+    actualLocation: document.getElementById('auditLocation').value,
+    result: document.getElementById('auditResult').value,
+    updateItem: document.getElementById('auditUpdate').value === 'true',
+    notes: document.getElementById('auditNotes').value
+  };
+  
+  if (!data.itemId || !data.auditDate) {
+    setMsg('auditMsg', 'يرجى اختيار السيارة وتاريخ الجرد', 'error');
+    return;
+  }
+  
+  try {
+    const result = await apiCall('addInventoryAudit', [data, sessionToken]);
+    currentReport = result;
+    loadInventory();
+    setMsg('auditMsg', '✓ تم تسجيل الجرد بنجاح', 'success');
+    clearAuditForm();
+    refreshAllData();
+  } catch (err) {
+    setMsg('auditMsg', '❌ ' + err.message, 'error');
+  }
+}
+
+function clearAuditForm() {
+  document.getElementById('auditLocation').value = '';
+  document.getElementById('auditNotes').value = '';
+  document.getElementById('auditDate').value = today();
+  document.getElementById('auditCondition').value = 'متوفر';
+  document.getElementById('auditResult').value = 'مطابق';
+  document.getElementById('auditUpdate').value = 'false';
+}
+
+// ==================== طلبات الموقع ====================
+async function loadRequests() {
+  try {
+    const requests = await apiCall('listPendingRequests', [sessionToken]);
+    document.getElementById('requestsTable').innerHTML = requestsTableHtml(requests);
+  } catch (err) {
+    setMsg('requestsMsg', 'خطأ: ' + err.message, 'error');
+  }
+}
+
+function requestsTableHtml(requests) {
+  if (!requests || !requests.length) return '<p style="text-align:center; padding:20px;">لا توجد طلبات معلقة</p>';
+  
+  return `<tr>
+    <thead>
+      <tr><th>رقم الطلب</th><th>السيارة</th><th>طالب الحجز</th><th>المريض/المتوفى</th><th>نوع الخدمة</th><th>التاريخ</th><th>الحالة</th><th>${canEdit() ? 'الإجراء' : ''}</th></tr>
+    </thead>
+    <tbody>
+      ${requests.map(r => `
+        <tr>
+          <td>${esc(r.requestNo)}</td>
+          <td>${esc(r.itemName)}</td>
+          <td>${esc(r.borrower)}</td>
+          <td>${esc(r.patientName || r.deceasedName || '-')}</td>
+          <td>${r.serviceType === 'burial' ? '<span class="badge badge-burial">⚰️ نقل جثة</span>' : '<span class="badge badge-primary">🚑 نقل طبي</span>'}</td>
+          <td>${r.loanDate || '-'}</td>
+          <td><span class="badge badge-warning">${esc(r.status)}</span></td>
+          ${canEdit() ? `<td>
+            <button class="mini-btn mini-success" onclick="approveRequest('${r.requestNo}')">✅ تأكيد</button>
+            <button class="mini-btn mini-danger" onclick="rejectRequest('${r.requestNo}')">❌ رفض</button>
+          </td>` : ''}
+        </tr>
+      `).join('')}
+    </tbody>
+  </table>`;
+}
+
+async function approveRequest(requestNo) {
+  if (!confirm('تأكيد هذا الطلب؟ سيتم تحويله إلى حجز فعال وتحديث حالة السيارة.')) return;
+  try {
+    const result = await apiCall('approveExternalRequest', [requestNo, sessionToken]);
+    currentReport = result;
+    loadRequests();
+    refreshAllData();
+    setMsg('requestsMsg', '✓ تم تأكيد الطلب بنجاح', 'success');
+  } catch (err) {
+    setMsg('requestsMsg', '❌ ' + err.message, 'error');
+  }
+}
+
+async function rejectRequest(requestNo) {
+  if (!confirm('رفض هذا الطلب؟')) return;
+  try {
+    await apiCall('rejectExternalRequest', [requestNo, sessionToken]);
+    loadRequests();
+    setMsg('requestsMsg', '✓ تم رفض الطلب', 'success');
+  } catch (err) {
+    setMsg('requestsMsg', '❌ ' + err.message, 'error');
+  }
+}
+
+// ==================== سجل العمليات ====================
+async function loadLogs() {
+  try {
+    const logs = await apiCall('listOperationLogs', [sessionToken]);
+    document.getElementById('logsTable').innerHTML = logsTableHtml(logs);
+  } catch (err) {
+    setMsg('logsMsg', 'خطأ: ' + err.message, 'error');
+  }
+}
+
+function logsTableHtml(logs) {
+  if (!logs || !logs.length) return '<p style="text-align:center; padding:20px;">لا توجد عمليات مسجلة</p>';
+  
+  return `<table>
+    <thead>
+      <tr><th>التاريخ</th><th>العملية</th><th>المنفذ</th><th>الدور</th><th>المرجع</th><th>التفاصيل</th></tr>
+    </thead>
+    <tbody>
+      ${logs.slice(0, 100).map(l => `
+        <tr>
+          <td>${l.date || '-'}</td>
+          <td>${esc(l.action)}</td>
+          <td>${esc(l.actor)}</td>
+          <td>${esc(l.role || '-')}</td>
+          <td>${esc(l.ref || '-')}</td>
+          <td>${esc(l.details)}</td>
+        </tr>
+      `).join('')}
+    </tbody>
+  </table>`;
+}
+
+// ==================== إدارة الأدمن ====================
+async function loadAdmins() {
+  if (!isSuper()) return;
+  try {
+    const admins = await apiCall('listAdmins', [sessionToken]);
+    document.getElementById('adminsTable').innerHTML = adminsTableHtml(admins);
+  } catch (err) {
+    setMsg('adminMsg', 'خطأ: ' + err.message, 'error');
+  }
+}
+
+function adminsTableHtml(admins) {
+  if (!admins || !admins.length) return '<p style="text-align:center; padding:20px;">لا توجد حسابات أدمن</p>';
+  
+  return `</table>
+    <thead>
+      <tr><th>الاسم</th><th>اسم المستخدم</th><th>الصلاحية</th><th>الحالة</th><th></th></tr>
+    </thead>
+    <tbody>
+      ${admins.map(a => `
+        <tr>
+          <td>${esc(a.name)}</td>
+          <td>${esc(a.username)}</td>
+          <td>${a.roleLabel || a.role}</td>
+          <td><span class="badge ${a.active ? 'badge-success' : 'badge-danger'}">${a.active ? 'نشط' : 'غير نشط'}</span></td>
+          <td><button class="mini-btn mini-danger" onclick="deleteAdminUser('${a.id}')" ${a.username === currentAdmin?.username ? 'disabled' : ''}>🗑️ حذف</button></td>
+        </tr>
+      `).join('')}
+    </tbody>
+  </table>`;
+}
+
+async function addAdminUser() {
+  if (!isSuper()) return;
+  
+  const data = {
+    name: document.getElementById('adminName').value,
+    username: document.getElementById('adminUsername').value,
+    password: document.getElementById('adminPassword').value,
+    role: document.getElementById('adminRole').value
+  };
+  
+  if (!data.name || !data.username || !data.password) {
+    setMsg('adminMsg', 'يرجى ملء جميع الحقول', 'error');
+    return;
+  }
+  
+  if (data.password.length < 6) {
+    setMsg('adminMsg', 'كلمة المرور يجب أن تكون 6 أحرف على الأقل', 'error');
+    return;
+  }
+  
+  try {
+    await apiCall('addAdmin', [data, sessionToken]);
+    setMsg('adminMsg', '✓ تم إضافة الأدمن بنجاح', 'success');
+    clearAdminForm();
+    loadAdmins();
+  } catch (err) {
+    setMsg('adminMsg', '❌ ' + err.message, 'error');
+  }
+}
+
+function clearAdminForm() {
+  document.getElementById('adminName').value = '';
+  document.getElementById('adminUsername').value = '';
+  document.getElementById('adminPassword').value = '';
+  document.getElementById('adminRole').value = 'editor';
+}
+
+async function deleteAdminUser(id) {
+  if (!isSuper()) return;
+  if (!confirm('هل أنت متأكد من حذف هذا الحساب؟')) return;
+  
+  try {
+    await apiCall('deleteAdmin', [id, sessionToken]);
+    setMsg('adminMsg', '✓ تم حذف الحساب', 'success');
+    loadAdmins();
+  } catch (err) {
+    setMsg('adminMsg', '❌ ' + err.message, 'error');
+  }
+}
+
+// ==================== التقارير والطباعة ====================
+function printSection(sectionId) {
+  document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+  document.getElementById(sectionId).classList.add('active');
+  window.print();
+}
+
+function printTableOnly(type) {
+  if (!currentReport) {
+    alert('البيانات غير متاحة حالياً');
+    return;
+  }
+  
+  const templates = {
+    equipment: { title: 'سجل سيارات الإسعاف', data: currentReport.equipment, render: equipmentPrintTable },
+    loans: { title: 'سجل الحجوزات', data: currentReport.loans, render: loansPrintTable },
+    activeLoans: { title: 'الحجوزات النشطة', data: currentReport.activeLoans, render: loansPrintTable },
+    audits: { title: 'سجل الجرد الدوري', data: currentReport.audits, render: auditsPrintTable },
+    missions: { title: 'سجل التكاليف الطبية', data: currentReport.missions, render: missionsPrintTable },
+    burialServices: { title: 'سجل خدمات نقل الجثة', data: currentReport.burialServices, render: burialPrintTable },
+    drivers: { title: 'سجل السائقين', data: currentReport.drivers, render: driversPrintTable },
+    medicalStaff: { title: 'سجل الطاقم الطبي', data: currentReport.medicalStaff, render: staffPrintTable }
+  };
+  
+  const t = templates[type];
+  if (!t) return;
+  
+  const win = window.open('', '_blank');
+  win.document.write(`
+    <!DOCTYPE html>
+    <html dir="rtl" lang="ar">
+    <head>
+      <meta charset="UTF-8">
+      <title>${t.title} - جمعية الجواهر بقمار</title>
+      <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+      <style>
+        body { font-family: 'Cairo', sans-serif; padding: 20px; margin: 0; }
+        .header { text-align: center; border-bottom: 3px solid #0f766e; padding-bottom: 10px; margin-bottom: 20px; }
+        .logo { width: 70px; height: 70px; border-radius: 50%; }
+        h1 { color: #0f766e; margin: 10px 0 0; }
+        .date { color: #64748b; font-size: 12px; margin-top: 5px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { border: 1px solid #e2e8f0; padding: 8px; text-align: center; font-size: 12px; }
+        th { background: #0f766e; color: white; }
+        .footer { text-align: center; margin-top: 20px; font-size: 10px; color: #64748b; }
+        @media print {
+          body { padding: 0; }
+          .no-print { display: none; }
+        }
+      </style>
+    </head>
+    <body>
+      <div class="header">
+        <img class="logo" src="https://drive.google.com/thumbnail?id=1mN39uinRmOQGj04B5OfC9ZTPtlXyF1mb&sz=256">
+        <h1>جمعية الجواهر بقمار</h1>
+        <p>${t.title}</p>
+        <div class="date">تاريخ التقرير: ${new Date().toLocaleString('ar-DZ')}</div>
+      </div>
+      ${t.render(t.data)}
+      <div class="footer">تم إنشاء التقرير بواسطة النظام المتكامل لإدارة الخدمات الإسعافية</div>
+      <script>window.print();<\/script>
+    </body>
+    </html>
+  `);
+  win.document.close();
+}
+
+function equipmentPrintTable(data) {
+  if (!data || !data.length) return '<p>لا توجد بيانات</p>';
+  return `<table>
+    <thead><tr><th>رقم اللوحة</th><th>الاسم</th><th>النوع</th><th>الحالة</th><th>الموقع</th><th>القيمة</th></tr></thead>
+    <tbody>${data.map(e => `<tr><td>${esc(e.inventoryNo)}</td><td>${esc(e.name)}</td><td>${esc(e.type || '-')}</td><td>${e.condition}</td><td>${esc(e.location || '-')}</td><td>${money(e.value)}</td></tr>`).join('')}</tbody>
+  </table>`;
+}
+
+function loansPrintTable(data) {
+  if (!data || !data.length) return '<p>لا توجد بيانات</p>';
+  return `<table>
+    <thead><tr><th>رقم الجرد</th><th>السيارة</th><th>المستعير</th><th>المريض/المتوفى</th><th>نوع الخدمة</th><th>التاريخ</th><th>الحالة</th></tr></thead>
+    <tbody>${data.map(l => `<tr><td>${esc(l.inventoryNo)}</td><td>${esc(l.itemName)}</td><td>${esc(l.borrower)}</td><td>${esc(l.patientName || l.deceasedName || '-')}</td><td>${l.serviceType === 'burial' ? 'نقل جثة' : 'نقل طبي'}</td><td>${l.loanDate || '-'}</td><td>${l.status}</td></tr>`).join('')}</tbody>
+  </table>`;
+}
+
+function auditsPrintTable(data) {
+  if (!data || !data.length) return '<p>لا توجد بيانات</p>';
+  return `<table>
+    <thead><tr><th>التاريخ</th><th>السيارة</th><th>الحالة المسجلة</th><th>الحالة الفعلية</th><th>النتيجة</th></tr></thead>
+    <tbody>${data.map(a => `<tr><td>${a.auditDate || '-'}</td><td>${esc(a.itemName)}</td><td>${esc(a.registeredCondition)}</td><td>${esc(a.actualCondition)}</td><td>${a.result}</td></tr>`).join('')}</tbody>
+  </table>`;
+}
+
+function missionsPrintTable(data) {
+  if (!data || !data.length) return '<p>لا توجد بيانات</p>';
+  return `<table>
+    <thead><tr><th>رقم التكليف</th><th>التاريخ</th><th>السيارة</th><th>السائق</th><th>المريض</th><th>التكلفة</th><th>الحالة</th></tr></thead>
+    <tbody>${data.map(m => `<tr><td>${esc(m.missionNo)}</td><td>${m.date || '-'}</td><td>${esc(m.itemName)}</td><td>${esc(m.driverName)}</td><td>${esc(m.patientName)}</td><td>${money(m.totalCost)}</td><td>${m.status}</td></tr>`).join('')}</tbody>
+  </table>`;
+}
+
+function burialPrintTable(data) {
+  if (!data || !data.length) return '<p>لا توجد بيانات</p>';
+  return `<table>
+    <thead><tr><th>رقم الخدمة</th><th>التاريخ</th><th>السيارة</th><th>السائق</th><th>المتوفى</th><th>التكلفة</th><th>الحالة</th></tr></thead>
+    <tbody>${data.map(s => `<tr><td>${esc(s.burialNo)}</td><td>${s.date || '-'}</td><td>${esc(s.itemName)}</td><td>${esc(s.driverName)}</td><td>${esc(s.deceasedName)}</td><td>${money(s.totalCost)}</td><td>${s.status}</td></tr>`).join('')}</tbody>
+  </table>`;
+}
+
+function driversPrintTable(data) {
+  if (!data || !data.length) return '<p>لا توجد بيانات</p>';
+  return `<table>
+    <thead><tr><th>الاسم</th><th>رقم الرخصة</th><th>الهاتف</th><th>التخصص</th><th>سنوات الخبرة</th><th>الحالة</th></tr></thead>
+    <tbody>${data.map(d => `<tr><td>${esc(d.name)}</td><td>${esc(d.licenseNo)}</td><td>${esc(d.phone)}</td><td>${esc(d.specialization || '-')}</td><td>${d.experienceYears || 0}</td><td>${d.status}</td></tr>`).join('')}</tbody>
+  </table>`;
+}
+
+function staffPrintTable(data) {
+  if (!data || !data.length) return '<p>لا توجد بيانات</p>';
+  return `<table>
+    <thead><tr><th>الاسم</th><th>التخصص</th><th>الهاتف</th><th>رقم التسجيل</th><th>المؤهلات</th><th>الحالة</th></tr></thead>
+    <tbody>${data.map(s => `<tr><td>${esc(s.name)}</td><td>${esc(s.specialty)}</td><td>${esc(s.phone)}</td><td>${esc(s.registrationNo || '-')}</td><td>${esc(s.qualifications || '-')}</td><td>${s.status}</td></tr>`).join('')}</tbody>
+  </table>`;
+}
+
+// ==================== التهيئة الأولية ====================
+async function init() {
+  document.getElementById('loanDate').value = today();
+  document.getElementById('auditDate').value = today();
+  document.getElementById('missionDepartureDate').value = today();
+  
+  if (sessionToken && currentAdmin) {
+    document.getElementById('loginScreen').style.display = 'none';
+    document.getElementById('appShell').style.display = 'block';
+    applyRoleUI();
+    await refreshAllData();
+    await loadDriverAndStaffOptions();
+    await loadBurialDriverOptions();
+  }
+}
+
+// ربط الأحداث
+window.onload = init;
 </script>
-</body></html>
+</body>
+</html>
