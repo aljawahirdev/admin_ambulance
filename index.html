@@ -1,24 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
-  <base target="_top">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>النظام المتكامل لإدارة الخدمات الإسعافية والنقل الطبي - لوحة التحكم</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <style>
-    :root {
-      --primary: #0f766e;
-      --primary-light: #14b8a6;
-      --primary-dark: #0d5c56;
+<head><base target="_top"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>النظام المتكامل لإدارة الخدمات الإسعافية والنقل الطبي - لوحة التحكم</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet"><script src="https://cdn.jsdelivr.net/npm/chart.js"></script><style>:root {
+      --primary: #2986B0;
+      --primary-light: #7ED6D1;
+      --primary-dark: #1F6F91;
       --accent: #F59E0B;
-      --dark: #1e293b;
-      --bg: #f0fdfa;
-      --muted: #64748b;
+      --gold-brown: #A86417;
+      --dark: #222222;
+      --ink: #222222;
+      --bg: #F5F5F5;
+      --muted: #596575;
       --border: #e2e8f0;
       --danger: #dc2626;
       --danger-light: #fee2e2;
@@ -46,14 +37,15 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, #0f766e, #14b8a6, #0d9488);
+      background: linear-gradient(135deg, #2986B0, #7ED6D1, #7ED6D1);
     }
     .login-card {
       width: min(440px, 92vw);
       background: white;
       border-radius: 32px;
       padding: 32px;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 25px 50px -12px rgba(34, 34, 34, 0.22);
+      border-top: 6px solid #F59E0B;
       text-align: center;
     }
     .login-card .logo {
@@ -90,7 +82,7 @@
       width: 100%;
       padding: 14px;
       margin-top: 18px;
-      background: linear-gradient(135deg, #0f766e, #14b8a6);
+      background: linear-gradient(135deg, #2986B0, #7ED6D1);
       border: none;
       border-radius: 16px;
       color: white;
@@ -115,7 +107,7 @@
       top: 0;
       width: 290px;
       height: 100vh;
-      background: linear-gradient(180deg, #0f766e, #0d5c56 65%, #1e293b);
+      background: linear-gradient(180deg, #2986B0, #1F6F91 65%, #222222);
       color: #fff;
       padding: 20px;
       overflow-y: auto;
@@ -304,7 +296,7 @@
       margin-top: 16px;
       border: none;
       border-radius: 16px;
-      background: linear-gradient(135deg, #0f766e, #14b8a6);
+      background: linear-gradient(135deg, #2986B0, #7ED6D1);
       color: white;
       font-size: 16px;
       font-weight: 800;
@@ -316,7 +308,7 @@
       box-shadow: 0 8px 20px rgba(15,118,110,0.3);
     }
     .secondary-btn {
-      background: linear-gradient(135deg, #64748b, #475569);
+      background: linear-gradient(135deg, #596575, #475569);
     }
     .danger-btn {
       background: linear-gradient(135deg, #dc2626, #b91c1c);
@@ -362,7 +354,7 @@
     .badge-danger { background: var(--danger-light); color: var(--danger); }
     .badge-warning { background: var(--warning-light); color: var(--warning); }
     .badge-burial { background: var(--burial-light); color: var(--burial); }
-    .badge-primary { background: #e0f2fe; color: #0284c7; }
+    .badge-primary { background: #E9F7F8; color: #0284c7; }
 
     .mini-btn {
       padding: 6px 10px;
@@ -393,7 +385,7 @@
       font-size: 13px;
     }
     .info-msg {
-      background: #e0f2fe;
+      background: #E9F7F8;
       padding: 12px;
       border-radius: 12px;
       margin-top: 12px;
@@ -487,487 +479,39 @@
         margin-bottom: 10px;
       }
     }
-  </style>
+    @media (max-width: 700px){
+      body{font-size:14px}
+      .container,.main,.content{width:100%;padding:8px;margin:0}
+      .card{padding:12px;border-radius:14px;overflow-x:auto}
+      .form-grid,.grid{grid-template-columns:1fr!important;gap:10px}
+      input,select,textarea,button{font-size:14px;min-height:42px}
+      table{min-width:720px;font-size:12px}
+      .tabs,.nav,.sidebar{overflow-x:auto;white-space:nowrap}
+      .submit-btn{width:100%;padding:12px}
+    }
+</style>
 </head>
-<body>
-
-<!-- شاشة تسجيل الدخول -->
-<div id="loginScreen" class="login-screen">
-  <div class="login-card">
-    <img class="logo" src="https://drive.google.com/thumbnail?id=1mN39uinRmOQGj04B5OfC9ZTPtlXyF1mb&sz=256">
-    <h1>  جمعية الجواهر بقمار</h1>
-    <p style="color: #64748b; margin-bottom: 20px;">النظام المتكامل لإدارة الخدمات الإسعافية والنقل الطبي</p>
-    <input id="loginUsername" placeholder="اسم المستخدم" autocomplete="username">
-    <input id="loginPassword" type="password" placeholder="كلمة المرور" autocomplete="current-password" onkeydown="if(event.key==='Enter')login()">
-    <button onclick="login()"> تسجيل الدخول</button>
-    <div id="loginMsg"></div>
-    <div style="margin-top: 20px; font-size: 12px; color: #94a3b8;">
-           <strong> </strong> / <strong> </strong>
-    </div>
-  </div>
-</div>
-
-<!-- واجهة الإدارة -->
-<div id="appShell" class="app-shell">
-  <!-- القائمة الجانبية -->
-  <div class="sidebar">
-    <img class="logo" src="https://drive.google.com/thumbnail?id=1mN39uinRmOQGj04B5OfC9ZTPtlXyF1mb&sz=256">
-    <h2>جمعية الجواهر</h2>
-    <div class="subtitle">النظام المتكامل للخدمات الإسعافية</div>
-    <div class="admin-badge" id="adminBadge">جاري التحميل...</div>
-    
-    <button class="current" onclick="showTab('dashboard',this)">
-      <span>📊</span> لوحة التحكم
-    </button>
-    <button onclick="showTab('equipment',this)">
-      <span>🚑</span> سيارات الإسعاف
-    </button>
-    <button onclick="showTab('drivers',this); loadDrivers()">
-      <span>👨‍✈️</span> السائقين
-    </button>
-    <button onclick="showTab('medicalStaff',this); loadMedicalStaff()">
-      <span>👨‍⚕️</span> الطاقم الطبي
-    </button>
-    <button onclick="showTab('missions',this); loadMissions()">
-      <span>📋</span> التكاليف والمهمات
-    </button>
-    <button onclick="showTab('burialServices',this); loadBurialServices()">
-      <span>⚰️</span> خدمات نقل الجثة
-    </button>
-    <button onclick="showTab('loans',this)">
-      <span>📝</span> الحجوزات
-    </button>
-    <button onclick="showTab('pricing',this); loadPricingRules()">
-      <span>💰</span> التسعير
-    </button>
-    <button onclick="showTab('inventory',this)">
-      <span>📦</span> الجرد الدوري
-    </button>
-    <button onclick="showTab('requests',this); loadRequests()">
-      <span>📨</span> طلبات الموقع
-    </button>
-    <button onclick="showTab('reports',this)">
-      <span>📄</span> التقارير
-    </button>
-    <button onclick="showTab('logs',this); loadLogs()">
-      <span>📜</span> سجل العمليات
-    </button>
-    <button class="super-only" onclick="showTab('admins',this); loadAdmins()">
-      <span>👑</span> إدارة الأدمن
-    </button>
-    <button onclick="logout()">
-      <span>🚪</span> تسجيل الخروج
-    </button>
-  </div>
-
-  <!-- المحتوى الرئيسي -->
-  <div class="main">
-    <div class="topbar">
-      <div>
-        <h1>🏥 نظام إدارة الخدمات الإسعافية والنقل الطبي</h1>
-        <div class="status" id="syncStatus">✓ النظام جاهز للعمل</div>
-      </div>
-      <button class="submit-btn secondary-btn" style="width: auto; padding: 10px 20px;" onclick="refreshAllData()">🔄 تحديث الكل</button>
-    </div>
-
-    <!-- ==================== لوحة التحكم ==================== -->
-    <div id="dashboard" class="content active">
-      <div class="stats-grid" id="statsGrid"></div>
-      
-      <div class="card">
-        <h2>📈 حالة الأسطول</h2>
-        <canvas id="fleetChart" style="max-height: 280px; width: 100%;"></canvas>
-      </div>
-      
-      <div class="box no-print">
-        <h2>🖨️ تقارير سريعة</h2>
-        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-          <button class="submit-btn secondary-btn" style="width: auto;" onclick="printSection('dashboard')">📄 طباعة الملخص</button>
-          <button class="submit-btn secondary-btn" style="width: auto;" onclick="printTableOnly('equipment')">🚑 طباعة سجل السيارات</button>
-          <button class="submit-btn secondary-btn" style="width: auto;" onclick="printTableOnly('activeLoans')">📝 طباعة الحجوزات النشطة</button>
-          <button class="submit-btn secondary-btn" style="width: auto;" onclick="printTableOnly('missions')">📋 طباعة التكاليف</button>
-          <button class="submit-btn secondary-btn" style="width: auto;" onclick="printTableOnly('burialServices')">⚰️ طباعة خدمات نقل الجثة</button>
-        </div>
-      </div>
-      
-      <div class="card">
-        <h2>🚑 آخر الحجوزات النشطة</h2>
-        <div id="dashboardLoans" class="table-wrapper"></div>
-      </div>
-      
-      <div class="card">
-        <h2>📋 آخر التكاليف والمهمات</h2>
-        <div id="dashboardMissions" class="table-wrapper"></div>
-      </div>
-    </div>
-
-    <!-- ==================== سيارات الإسعاف ==================== -->
-    <div id="equipment" class="content">
-      <div class="card">
-        <h2>➕ إضافة / تعديل سيارة إسعاف</h2>
-        <div id="eqEditNote" class="edit-note">✏️ وضع التعديل مفعل</div>
-        <div class="form-grid">
-          <input id="eqInventoryNo" placeholder="رقم اللوحة / الجرد *">
-          <input id="eqName" placeholder="اسم / نوع السيارة *">
-          <input id="eqCategory" list="categoryList" placeholder="الصنف">
-          <datalist id="categoryList"></datalist>
-          <select id="eqAmbulanceType">
-            <option value="سيارة إسعاف عادية">🚑 سيارة إسعاف عادية</option>
-            <option value="سيارة إسعاف عناية مركزة">🚑 سيارة إسعاف عناية مركزة</option>
-            <option value="سيارة نقل الجثث">⚰️ سيارة نقل الجثث</option>
-            <option value="حافلة صغيرة">🚐 حافلة صغيرة</option>
-          </select>
-          <input id="eqCapacity" placeholder="سعة التحميل">
-          <select id="eqEquippedForBurial">
-            <option value="لا">مجهزة لنقل الجثث؟ لا</option>
-            <option value="نعم">مجهزة لنقل الجثث؟ نعم</option>
-          </select>
-          <input id="eqQuantity" type="number" placeholder="الكمية" value="1">
-          <select id="eqCondition">
-            <option value="متوفر">🟢 متوفرة</option>
-            <option value="محجوز">🟠 محجوزة</option>
-            <option value="معطل">🔴 معطلة</option>
-            <option value="تالف">💀 تالفة</option>
-          </select>
-          <input id="eqLocation" placeholder="المكان / المستودع">
-          <input id="eqAcquiredDate" type="date">
-          <input id="eqValue" type="number" placeholder="القيمة بالدج">
-          <input id="eqNotes" placeholder="ملاحظات">
-        </div>
-        <button id="eqSaveBtn" class="submit-btn" onclick="saveEquipment()">💾 حفظ السيارة</button>
-        <button id="eqCancelBtn" class="submit-btn secondary-btn" style="display:none" onclick="cancelEquipmentEdit()">❌ إلغاء التعديل</button>
-        <div id="eqMsg"></div>
-      </div>
-      <div class="card">
-        <h2>📋 قائمة سيارات الإسعاف</h2>
-        <div id="equipmentTable" class="table-wrapper"></div>
-      </div>
-    </div>
-
-    <!-- ==================== السائقين ==================== -->
-    <div id="drivers" class="content">
-      <div class="sub-tabs">
-        <div class="sub-tab active" onclick="showDriverSubTab('list')">📋 قائمة السائقين</div>
-        <div class="sub-tab" onclick="showDriverSubTab('add')">➕ إضافة سائق جديد</div>
-      </div>
-      <div id="driverListTab" class="sub-content active">
-        <div class="card">
-          <h2>📋 قائمة السائقين</h2>
-          <div id="driversTable" class="table-wrapper"></div>
-        </div>
-      </div>
-      <div id="driverAddTab" class="sub-content">
-        <div class="card">
-          <h2>➕ إضافة سائق جديد</h2>
-          <div class="form-grid">
-            <input id="driverName" placeholder="الاسم الكامل *">
-            <input id="driverLicense" placeholder="رقم الرخصة *">
-            <input id="driverPhone" placeholder="رقم الهاتف *">
-            <input id="driverEmergencyPhone" placeholder="رقم الطوارئ">
-            <input id="driverAddress" placeholder="العنوان">
-            <input id="driverBirthDate" type="date">
-            <input id="driverLicenseExpiryDate" type="date">
-            <input id="driverSpecialization" placeholder="التخصص">
-            <input id="driverExperience" type="number" placeholder="سنوات الخبرة">
-            <select id="driverStatus">
-              <option value="نشط">🟢 نشط</option>
-              <option value="غير نشط">🔴 غير نشط</option>
-              <option value="في إجازة">🟡 في إجازة</option>
-            </select>
-            <textarea id="driverNotes" placeholder="ملاحظات"></textarea>
-          </div>
-          <button class="submit-btn" onclick="addDriver()">➕ إضافة سائق</button>
-          <div id="driverMsg"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ==================== الطاقم الطبي ==================== -->
-    <div id="medicalStaff" class="content">
-      <div class="sub-tabs">
-        <div class="sub-tab active" onclick="showStaffSubTab('list')">📋 قائمة الطاقم الطبي</div>
-        <div class="sub-tab" onclick="showStaffSubTab('add')">➕ إضافة عضو جديد</div>
-      </div>
-      <div id="staffListTab" class="sub-content active">
-        <div class="card">
-          <h2>📋 قائمة الطاقم الطبي</h2>
-          <div id="medicalStaffTable" class="table-wrapper"></div>
-        </div>
-      </div>
-      <div id="staffAddTab" class="sub-content">
-        <div class="card">
-          <h2>➕ إضافة عضو طاقم طبي</h2>
-          <div class="form-grid">
-            <input id="staffName" placeholder="الاسم الكامل *">
-            <select id="staffSpecialty">
-              <option value="طبيب">👨‍⚕️ طبيب</option>
-              <option value="ممرض">💉 ممرض</option>
-              <option value="مسعف">🚑 مسعف</option>
-              <option value="فني">🔧 فني</option>
-            </select>
-            <input id="staffPhone" placeholder="رقم الهاتف *">
-            <input id="staffEmergencyPhone" placeholder="رقم الطوارئ">
-            <input id="staffRegistrationNo" placeholder="رقم التسجيل المهني">
-            <input id="staffRegistrationAuthority" placeholder="جهة التسجيل">
-            <input id="StaffBirthDate" type="date">
-            <input id="staffExperience" type="number" placeholder="سنوات الخبرة">
-            <input id="staffQualifications" placeholder="المؤهلات">
-            <select id="staffStatus">
-              <option value="نشط">🟢 نشط</option>
-              <option value="غير نشط">🔴 غير نشط</option>
-            </select>
-            <textarea id="staffNotes" placeholder="ملاحظات"></textarea>
-          </div>
-          <button class="submit-btn" onclick="addMedicalStaff()">➕ إضافة عضو</button>
-          <div id="staffMsg"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ==================== التكاليف والمهمات الطبية ==================== -->
-    <div id="missions" class="content">
-      <div class="card">
-        <h2>➕ إنشاء تكليف مهمة طبية جديدة</h2>
-        <div class="form-grid">
-          <select id="missionItem" required onchange="updateMissionEstimate()"></select>
-          <select id="missionDriver" required></select>
-          <select id="missionStaff" required></select>
-          <input id="missionPatientName" placeholder="اسم المريض *" required>
-          <input id="missionRelationship" placeholder="صلة القرابة">
-          <select id="missionPatientCondition">
-            <option value="مستقر">🟢 مستقر</option>
-            <option value="طارئ">🟠 طارئ</option>
-            <option value="عناية مركزة">🔴 عناية مركزة</option>
-          </select>
-          <input id="missionCompanionName" placeholder="اسم المرافق">
-          <input id="missionCompanionPhone" placeholder="هاتف المرافق">
-          <input id="missionCompanionRelation" placeholder="صلة المرافق">
-          <select id="missionTripType" required onchange="toggleMissionState(); updateMissionEstimate()">
-            <option value="">نوع النقل</option>
-            <option value="داخل الولاية">🚑 داخل الولاية</option>
-            <option value="خارج الولاية">🚑 خارج الولاية</option>
-          </select>
-          <div id="missionStateDiv" style="display:none"><input id="missionDestinationState" placeholder="الولاية المتجه إليها" onchange="updateMissionEstimate()"></div>
-          <div id="missionDistanceDiv" style="display:none"><input id="missionDistanceKm" type="number" placeholder="المسافة (كم)" onchange="updateMissionEstimate()"></div>
-          <input id="missionDestination" placeholder="الوجهة / المستشفى">
-          <input id="missionDepartureDate" type="date" required>
-          <input id="missionExpectedReturnDate" type="date">
-          <select id="missionExtraServices" onchange="updateMissionEstimate()">
-            <option value="0">خدمات إضافية</option>
-            <option value="500">+ أكسجين (500 دج)</option>
-            <option value="400">+ كرسي متحرك (400 دج)</option>
-            <option value="600">+ ممرض مرافق (600 دج)</option>
-          </select>
-          <input id="missionPaidAmount" type="number" placeholder="المبلغ المدفوع" value="0">
-          <textarea id="missionNotes" placeholder="ملاحظات"></textarea>
-        </div>
-        <div id="missionCostPreview" class="info-msg" style="display:none">💰 <strong>التكلفة التقديرية:</strong> <span id="missionEstimatedCost">0</span> دج</div>
-        <button class="submit-btn" onclick="createMission()">📋 إنشاء التكليف</button>
-        <div id="missionMsg"></div>
-      </div>
-      <div class="card">
-        <h2>📋 قائمة التكاليف والمهمات الطبية</h2>
-        <div id="missionsTable" class="table-wrapper"></div>
-      </div>
-    </div>
-
-    <!-- ==================== خدمات نقل الجثة ==================== -->
-    <div id="burialServices" class="content">
-      <div class="card">
-        <h2>⚰️ إنشاء خدمة نقل جثة جديدة</h2>
-        <div class="form-grid">
-          <select id="burialItem" required onchange="updateBurialEstimate()"></select>
-          <select id="burialDriver" required></select>
-          <select id="burialStaff"></select>
-          <input id="burialDeceasedName" placeholder="اسم المتوفى *" required>
-          <input id="burialCauseOfDeath" placeholder="سبب الوفاة">
-          <input id="burialPlaceOfDeath" placeholder="مكان الوفاة">
-          <input id="burialBurialPlace" placeholder="مكان الدفن *" required>
-          <input id="burialApplicantName" placeholder="اسم مقدم الطلب">
-          <input id="burialApplicantRelation" placeholder="صلة مقدم الطلب بالمتوفى">
-          <input id="burialDateOfDeath" type="date">
-          <input id="burialDate" type="date">
-          <select id="burialTripType" required onchange="toggleBurialState(); updateBurialEstimate()">
-            <option value="">نوع النقل</option>
-            <option value="داخل الولاية">⚰️ داخل الولاية</option>
-            <option value="خارج الولاية">⚰️ خارج الولاية</option>
-          </select>
-          <div id="burialStateDiv" style="display:none"><input id="burialDestinationState" placeholder="الولاية المتجه إليها" onchange="updateBurialEstimate()"></div>
-          <div id="burialDistanceDiv" style="display:none"><input id="burialDistanceKm" type="number" placeholder="المسافة (كم)" onchange="updateBurialEstimate()"></div>
-          <input id="burialPaidAmount" type="number" placeholder="المبلغ المدفوع" value="0">
-          <textarea id="burialNotes" placeholder="ملاحظات"></textarea>
-        </div>
-        <div id="burialCostPreview" class="info-msg" style="display:none">💰 <strong>التكلفة التقديرية لنقل الجثة:</strong> <span id="burialEstimatedCost">0</span> دج</div>
-        <button class="submit-btn warning-btn" onclick="createBurialService()">⚰️ إنشاء خدمة نقل جثة</button>
-        <div id="burialMsg"></div>
-      </div>
-      <div class="card">
-        <h2>📋 قائمة خدمات نقل الجثة</h2>
-        <div id="burialServicesTable" class="table-wrapper"></div>
-      </div>
-    </div>
-
-    <!-- ==================== الحجوزات ==================== -->
-    <div id="loans" class="content">
-      <div class="card">
-        <h2>📝 تسجيل حجز جديد</h2>
-        <div class="form-grid">
-          <select id="loanItem"></select>
-          <select id="loanServiceType" onchange="toggleLoanServiceFields()">
-            <option value="medical">🚑 نقل طبي</option>
-            <option value="burial">⚰️ نقل جثة</option>
-          </select>
-          <input id="loanBorrower" placeholder="اسم طالب الحجز *">
-          <input id="loanContact" placeholder="رقم الهاتف *">
-          <div id="loanMedicalFields">
-            <input id="loanPatientName" placeholder="اسم المريض">
-            <input id="loanRelationship" placeholder="صلة القرابة">
-          </div>
-          <div id="loanBurialFields" style="display:none">
-            <input id="loanDeceasedName" placeholder="اسم المتوفى">
-            <input id="loanCauseOfDeath" placeholder="سبب الوفاة">
-            <input id="loanBurialPlace" placeholder="مكان الدفن">
-          </div>
-          <input id="loanCity" placeholder="المدينة">
-          <input id="loanDate" type="date">
-          <input id="loanExpected" type="date">
-          <textarea id="loanNotes" placeholder="ملاحظات"></textarea>
-        </div>
-        <button class="submit-btn" onclick="saveLoan()">💾 حفظ الحجز</button>
-        <div id="loanMsg"></div>
-      </div>
-      <div class="card">
-        <h2>📋 الحجوزات النشطة</h2>
-        <div id="activeLoansTable" class="table-wrapper"></div>
-      </div>
-      <div class="card">
-        <h2>📋 سجل الحجوزات السابقة</h2>
-        <div id="allLoansTable" class="table-wrapper"></div>
-      </div>
-    </div>
-
-    <!-- ==================== التسعير ==================== -->
-    <div id="pricing" class="content">
-      <div class="card">
-        <h2>💰 إدارة قواعد التسعير</h2>
-        <div class="form-grid">
-          <input id="pricingService" placeholder="اسم الخدمة *">
-          <input id="pricingBasePrice" type="number" placeholder="السعر الأساسي (دج) *">
-          <input id="pricingPricePerKm" type="number" placeholder="السعر لكل كيلومتر">
-          <input id="pricingExtraPrice" type="number" placeholder="سعر الخدمات الإضافية">
-          <textarea id="pricingNotes" placeholder="ملاحظات"></textarea>
-        </div>
-        <button class="submit-btn" onclick="addPricingRule()">➕ إضافة قاعدة تسعير</button>
-        <div id="pricingMsg"></div>
-      </div>
-      <div class="card">
-        <h2>📋 قواعد التسعير الحالية</h2>
-        <div id="pricingRulesTable" class="table-wrapper"></div>
-      </div>
-    </div>
-
-    <!-- ==================== الجرد الدوري ==================== -->
-    <div id="inventory" class="content">
-      <div class="card">
-        <h2>📦 تسجيل عملية جرد</h2>
-        <div class="form-grid">
-          <select id="auditItem"></select>
-          <input id="auditDate" type="date">
-          <select id="auditCondition">
-            <option value="متوفر">🟢 متوفرة</option>
-            <option value="محجوز">🟠 محجوزة</option>
-            <option value="معطل">🔴 معطلة</option>
-            <option value="تالف">💀 تالفة</option>
-          </select>
-          <input id="auditLocation" placeholder="المكان أثناء الجرد">
-          <select id="auditResult">
-            <option>✅ مطابق</option>
-            <option>⚠️ اختلاف حالة</option>
-            <option>📍 اختلاف مكان</option>
-            <option>❌ مفقود</option>
-          </select>
-          <select id="auditUpdate">
-            <option value="false">لا تحدث حالة السيارة</option>
-            <option value="true">تحديث حالة السيارة</option>
-          </select>
-          <textarea id="auditNotes" placeholder="ملاحظات"></textarea>
-        </div>
-        <button class="submit-btn" onclick="saveAudit()">💾 حفظ الجرد</button>
-        <div id="auditMsg"></div>
-      </div>
-      <div class="card">
-        <h2>📋 سجل عمليات الجرد</h2>
-        <div id="auditsTable" class="table-wrapper"></div>
-      </div>
-    </div>
-
-    <!-- ==================== طلبات الموقع ==================== -->
-    <div id="requests" class="content">
-      <div class="card">
-        <h2>📨 طلبات الحجز من الموقع الخارجي</h2>
-        <p style="color: #64748b; margin-bottom: 16px;">يمكن للأدمن تأكيد أو رفض الطلب. عند التأكيد، يتم تحديث حالة السيارة تلقائياً.</p>
-        <button class="submit-btn secondary-btn" style="width: auto;" onclick="loadRequests()">🔄 تحديث الطلبات</button>
-        <div id="requestsTable" class="table-wrapper" style="margin-top: 20px;"></div>
-        <div id="requestsMsg"></div>
-      </div>
-    </div>
-
-    <!-- ==================== التقارير ==================== -->
-    <div id="reports" class="content">
-      <div class="card">
-        <h2>📄 التقارير والطباعة</h2>
-        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px;">
-          <button class="submit-btn secondary-btn" onclick="printTableOnly('equipment')">🚑 سجل السيارات</button>
-          <button class="submit-btn secondary-btn" onclick="printTableOnly('loans')">📝 سجل الحجوزات</button>
-          <button class="submit-btn secondary-btn" onclick="printTableOnly('activeLoans')">📝 الحجوزات النشطة</button>
-          <button class="submit-btn secondary-btn" onclick="printTableOnly('audits')">📦 سجل الجرد</button>
-          <button class="submit-btn secondary-btn" onclick="printTableOnly('missions')">📋 التكاليف الطبية</button>
-          <button class="submit-btn secondary-btn" onclick="printTableOnly('burialServices')">⚰️ خدمات نقل الجثة</button>
-          <button class="submit-btn secondary-btn" onclick="printTableOnly('drivers')">👨‍✈️ السائقين</button>
-          <button class="submit-btn secondary-btn" onclick="printTableOnly('medicalStaff')">👨‍⚕️ الطاقم الطبي</button>
-        </div>
-        <div id="reportArea"></div>
-      </div>
-    </div>
-
-    <!-- ==================== سجل العمليات ==================== -->
-    <div id="logs" class="content">
-      <div class="card">
-        <h2>📜 سجل جميع العمليات</h2>
-        <button class="submit-btn secondary-btn" style="width: auto;" onclick="loadLogs()">🔄 تحديث السجل</button>
-        <div id="logsTable" class="table-wrapper" style="margin-top: 20px;"></div>
-        <div id="logsMsg"></div>
-      </div>
-    </div>
-
-    <!-- ==================== إدارة الأدمن ==================== -->
-    <div id="admins" class="content super-only">
-      <div class="card">
-        <h2>👑 إضافة أدمن جديد</h2>
-        <div class="form-grid">
-          <input id="adminName" placeholder="اسم الأدمن *">
-          <input id="adminUsername" placeholder="اسم المستخدم *">
-          <input id="adminPassword" type="password" placeholder="كلمة المرور *">
-          <select id="adminRole">
-            <option value="super">👑 أدمن كامل الصلاحيات</option>
-            <option value="editor">✏️ محرر</option>
-            <option value="viewer">👁️ مشاهد فقط</option>
-          </select>
-        </div>
-        <button class="submit-btn" onclick="addAdminUser()">➕ إضافة أدمن</button>
-        <div id="adminMsg"></div>
-      </div>
-      <div class="card">
-        <h2>📋 قائمة الأدمن</h2>
-        <div id="adminsTable" class="table-wrapper"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script>
+<body><!-- شاشة تسجيل الدخول -->
+<div id="loginScreen" class="login-screen"><div class="login-card"><img class="logo" src="https://drive.google.com/thumbnail?id=1mN39uinRmOQGj04B5OfC9ZTPtlXyF1mb&sz=256"><h1> جمعية الجواهر بقمار</h1><p style="color: #596575; margin-bottom: 20px;">النظام المتكامل لإدارة الخدمات الإسعافية والنقل الطبي</p><input id="loginUsername" placeholder="اسم المستخدم" autocomplete="username"><input id="loginPassword" type="password" placeholder="كلمة المرور" autocomplete="current-password" onkeydown="if(event.key==='Enter')login()"><button onclick="login()"> تسجيل الدخول</button><div id="loginMsg"></div><div style="margin-top: 20px; font-size: 12px; color: #94a3b8;">الدخول التجريبي: <strong>admin</strong> / <strong>admin123</strong></div></div>
+</div><!-- واجهة الإدارة -->
+<div id="appShell" class="app-shell"><!-- القائمة الجانبية --><div class="sidebar"><img class="logo" src="https://drive.google.com/thumbnail?id=1mN39uinRmOQGj04B5OfC9ZTPtlXyF1mb&sz=256"><h2>جمعية الجواهر</h2><div class="subtitle">النظام المتكامل للخدمات الإسعافية</div><div class="admin-badge" id="adminBadge">جاري التحميل...</div><button class="current" onclick="showTab('dashboard',this)"><span></span> لوحة التحكم
+    </button><button onclick="showTab('equipment',this)"><span></span> سيارات الإسعاف
+    </button><button onclick="showTab('drivers',this); loadDrivers()"><span>‍️</span> السائقين
+    </button><button onclick="showTab('medicalStaff',this); loadMedicalStaff()"><span>‍️</span> الطاقم الطبي
+    </button><button onclick="showTab('missions',this); loadMissions()"><span></span> التكاليف والمهمات
+    </button><button onclick="showTab('burialServices',this); loadBurialServices()"><span>️</span> خدمات نقل الجثة
+    </button><button onclick="showTab('loans',this)"><span></span> الحجوزات
+    </button><button onclick="showTab('pricing',this); loadPricingRules()"><span></span> التسعير
+    </button><button onclick="showTab('inventory',this)"><span></span> الجرد الدوري
+    </button><button onclick="showTab('requests',this); loadRequests()"><span></span> طلبات الموقع
+    </button><button onclick="showTab('reports',this)"><span></span> التقارير
+    </button><button onclick="showTab('logs',this); loadLogs()"><span></span> سجل العمليات
+    </button><button class="super-only" onclick="showTab('admins',this); loadAdmins()"><span></span> إدارة الأدمن
+    </button><button onclick="logout()"><span></span> تسجيل الخروج
+    </button></div><!-- المحتوى الرئيسي --><div class="main"><div class="topbar"><div><h1> نظام إدارة الخدمات الإسعافية والنقل الطبي</h1><div class="status" id="syncStatus"> النظام جاهز للعمل</div></div><button class="submit-btn secondary-btn" style="width: auto; padding: 10px 20px;" onclick="refreshAllData()"> تحديث الكل</button></div><!-- ==================== لوحة التحكم ==================== --><div id="dashboard" class="content active"><div class="stats-grid" id="statsGrid"></div><div class="card"><h2> حالة الأسطول</h2><canvas id="fleetChart" style="max-height: 280px; width: 100%;"></canvas></div><div class="box no-print"><h2>️ تقارير سريعة</h2><div style="display: flex; gap: 10px; flex-wrap: wrap;"><button class="submit-btn secondary-btn" style="width: auto;" onclick="printSection('dashboard')"> طباعة الملخص</button><button class="submit-btn secondary-btn" style="width: auto;" onclick="printTableOnly('equipment')"> طباعة سجل السيارات</button><button class="submit-btn secondary-btn" style="width: auto;" onclick="printTableOnly('activeLoans')"> طباعة الحجوزات النشطة</button><button class="submit-btn secondary-btn" style="width: auto;" onclick="printTableOnly('missions')"> طباعة تكاليف المهمات</button><button class="submit-btn secondary-btn" style="width: auto;" onclick="printTableOnly('burialServices')">️ طباعة خدمات نقل الجثة</button></div></div><div class="card"><h2> آخر الحجوزات النشطة</h2><div id="dashboardLoans" class="table-wrapper"></div></div><div class="card"><h2> آخر تكاليف ومهمات نقل المرضى ونقل الموتى</h2><div id="dashboardMissions" class="table-wrapper"></div></div><div class="card"><h2> سجل سيارات الإسعاف</h2><div id="dashboardEquipment" class="table-wrapper"></div></div><div class="card"><h2>‍️ السائقون</h2><div id="dashboardDrivers" class="table-wrapper"></div></div><div class="card"><h2>‍️ الطاقم الطبي</h2><div id="dashboardMedicalStaff" class="table-wrapper"></div></div><div class="card"><h2>️ خدمات نقل الجثة</h2><div id="dashboardBurialServices" class="table-wrapper"></div></div><div class="card"><h2> طلبات الحجز قيد الانتظار</h2><div id="dashboardPendingRequests" class="table-wrapper"></div></div></div><!-- ==================== سيارات الإسعاف ==================== --><div id="equipment" class="content"><div class="card"><h2> إضافة / تعديل سيارة إسعاف</h2><div id="eqEditNote" class="edit-note">️ وضع التعديل مفعل</div><div class="form-grid"><input id="eqInventoryNo" placeholder="رقم اللوحة / الجرد *"><input id="eqName" placeholder="اسم / نوع السيارة *"><input id="eqCategory" list="categoryList" placeholder="الصنف"><datalist id="categoryList"></datalist><select id="eqAmbulanceType"><option value="سيارة إسعاف عادية"> سيارة إسعاف عادية</option><option value="سيارة إسعاف عناية مركزة"> سيارة إسعاف عناية مركزة</option><option value="سيارة نقل الجثث">️ سيارة نقل الجثث</option><option value="حافلة صغيرة"> حافلة صغيرة</option></select><input id="eqCapacity" placeholder="سعة التحميل"><select id="eqEquippedForBurial"><option value="لا">مجهزة لنقل الجثث؟ لا</option><option value="نعم">مجهزة لنقل الجثث؟ نعم</option></select><input id="eqQuantity" type="number" placeholder="الكمية" value="1"><select id="eqCondition"><option value="متوفر"> متوفرة</option><option value="محجوز"> محجوزة</option><option value="معطل"> معطلة</option><option value="تالف"> تالفة</option></select><input id="eqLocation" placeholder="المكان / المستودع"><input id="eqAcquiredDate" type="date"><input id="eqValue" type="number" placeholder="القيمة بالدج"><input id="eqNotes" placeholder="ملاحظات"></div><button id="eqSaveBtn" class="submit-btn" onclick="saveEquipment()"> حفظ السيارة</button><button id="eqCancelBtn" class="submit-btn secondary-btn" style="display:none" onclick="cancelEquipmentEdit()"> إلغاء التعديل</button><div id="eqMsg"></div></div><div class="card"><h2> قائمة سيارات الإسعاف</h2><div id="equipmentTable" class="table-wrapper"></div></div></div><!-- ==================== السائقين ==================== --><div id="drivers" class="content"><div class="sub-tabs"><div class="sub-tab active" onclick="showDriverSubTab('list')"> قائمة السائقين</div><div class="sub-tab" onclick="showDriverSubTab('add')"> إضافة سائق جديد</div></div><div id="driverListTab" class="sub-content active"><div class="card"><h2> قائمة السائقين</h2><div id="driversTable" class="table-wrapper"></div></div></div><div id="driverAddTab" class="sub-content"><div class="card"><h2> إضافة سائق جديد</h2><div class="form-grid"><input id="driverName" placeholder="الاسم الكامل *"><input id="driverLicense" placeholder="رقم الرخصة *"><input id="driverPhone" placeholder="رقم الهاتف *"><input id="driverEmergencyPhone" placeholder="رقم الطوارئ"><input id="driverAddress" placeholder="العنوان"><input id="driverBirthDate" type="date"><input id="driverLicenseExpiryDate" type="date"><input id="driverSpecialization" placeholder="التخصص"><input id="driverExperience" type="number" placeholder="سنوات الخبرة"><select id="driverStatus"><option value="نشط"> نشط</option><option value="غير نشط"> غير نشط</option><option value="في إجازة"> في إجازة</option></select><textarea id="driverNotes" placeholder="ملاحظات"></textarea></div><button class="submit-btn" onclick="addDriver()"> إضافة سائق</button><div id="driverMsg"></div></div></div></div><!-- ==================== الطاقم الطبي ==================== --><div id="medicalStaff" class="content"><div class="sub-tabs"><div class="sub-tab active" onclick="showStaffSubTab('list')"> قائمة الطاقم الطبي</div><div class="sub-tab" onclick="showStaffSubTab('add')"> إضافة عضو جديد</div></div><div id="staffListTab" class="sub-content active"><div class="card"><h2> قائمة الطاقم الطبي</h2><div id="medicalStaffTable" class="table-wrapper"></div></div></div><div id="staffAddTab" class="sub-content"><div class="card"><h2> إضافة عضو طاقم طبي</h2><div class="form-grid"><input id="staffName" placeholder="الاسم الكامل *"><select id="staffSpecialty"><option value="طبيب">‍️ طبيب</option><option value="ممرض"> ممرض</option><option value="مسعف"> مسعف</option><option value="فني"> فني</option></select><input id="staffPhone" placeholder="رقم الهاتف *"><input id="staffEmergencyPhone" placeholder="رقم الطوارئ"><input id="staffRegistrationNo" placeholder="رقم التسجيل المهني"><input id="staffRegistrationAuthority" placeholder="جهة التسجيل"><input id="StaffBirthDate" type="date"><input id="staffExperience" type="number" placeholder="سنوات الخبرة"><input id="staffQualifications" placeholder="المؤهلات"><select id="staffStatus"><option value="نشط"> نشط</option><option value="غير نشط"> غير نشط</option></select><textarea id="staffNotes" placeholder="ملاحظات"></textarea></div><button class="submit-btn" onclick="addMedicalStaff()"> إضافة عضو</button><div id="staffMsg"></div></div></div></div><!-- ==================== التكاليف ومهمات نقل المرضى ونقل الموتى ==================== --><div id="missions" class="content"><div class="card"><h2> إنشاء تكليف مهمة جديدة: نقل المرضى أو نقل الموتى</h2><div class="form-grid"><select id="missionLoan" onchange="fillMissionFromLoan()"><option value="">استدعاء حجز موجود للتكليف</option></select><select id="missionItem" required onchange="updateMissionEstimate()"></select><select id="missionDriver" required></select><select id="missionStaff" required></select><input id="missionPatientName" placeholder="اسم المريض *" required><input id="missionRelationship" placeholder="صلة القرابة"><select id="missionPatientCondition"><option value="مستقر"> مستقر</option><option value="طارئ"> طارئ</option><option value="عناية مركزة"> عناية مركزة</option></select><input id="missionCompanionName" placeholder="اسم المرافق"><input id="missionCompanionPhone" placeholder="هاتف المرافق"><input id="missionCompanionRelation" placeholder="صلة المرافق"><select id="missionTripType" required onchange="toggleMissionState(); updateMissionEstimate()"><option value="">نوع النقل</option><option value="داخل الولاية"> داخل الولاية</option><option value="خارج الولاية"> خارج الولاية</option></select><div id="missionStateDiv" style="display:none"><input id="missionDestinationState" placeholder="الولاية المتجه إليها" onchange="updateMissionEstimate()"></div><div id="missionDistanceDiv" style="display:none"><input id="missionDistanceKm" type="number" placeholder="المسافة (كم)" onchange="updateMissionEstimate()"></div><input id="missionDestination" placeholder="الوجهة / المستشفى"><input id="missionDepartureDate" type="date" required><input id="missionExpectedReturnDate" type="date"><select id="missionExtraServices" onchange="updateMissionEstimate()"><option value="0">خدمات إضافية</option><option value="500">+ أكسجين (500 دج)</option><option value="400">+ كرسي متحرك (400 دج)</option><option value="600">+ ممرض مرافق (600 دج)</option></select><input id="missionPaidAmount" type="number" placeholder="المبلغ المدفوع" value="0"><textarea id="missionNotes" placeholder="ملاحظات"></textarea></div><div id="missionCostPreview" class="info-msg" style="display:none"> <strong>التكلفة التقديرية:</strong> <span id="missionEstimatedCost">0</span> دج</div><button class="submit-btn" onclick="createMission()"> إنشاء التكليف</button><div id="missionMsg"></div></div><div class="card"><h2> قائمة التكاليف ومهمات نقل المرضى ونقل الموتى</h2><div id="missionsTable" class="table-wrapper"></div></div></div><!-- ==================== خدمات نقل الجثة ==================== --><div id="burialServices" class="content"><div class="card"><h2>️ إنشاء خدمة نقل جثة جديدة</h2><div class="form-grid"><select id="burialItem" required onchange="updateBurialEstimate()"></select><select id="burialDriver" required></select><select id="burialStaff"></select><input id="burialDeceasedName" placeholder="اسم المتوفى *" required><input id="burialCauseOfDeath" placeholder="سبب الوفاة"><input id="burialPlaceOfDeath" placeholder="مكان الوفاة"><input id="burialBurialPlace" placeholder="مكان الدفن *" required><input id="burialApplicantName" placeholder="اسم مقدم الطلب"><input id="burialApplicantRelation" placeholder="صلة مقدم الطلب بالمتوفى"><input id="burialDateOfDeath" type="date"><input id="burialDate" type="date"><select id="burialTripType" required onchange="toggleBurialState(); updateBurialEstimate()"><option value="">نوع النقل</option><option value="داخل الولاية">️ داخل الولاية</option><option value="خارج الولاية">️ خارج الولاية</option></select><div id="burialStateDiv" style="display:none"><input id="burialDestinationState" placeholder="الولاية المتجه إليها" onchange="updateBurialEstimate()"></div><div id="burialDistanceDiv" style="display:none"><input id="burialDistanceKm" type="number" placeholder="المسافة (كم)" onchange="updateBurialEstimate()"></div><input id="burialPaidAmount" type="number" placeholder="المبلغ المدفوع" value="0"><textarea id="burialNotes" placeholder="ملاحظات"></textarea></div><div id="burialCostPreview" class="info-msg" style="display:none"> <strong>التكلفة التقديرية لنقل الجثة:</strong> <span id="burialEstimatedCost">0</span> دج</div><button class="submit-btn warning-btn" onclick="createBurialService()">️ إنشاء خدمة نقل جثة</button><div id="burialMsg"></div></div><div class="card"><h2> قائمة خدمات نقل الجثة</h2><div id="burialServicesTable" class="table-wrapper"></div></div></div><!-- ==================== الحجوزات ==================== --><div id="loans" class="content"><div class="card"><h2> تسجيل حجز جديد</h2><div class="form-grid"><select id="loanItem"></select><select id="loanServiceType" onchange="toggleLoanServiceFields()"><option value="medical"> نقل طبي</option><option value="burial">️ نقل جثة</option></select><input id="loanBorrower" placeholder="اسم طالب الحجز *"><input id="loanContact" placeholder="رقم الهاتف *"><div id="loanMedicalFields"><input id="loanPatientName" placeholder="اسم المريض"><input id="loanRelationship" placeholder="صلة القرابة"></div><div id="loanBurialFields" style="display:none"><input id="loanDeceasedName" placeholder="اسم المتوفى"><input id="loanCauseOfDeath" placeholder="سبب الوفاة"><input id="loanBurialPlace" placeholder="مكان الدفن"></div><input id="loanCity" placeholder="المدينة"><input id="loanDate" type="date"><input id="loanExpected" type="date"><textarea id="loanNotes" placeholder="ملاحظات"></textarea></div><button class="submit-btn" onclick="saveLoan()"> حفظ الحجز</button><div id="loanMsg"></div></div><div class="card"><h2> الحجوزات النشطة</h2><div id="activeLoansTable" class="table-wrapper"></div></div><div class="card"><h2> سجل الحجوزات السابقة</h2><div id="allLoansTable" class="table-wrapper"></div></div></div><!-- ==================== التسعير ==================== --><div id="pricing" class="content"><div class="card"><h2> إدارة قواعد التسعير</h2><div class="form-grid"><input id="pricingService" placeholder="اسم الخدمة *"><input id="pricingBasePrice" type="number" placeholder="السعر الأساسي (دج) *"><input id="pricingPricePerKm" type="number" placeholder="السعر لكل كيلومتر"><input id="pricingExtraPrice" type="number" placeholder="سعر الخدمات الإضافية"><textarea id="pricingNotes" placeholder="ملاحظات"></textarea></div><button class="submit-btn" onclick="addPricingRule()"> إضافة قاعدة تسعير</button><div id="pricingMsg"></div></div><div class="card"><h2> قواعد التسعير الحالية</h2><div id="pricingRulesTable" class="table-wrapper"></div></div></div><!-- ==================== الجرد الدوري ==================== --><div id="inventory" class="content"><div class="card"><h2> تسجيل عملية جرد</h2><div class="form-grid"><select id="auditItem"></select><input id="auditDate" type="date"><select id="auditCondition"><option value="متوفر"> متوفرة</option><option value="محجوز"> محجوزة</option><option value="معطل"> معطلة</option><option value="تالف"> تالفة</option></select><input id="auditLocation" placeholder="المكان أثناء الجرد"><select id="auditResult"><option> مطابق</option><option>️ اختلاف حالة</option><option> اختلاف مكان</option><option> مفقود</option></select><select id="auditUpdate"><option value="false">لا تحدث حالة السيارة</option><option value="true">تحديث حالة السيارة</option></select><textarea id="auditNotes" placeholder="ملاحظات"></textarea></div><button class="submit-btn" onclick="saveAudit()"> حفظ الجرد</button><div id="auditMsg"></div></div><div class="card"><h2> سجل عمليات الجرد</h2><div id="auditsTable" class="table-wrapper"></div></div></div><!-- ==================== طلبات الموقع ==================== --><div id="requests" class="content"><div class="card"><h2> طلبات الحجز من الموقع الخارجي</h2><p style="color: #596575; margin-bottom: 16px;">يمكن للأدمن تأكيد أو رفض الطلب. عند التأكيد، يتم تحديث حالة السيارة تلقائياً.</p><button class="submit-btn secondary-btn" style="width: auto;" onclick="loadRequests()"> تحديث الطلبات</button><button class="submit-btn secondary-btn super-only" style="width: auto;" onclick="setupTelegramBot()"> تشغيل بوت تلجرام</button><div id="requestsTable" class="table-wrapper" style="margin-top: 20px;"></div><div id="requestsMsg"></div></div></div><!-- ==================== التقارير ==================== --><div id="reports" class="content"><div class="card"><h2> التقارير والطباعة</h2><div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px;"><button class="submit-btn secondary-btn" onclick="printTableOnly('equipment')"> سجل السيارات</button><button class="submit-btn secondary-btn" onclick="printTableOnly('loans')"> سجل الحجوزات</button><button class="submit-btn secondary-btn" onclick="printTableOnly('activeLoans')"> الحجوزات النشطة</button><button class="submit-btn secondary-btn" onclick="printTableOnly('audits')"> سجل الجرد</button><button class="submit-btn secondary-btn" onclick="printTableOnly('missions')"> التكاليف الطبية</button><button class="submit-btn secondary-btn" onclick="printTableOnly('burialServices')">️ خدمات نقل الجثة</button><button class="submit-btn secondary-btn" onclick="printTableOnly('drivers')">‍️ السائقين</button><button class="submit-btn secondary-btn" onclick="printTableOnly('medicalStaff')">‍️ الطاقم الطبي</button></div><div id="reportArea"></div></div></div><!-- ==================== سجل العمليات ==================== --><div id="logs" class="content"><div class="card"><h2> سجل جميع العمليات</h2><button class="submit-btn secondary-btn" style="width: auto;" onclick="loadLogs()"> تحديث السجل</button><div id="logsTable" class="table-wrapper" style="margin-top: 20px;"></div><div id="logsMsg"></div></div></div><!-- ==================== إدارة الأدمن ==================== --><div id="admins" class="content super-only"><div class="card"><h2> إضافة أدمن جديد</h2><div class="form-grid"><input id="adminName" placeholder="اسم الأدمن *"><input id="adminUsername" placeholder="اسم المستخدم *"><input id="adminPassword" type="password" placeholder="كلمة المرور *"><select id="adminRole"><option value="super"> أدمن كامل الصلاحيات</option><option value="editor">️ محرر</option><option value="viewer">️ مشاهد فقط</option></select></div><button class="submit-btn" onclick="addAdminUser()"> إضافة أدمن</button><div id="adminMsg"></div></div><div class="card"><h2> قائمة الأدمن</h2><div id="adminsTable" class="table-wrapper"></div></div></div></div>
+</div><script>
 // ==================== الإعدادات الأساسية ====================
-const APPS_SCRIPT_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbzCLlEpNWyiJLD0lYR8g3l1GdAe2CZTXLX6isnI1V59XIGv1a1QPssDa0zA5G29pZA29w/exec';
+const APPS_SCRIPT_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyt_EXTw1ENBWH5kgAYhxJg84AkXC6YwtUB4Wpzsr5Siwq2xF1Tmr4uQxuIb0OvCjql/exec';
 
 let sessionToken = localStorage.getItem('equipment_session_token') || '';
 let currentAdmin = JSON.parse(localStorage.getItem('equipment_current_admin') || 'null');
@@ -1015,7 +559,7 @@ function setMsg(elementId, message, type) {
 // ==================== دوال API ====================
 async function apiCall(action, args) {
   if (!APPS_SCRIPT_WEB_APP_URL || APPS_SCRIPT_WEB_APP_URL.includes('YOUR_SCRIPT_ID')) {
-    throw new Error('⚠️ يرجى وضع رابط Google Apps Script الصحيح');
+    throw new Error('️ يرجى وضع رابط Google Apps Script الصحيح');
   }
   const response = await fetch(APPS_SCRIPT_WEB_APP_URL, {
     method: 'POST',
@@ -1051,7 +595,7 @@ async function login() {
     applyRoleUI();
     await refreshAllData();
   } catch (err) {
-    setMsg('loginMsg', '❌ ' + err.message, 'error');
+    setMsg('loginMsg', ' ' + err.message, 'error');
   }
 }
 
@@ -1064,7 +608,7 @@ function logout() {
 function applyRoleUI() {
   const badge = document.getElementById('adminBadge');
   if (badge && currentAdmin) {
-    badge.innerHTML = `👤 ${currentAdmin.name} | ${currentAdmin.roleLabel || (currentAdmin.role === 'super' ? 'أدمن كامل' : currentAdmin.role === 'editor' ? 'محرر' : 'مشاهد')}`;
+    badge.innerHTML = ` ${currentAdmin.name} | ${currentAdmin.roleLabel || (currentAdmin.role === 'super' ? 'أدمن كامل' : currentAdmin.role === 'editor' ? 'محرر' : 'مشاهد')}`;
   }
   
   document.querySelectorAll('.super-only').forEach(el => {
@@ -1089,14 +633,14 @@ async function refreshAllData() {
     updateSyncStatus();
   } catch (err) {
     console.error('خطأ في التحديث:', err);
-    document.getElementById('syncStatus').innerHTML = '⚠️ ' + err.message;
+    document.getElementById('syncStatus').innerHTML = '️ ' + err.message;
   }
 }
 
 function updateSyncStatus() {
   const statusEl = document.getElementById('syncStatus');
   if (statusEl) {
-    statusEl.innerHTML = '✓ آخر تحديث: ' + new Date().toLocaleString('ar-DZ');
+    statusEl.innerHTML = ' آخر تحديث: ' + new Date().toLocaleString('ar-DZ');
   }
 }
 
@@ -1106,13 +650,7 @@ function renderDashboard(report) {
   
   // الإحصائيات
   const statsHtml = `
-    <div class="stat-card"><h3>🚑 إجمالي السيارات</h3><div class="stat-value">${report.totals.total}</div></div>
-    <div class="stat-card"><h3>🟢 متوفرة</h3><div class="stat-value" style="color: #166534;">${report.totals.available}</div></div>
-    <div class="stat-card"><h3>🟠 محجوزة</h3><div class="stat-value" style="color: #f59e0b;">${report.totals.loaned}</div></div>
-    <div class="stat-card"><h3>🔴 معطلة/تالفة</h3><div class="stat-value" style="color: #dc2626;">${report.totals.damaged}</div></div>
-    <div class="stat-card"><h3>💰 القيمة الإجمالية</h3><div class="stat-value">${money(report.totals.value)}</div></div>
-    <div class="stat-card"><h3>⚰️ خدمات نقل جثة</h3><div class="stat-value">${(report.burialServices || []).length}</div></div>
-  `;
+    <div class="stat-card"><h3> إجمالي السيارات</h3><div class="stat-value">${report.totals.total}</div></div><div class="stat-card"><h3> متوفرة</h3><div class="stat-value" style="color: #166534;">${report.totals.available}</div></div><div class="stat-card"><h3> محجوزة</h3><div class="stat-value" style="color: #f59e0b;">${report.totals.loaned}</div></div><div class="stat-card"><h3> معطلة/تالفة</h3><div class="stat-value" style="color: #dc2626;">${report.totals.damaged}</div></div><div class="stat-card"><h3> القيمة الإجمالية</h3><div class="stat-value">${money(report.totals.value)}</div></div><div class="stat-card"><h3>️ خدمات نقل جثة</h3><div class="stat-value">${(report.burialServices || []).length}</div></div>`;
   document.getElementById('statsGrid').innerHTML = statsHtml;
   
   // رسم بياني
@@ -1125,6 +663,14 @@ function renderDashboard(report) {
   // التكاليف الطبية
   const missions = (report.missions || []).slice(0, 10);
   document.getElementById('dashboardMissions').innerHTML = missionsTableHtml(missions);
+
+  // إظهار الجداول الإضافية في لوحة التحكم
+  document.getElementById('dashboardEquipment').innerHTML = equipmentTableHtml((report.equipment || []).slice(0, 10));
+  document.getElementById('dashboardDrivers').innerHTML = driversTableHtml((report.drivers || []).slice(0, 10));
+  document.getElementById('dashboardMedicalStaff').innerHTML = medicalStaffTableHtml((report.medicalStaff || []).slice(0, 10));
+  document.getElementById('dashboardBurialServices').innerHTML = burialServicesTableHtml((report.burialServices || []).slice(0, 10));
+  document.getElementById('dashboardPendingRequests').innerHTML = requestsTableHtml((report.pendingRequests || []).slice(0, 10));
+  fillMissionLoanOptions(report);
 }
 
 function drawFleetChart(totals) {
@@ -1135,7 +681,7 @@ function drawFleetChart(totals) {
   fleetChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ['🟢 متوفرة', '🟠 محجوزة', '🔴 معطلة/تالفة'],
+      labels: [' متوفرة', ' محجوزة', ' معطلة/تالفة'],
       datasets: [{
         data: [totals.available, totals.loaned, totals.damaged],
         backgroundColor: ['#166534', '#f59e0b', '#dc2626'],
@@ -1155,129 +701,49 @@ function drawFleetChart(totals) {
 function loansTableHtml(loans) {
   if (!loans || !loans.length) return '<p style="text-align:center; padding:20px;">لا توجد حجوزات نشطة</p>';
   
-  return `<table>
-    <thead>
-      <tr><th>رقم الجرد</th><th>السيارة</th><th>المستعير</th><th>المريض/المتوفى</th><th>نوع الخدمة</th><th>تاريخ الحجز</th><th>الحالة</th><th></th></tr>
-    </thead>
-    <tbody>
-      ${loans.map(loan => `
-        <tr>
-          <td>${esc(loan.inventoryNo)}</td>
-          <td>${esc(loan.itemName)}</td>
-          <td>${esc(loan.borrower)}</td>
-          <td>${esc(loan.patientName || loan.deceasedName || '-')}</td>
-          <td>${loan.serviceType === 'burial' ? '<span class="badge badge-burial">⚰️ نقل جثة</span>' : '<span class="badge badge-primary">🚑 نقل طبي</span>'}</td>
-          <td>${loan.loanDate || '-'}</td>
-          <td><span class="badge badge-warning">${esc(loan.status)}</span></td>
-          <td>${canEdit() ? `<button class="mini-btn mini-success" onclick="returnLoanNow('${loan.id}')">✅ إرجاع</button>` : ''}</td>
-        </tr>
-      `).join('')}
-    </tbody>
-  </table>`;
+  return `<table><thead><tr><th>رقم الجرد</th><th>السيارة</th><th>المستعير</th><th>المريض/المتوفى</th><th>نوع الخدمة</th><th>تاريخ الحجز</th><th>الحالة</th><th></th></tr></thead><tbody>${loans.map(loan => `
+        <tr><td>${esc(loan.inventoryNo)}</td><td>${esc(loan.itemName)}</td><td>${esc(loan.borrower)}</td><td>${esc(loan.patientName || loan.deceasedName || '-')}</td><td>${loan.serviceType === 'burial' ? '<span class="badge badge-burial">️ نقل جثة</span>' : '<span class="badge badge-primary"> نقل طبي</span>'}</td><td>${loan.loanDate || '-'}</td><td><span class="badge badge-warning">${esc(loan.status)}</span></td><td>${canEdit() ? `<button class="mini-btn mini-success" onclick="returnLoanNow('${loan.id}')"> إرجاع</button>` : ''}</td></tr>`).join('')}
+    </tbody></table>`;
 }
 
 function missionsTableHtml(missions) {
   if (!missions || !missions.length) return '<p style="text-align:center; padding:20px;">لا توجد تكاليف طبية</p>';
   
-  return `<table>
-    <thead>
-      <tr><th>رقم التكليف</th><th>التاريخ</th><th>السيارة</th><th>السائق</th><th>المريض</th><th>نوع النقل</th><th>التكلفة</th><th>الحالة</th><th></th></tr>
-    </thead>
-    <tbody>
-      ${missions.map(m => `
-        <tr>
-          <td>${esc(m.missionNo)}</td>
-          <td>${m.date || '-'}</td>
-          <td>${esc(m.itemName)}</td>
-          <td>${esc(m.driverName)}</td>
-          <td>${esc(m.patientName)}</td>
-          <td>${esc(m.tripType)}</td>
-          <td>${money(m.totalCost)}</td>
-          <td><span class="badge ${m.status === 'قيد التنفيذ' ? 'badge-warning' : 'badge-success'}">${esc(m.status)}</span></td>
-          <td><button class="mini-btn mini-primary" onclick="printMission('${m.missionNo}')">🖨️ طباعة</button></td>
-        </tr>
-      `).join('')}
-    </tbody>
-  </table>`;
+  return `<table><thead><tr><th>رقم التكليف</th><th>التاريخ</th><th>السيارة</th><th>السائق</th><th>المريض</th><th>نوع النقل</th><th>التكلفة</th><th>الحالة</th><th></th></tr></thead><tbody>${missions.map(m => `
+        <tr><td>${esc(m.missionNo)}</td><td>${m.date || '-'}</td><td>${esc(m.itemName)}</td><td>${esc(m.driverName)}</td><td>${esc(m.patientName)}</td><td>${esc(m.tripType)}</td><td>${money(m.totalCost)}</td><td><span class="badge ${m.status === 'قيد التنفيذ' ? 'badge-warning' : 'badge-success'}">${esc(m.status)}</span></td><td><button class="mini-btn mini-primary" onclick="printMission('${m.missionNo}')">🖨️ طباعة</button><button class="mini-btn" style="background:#F59E0B;color:#fff;margin-inline-start:6px" onclick="emailMission('${m.missionNo}')">📧 PDF</button></td></tr>`).join('')}
+    </tbody></table>`;
 }
 
 function burialServicesTableHtml(services) {
   if (!services || !services.length) return '<p style="text-align:center; padding:20px;">لا توجد خدمات نقل جثة</p>';
   
-  return `<table>
-    <thead>
-      <tr><th>رقم الخدمة</th><th>التاريخ</th><th>السيارة</th><th>السائق</th><th>المتوفى</th><th>نوع النقل</th><th>التكلفة</th><th>الحالة</th><th></th></tr>
-    </thead>
-    <tbody>
-      ${services.map(s => `
-        <tr>
-          <td>${esc(s.burialNo)}</td>
-          <td>${s.date || '-'}</td>
-          <td>${esc(s.itemName)}</td>
-          <td>${esc(s.driverName)}</td>
-          <td>${esc(s.deceasedName)}</td>
-          <td>${esc(s.tripType)}</td>
-          <td>${money(s.totalCost)}</td>
-          <td><span class="badge ${s.status === 'قيد التنفيذ' ? 'badge-warning' : 'badge-success'}">${esc(s.status)}</span></td>
-          <td><button class="mini-btn mini-primary" onclick="printBurialService('${s.burialNo}')">🖨️ طباعة</button></td>
-        </tr>
-      `).join('')}
-    </tbody>
-  </table>`;
+  return `<table><thead><tr><th>رقم الخدمة</th><th>التاريخ</th><th>السيارة</th><th>السائق</th><th>المتوفى</th><th>نوع النقل</th><th>التكلفة</th><th>الحالة</th><th></th></tr></thead><tbody>${services.map(s => `
+        <tr><td>${esc(s.burialNo)}</td><td>${s.date || '-'}</td><td>${esc(s.itemName)}</td><td>${esc(s.driverName)}</td><td>${esc(s.deceasedName)}</td><td>${esc(s.tripType)}</td><td>${money(s.totalCost)}</td><td><span class="badge ${s.status === 'قيد التنفيذ' ? 'badge-warning' : 'badge-success'}">${esc(s.status)}</span></td><td><button class="mini-btn mini-primary" onclick="printBurialService('${s.burialNo}')">️ طباعة</button></td></tr>`).join('')}
+    </tbody></table>`;
 }
 
 function driversTableHtml(drivers) {
   if (!drivers || !drivers.length) return '<p style="text-align:center; padding:20px;">لا توجد بيانات</p>';
   
-  return `<table>
-    <thead>
-      <tr><th>الاسم</th><th>رقم الرخصة</th><th>الهاتف</th><th>هاتف طوارئ</th><th>التخصص</th><th>سنوات الخبرة</th><th>الحالة</th>${canEdit() ? '<th></th>' : ''}</tr>
-    </thead>
-    <tbody>
-      ${drivers.map(d => `
-        <tr>
-          <td>${esc(d.name)}</td>
-          <td>${esc(d.licenseNo)}</td>
-          <td>${esc(d.phone)}</td>
-          <td>${esc(d.emergencyPhone || '-')}</td>
-          <td>${esc(d.specialization || '-')}</td>
-          <td>${d.experienceYears || 0}</td>
-          <td><span class="badge ${d.status === 'نشط' ? 'badge-success' : 'badge-danger'}">${esc(d.status)}</span></td>
-          ${canEdit() ? `<td><button class="mini-btn mini-danger" onclick="deleteDriver('${d.id}')">🗑️ حذف</button></td>` : ''}
-        </tr>
-      `).join('')}
-    </tbody>
-  </table>`;
+  return `<table><thead><tr><th>الاسم</th><th>رقم الرخصة</th><th>الهاتف</th><th>هاتف طوارئ</th><th>التخصص</th><th>سنوات الخبرة</th><th>الحالة</th>${canEdit() ? '<th></th>' : ''}</tr></thead><tbody>${drivers.map(d => `
+        <tr><td>${esc(d.name)}</td><td>${esc(d.licenseNo)}</td><td>${esc(d.phone)}</td><td>${esc(d.emergencyPhone || '-')}</td><td>${esc(d.specialization || '-')}</td><td>${d.experienceYears || 0}</td><td><span class="badge ${d.status === 'نشط' ? 'badge-success' : 'badge-danger'}">${esc(d.status)}</span></td>${canEdit() ? `<td><button class="mini-btn mini-danger" onclick="deleteDriver('${d.id}')">️ حذف</button></td>` : ''}
+        </tr>`).join('')}
+    </tbody></table>`;
 }
 
 function medicalStaffTableHtml(staff) {
   if (!staff || !staff.length) return '<p style="text-align:center; padding:20px;">لا توجد بيانات</p>';
   
-  return `<table>
-    <thead>
-      <tr><th>الاسم</th><th>التخصص</th><th>الهاتف</th><th>رقم التسجيل</th><th>سنوات الخبرة</th><th>المؤهلات</th><th>الحالة</th>${canEdit() ? '<th></th>' : ''}</tr>
-    </thead>
-    <tbody>
-      ${staff.map(s => `
-        <tr>
-          <td>${esc(s.name)}</td>
-          <td>${esc(s.specialty)}</td>
-          <td>${esc(s.phone)}</td>
-          <td>${esc(s.registrationNo || '-')}</td>
-          <td>${s.experienceYears || 0}</td>
-          <td>${esc(s.qualifications || '-')}</td>
-          <td><span class="badge ${s.status === 'نشط' ? 'badge-success' : 'badge-danger'}">${esc(s.status)}</span></td>
-          ${canEdit() ? `<td><button class="mini-btn mini-danger" onclick="deleteMedicalStaff('${s.id}')">🗑️ حذف</button></td>` : ''}
-        </tr>
-      `).join('')}
-    </tbody>
-  </table>`;
+  return `<table><thead><tr><th>الاسم</th><th>التخصص</th><th>الهاتف</th><th>رقم التسجيل</th><th>سنوات الخبرة</th><th>المؤهلات</th><th>الحالة</th>${canEdit() ? '<th></th>' : ''}</tr></thead><tbody>${staff.map(s => `
+        <tr><td>${esc(s.name)}</td><td>${esc(s.specialty)}</td><td>${esc(s.phone)}</td><td>${esc(s.registrationNo || '-')}</td><td>${s.experienceYears || 0}</td><td>${esc(s.qualifications || '-')}</td><td><span class="badge ${s.status === 'نشط' ? 'badge-success' : 'badge-danger'}">${esc(s.status)}</span></td>${canEdit() ? `<td><button class="mini-btn mini-danger" onclick="deleteMedicalStaff('${s.id}')">️ حذف</button></td>` : ''}
+        </tr>`).join('')}
+    </tbody></table>`;
 }
 
 // ==================== دوال الإدارة ====================
 function showTab(tabId, btn) {
   if (tabId === 'admins' && !isSuper()) {
-    alert('⛔ إدارة الأدمن متاحة للأدمن كامل الصلاحيات فقط');
+    alert(' إدارة الأدمن متاحة للأدمن كامل الصلاحيات فقط');
     return;
   }
   
@@ -1313,26 +779,24 @@ async function loadEquipment() {
 function equipmentTableHtml(equipment) {
   if (!equipment || !equipment.length) return '<p style="text-align:center; padding:20px;">لا توجد سيارات إسعاف</p>';
   
-  return `<table>
-    <thead>
-      <tr><th>رقم اللوحة</th><th>الاسم</th><th>النوع</th><th>الصنف</th><th>الحالة</th><th>الموقع</th><th>القيمة</th><th>مجهزة لنقل جثة</th><th>${canEdit() ? '' : ''}</th></tr>
-    </thead>
-    <tbody>
-      ${equipment.map(e => `
-        <tr>
-          <td>${esc(e.inventoryNo)}</td>
-          <td>${esc(e.name)}</td>
-          <td>${esc(e.type || 'سيارة إسعاف عادية')}</td>
-          <td>${esc(e.category)}</td>
-          <td><span class="badge ${e.condition === 'متوفر' ? 'badge-success' : e.condition === 'محجوز' ? 'badge-warning' : 'badge-danger'}">${esc(e.condition)}</span></td>
-          <td>${esc(e.location)}</td>
-          <td>${money(e.value)}</td>
-          <td>${e.equippedForBurial === 'نعم' ? '✅ نعم' : '❌ لا'}</td>
-          ${canEdit() ? `<td><button class="mini-btn mini-primary" onclick="editEquipment(${JSON.stringify(e).replace(/[&<>]/g, '')})">✏️ تعديل</button></td>` : ''}
-        </tr>
-      `).join('')}
-    </tbody>
-  </table>`;
+  return `<table><thead><tr><th>رقم اللوحة</th><th>الاسم</th><th>النوع</th><th>الصنف</th><th>الحالة</th><th>الموقع</th><th>القيمة</th><th>مجهزة لنقل جثة</th>${canEdit() ? '<th>الإجراء</th>' : ''}</tr></thead><tbody>${equipment.map(e => `
+        <tr><td>${esc(e.inventoryNo)}</td><td>${esc(e.name)}</td><td>${esc(e.type || 'سيارة إسعاف عادية')}</td><td>${esc(e.category)}</td><td><span class="badge ${e.condition === 'متوفر' ? 'badge-success' : e.condition === 'محجوز' ? 'badge-warning' : 'badge-danger'}">${esc(e.condition)}</span></td><td>${esc(e.location)}</td><td>${money(e.value)}</td><td>${e.equippedForBurial === 'نعم' ? ' نعم' : ' لا'}</td>${canEdit() ? `<td><button class="mini-btn mini-primary" onclick="editEquipment(${JSON.stringify(e).replace(/[&<>]/g, '')})">️ تعديل</button> <button class="mini-btn mini-danger" onclick="deleteEquipment('${e.id}')">️ حذف</button></td>` : ''}
+        </tr>`).join('')}
+    </tbody></table>`;
+}
+
+
+async function deleteEquipment(id) {
+  if (!confirm('هل أنت متأكد من حذف هذه السيارة؟')) return;
+  try {
+    const result = await apiCall('deleteEquipment', [id, sessionToken]);
+    currentReport = result;
+    loadEquipment();
+    refreshAllData();
+    setMsg('eqMsg', ' تم حذف السيارة بنجاح', 'success');
+  } catch (err) {
+    setMsg('eqMsg', ' ' + err.message, 'error');
+  }
 }
 
 function fillSelects(equipment) {
@@ -1341,6 +805,47 @@ function fillSelects(equipment) {
   if (document.getElementById('auditItem')) document.getElementById('auditItem').innerHTML = options;
   if (document.getElementById('missionItem')) document.getElementById('missionItem').innerHTML = options;
   if (document.getElementById('burialItem')) document.getElementById('burialItem').innerHTML = options;
+}
+
+
+function fillMissionLoanOptions(report) {
+  const select = document.getElementById('missionLoan');
+  if (!select || !report) return;
+  const loans = (report.activeLoans || []);
+  select.innerHTML = '<option value="">استدعاء حجز موجود للتكليف</option>' + loans.map(l =>`<option value="${esc(l.id)}">${esc(l.id)} - ${esc(l.borrower)} - ${esc(l.patientName || l.deceasedName || '-')} - ${esc(l.loanDate || '')}</option>`
+  ).join('');
+}
+
+function fillMissionFromLoan() {
+  const loanId = document.getElementById('missionLoan')?.value;
+  if (!loanId || !currentReport) return;
+  const loan = (currentReport.activeLoans || []).find(l => String(l.id) === String(loanId));
+  if (!loan) return;
+  const setVal = (id, val) => { const el = document.getElementById(id); if (el && val !== undefined && val !== null) el.value = val; };
+  const notes = loan.notes || '';
+  const noteVal = (label) => {
+    const m = notes.match(new RegExp(label + '\\s*:\\s*([^|\\n]+)'));
+    return m ? m[1].trim() : '';
+  };
+
+  setVal('missionItem', loan.itemId || '');
+  setVal('missionPatientName', loan.patientName || loan.deceasedName || '');
+  setVal('missionRelationship', loan.relationship || loan.applicantRelation || '');
+  setVal('missionPatientCondition', noteVal('حالة المريض') || loan.patientCondition || 'مستقر');
+  setVal('missionCompanionName', loan.companionName || noteVal('المرافق').replace(/\s*\([^)]*\)\s*$/, ''));
+  setVal('missionCompanionPhone', loan.companionPhone || noteVal('هاتف المرافق'));
+  setVal('missionCompanionRelation', loan.companionRelation || (noteVal('المرافق').match(/\(([^)]*)\)/) || [,''])[1]);
+  setVal('missionTripType', loan.tripType || noteVal('نوع النقل'));
+  setVal('missionDestinationState', loan.destinationState || noteVal('الولاية المتجه إليها'));
+  setVal('missionDistanceKm', loan.distanceKm || noteVal('المسافة التقريبية') || noteVal('المسافة'));
+  setVal('missionDestination', loan.destination || noteVal('الوجهة'));
+  setVal('missionDepartureDate', loan.loanDate || '');
+  setVal('missionExpectedReturnDate', loan.expectedReturnDate || loan.loanDate || '');
+
+  toggleMissionState();
+  const missionNotes = document.getElementById('missionNotes');
+  if (missionNotes) missionNotes.value = `استدعاء من الحجز: ${loan.id}\nطالب الحجز: ${loan.borrower || ''}\nالهاتف/الجهة: ${loan.contact || ''}\nنوع الخدمة: ${loan.serviceType === 'burial' ? 'نقل جثة' : 'نقل طبي'}\n${loan.notes || ''}`.trim();
+  updateMissionEstimate();
 }
 
 function fillCategoryList(equipment) {
@@ -1377,10 +882,10 @@ async function saveEquipment() {
     currentReport = result;
     loadEquipment();
     clearEquipmentForm();
-    setMsg('eqMsg', equipmentEditId ? '✓ تم تعديل السيارة بنجاح' : '✓ تم إضافة السيارة بنجاح', 'success');
+    setMsg('eqMsg', equipmentEditId ? ' تم تعديل السيارة بنجاح' : ' تم إضافة السيارة بنجاح', 'success');
     refreshAllData();
   } catch (err) {
-    setMsg('eqMsg', '❌ ' + err.message, 'error');
+    setMsg('eqMsg', ' ' + err.message, 'error');
   }
 }
 
@@ -1400,7 +905,7 @@ function editEquipment(equipment) {
   document.getElementById('eqNotes').value = equipment.notes || '';
   
   document.getElementById('eqEditNote').style.display = 'block';
-  document.getElementById('eqSaveBtn').textContent = '✏️ تحديث السيارة';
+  document.getElementById('eqSaveBtn').textContent = '️ تحديث السيارة';
   document.getElementById('eqCancelBtn').style.display = 'inline-block';
 }
 
@@ -1414,7 +919,7 @@ function clearEquipmentForm() {
   document.getElementById('eqQuantity').value = '1';
   document.getElementById('eqCondition').value = 'متوفر';
   document.getElementById('eqEditNote').style.display = 'none';
-  document.getElementById('eqSaveBtn').textContent = '💾 حفظ السيارة';
+  document.getElementById('eqSaveBtn').textContent = ' حفظ السيارة';
   document.getElementById('eqCancelBtn').style.display = 'none';
 }
 
@@ -1455,11 +960,11 @@ async function addDriver() {
   
   try {
     await apiCall('addDriver', [data, sessionToken]);
-    setMsg('driverMsg', '✓ تم إضافة السائق بنجاح', 'success');
+    setMsg('driverMsg', ' تم إضافة السائق بنجاح', 'success');
     clearDriverForm();
     loadDrivers();
   } catch (err) {
-    setMsg('driverMsg', '❌ ' + err.message, 'error');
+    setMsg('driverMsg', ' ' + err.message, 'error');
   }
 }
 
@@ -1476,10 +981,10 @@ async function deleteDriver(id) {
   if (!confirm('هل أنت متأكد من حذف هذا السائق؟')) return;
   try {
     await apiCall('deleteDriver', [id, sessionToken]);
-    setMsg('driverMsg', '✓ تم حذف السائق', 'success');
+    setMsg('driverMsg', ' تم حذف السائق', 'success');
     loadDrivers();
   } catch (err) {
-    setMsg('driverMsg', '❌ ' + err.message, 'error');
+    setMsg('driverMsg', ' ' + err.message, 'error');
   }
 }
 
@@ -1534,11 +1039,11 @@ async function addMedicalStaff() {
   
   try {
     await apiCall('addMedicalStaff', [data, sessionToken]);
-    setMsg('staffMsg', '✓ تم إضافة العضو بنجاح', 'success');
+    setMsg('staffMsg', ' تم إضافة العضو بنجاح', 'success');
     clearStaffForm();
     loadMedicalStaff();
   } catch (err) {
-    setMsg('staffMsg', '❌ ' + err.message, 'error');
+    setMsg('staffMsg', ' ' + err.message, 'error');
   }
 }
 
@@ -1556,10 +1061,10 @@ async function deleteMedicalStaff(id) {
   if (!confirm('هل أنت متأكد من حذف هذا العضو؟')) return;
   try {
     await apiCall('deleteMedicalStaff', [id, sessionToken]);
-    setMsg('staffMsg', '✓ تم حذف العضو', 'success');
+    setMsg('staffMsg', ' تم حذف العضو', 'success');
     loadMedicalStaff();
   } catch (err) {
-    setMsg('staffMsg', '❌ ' + err.message, 'error');
+    setMsg('staffMsg', ' ' + err.message, 'error');
   }
 }
 
@@ -1672,7 +1177,8 @@ async function createMission() {
     extraServicesPrice: parseFloat(document.getElementById('missionExtraServices').value) || 0,
     paidAmount: parseFloat(document.getElementById('missionPaidAmount').value) || 0,
     notes: document.getElementById('missionNotes').value,
-    serviceType: 'medical'
+    serviceType: 'medical',
+    sourceLoanId: document.getElementById('missionLoan')?.value || ''
   };
   
   if (!data.itemId || !data.driverId || !data.medicalStaffId || !data.patientName || !data.departureDate) {
@@ -1682,12 +1188,12 @@ async function createMission() {
   
   try {
     await apiCall('createMission', [data, sessionToken]);
-    setMsg('missionMsg', '✓ تم إنشاء التكليف بنجاح', 'success');
+    setMsg('missionMsg', ' تم إنشاء التكليف بنجاح', 'success');
     clearMissionForm();
     loadMissions();
     refreshAllData();
   } catch (err) {
-    setMsg('missionMsg', '❌ ' + err.message, 'error');
+    setMsg('missionMsg', ' ' + err.message, 'error');
   }
 }
 
@@ -1713,64 +1219,128 @@ async function printMission(missionNo) {
 }
 
 function printMissionReceipt(mission) {
+  openMissionOfficialReport(mission, false);
+}
+
+async function emailMission(missionNo) {
+  try {
+    const mission = await apiCall('getMissionById', [missionNo, sessionToken]);
+    if (!mission) throw new Error('لم يتم العثور على التكليف');
+    openMissionOfficialReport(mission, true);
+  } catch (err) {
+    alert(err.message);
+  }
+}
+
+function openMissionOfficialReport(mission, autoEmail) {
+  const safe = v => esc(v || '-');
+  const moneySafe = v => (v === 0 || v) ? money(v) : '-';
+  const ASSOCIATION_APPROVAL_NO = '0005588999999';
+  const ASSOCIATION_PHONE = '032233174';
+  const ASSOCIATION_LOGO_URL = 'https://drive.google.com/thumbnail?id=1mN39uinRmOQGj04B5OfC9ZTPtlXyF1mb&sz=256';
+  const dashboardUrl = (location.origin && location.origin !== 'null' ? location.origin + location.pathname : location.href.split('#')[0]) + '#missions/' + encodeURIComponent(mission.missionNo || '');
+  const qrPayload = {
+    type: 'dynamic_mission_verification_qr',
+    version: 'A4-compact-v3',
+    associationName: 'جمعية الجواهر بقمار',
+    associationNameFr: 'Association Al-Djawahir Guemar',
+    approvalNo: ASSOCIATION_APPROVAL_NO,
+    phone: ASSOCIATION_PHONE,
+    missionNo: mission.missionNo || '',
+    serviceScope: 'تكاليف ومهمات نقل المرضى ونقل الموتى',
+    beneficiary: mission.patientName || mission.deceasedName || '',
+    ambulance: mission.itemName || '',
+    vehicleNumber: mission.inventoryNo || mission.vehicleNumber || '',
+    driver: mission.driverName || '',
+    medicalStaff: mission.medicalStaffName || '',
+    destination: mission.destination || '',
+    distanceKm: mission.distanceKm || 0,
+    totalCost: mission.totalCost || 0,
+    issueDate: mission.date || mission.departureDate || '',
+    verificationUrl: dashboardUrl,
+    generatedAt: new Date().toISOString()
+  };
+  const qrText = JSON.stringify(qrPayload);
   const win = window.open('', '_blank');
-  win.document.write(`
-    <!DOCTYPE html>
-    <html dir="rtl" lang="ar">
-    <head>
-      <meta charset="UTF-8">
-      <title>تكليف مهمة طبية - ${mission.missionNo}</title>
-      <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
-      <style>
-        body { font-family: 'Cairo', sans-serif; padding: 20px; margin: 0; }
-        .receipt { max-width: 800px; margin: auto; border: 2px solid #0f766e; border-radius: 16px; padding: 20px; }
-        .header { text-align: center; border-bottom: 2px solid #0f766e; padding-bottom: 10px; margin-bottom: 20px; }
-        .logo { width: 80px; height: 80px; border-radius: 50%; }
-        .row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #e2e8f0; }
-        .label { font-weight: 700; color: #64748b; }
-        .value { font-weight: 600; }
-        .total { background: #fef3c7; padding: 12px; border-radius: 12px; margin-top: 16px; text-align: center; }
-        .signatures { display: flex; justify-content: space-between; margin-top: 30px; }
-        .sign { border-top: 1px dashed #94a3b8; padding-top: 8px; text-align: center; width: 45%; }
-        @media print {
-          body { padding: 0; }
-          .no-print { display: none; }
-        }
-      </style>
-    </head>
-    <body>
-      <div class="receipt">
-        <div class="header">
-          <h1>تكليف مهمة طبية</h1>
-          <p>جمعية الجواهر بقمار</p>
-          <p><strong>رقم التكليف:</strong> ${mission.missionNo}</p>
-        </div>
-        <div class="row"><span class="label">التاريخ:</span><span class="value">${mission.date}</span></div>
-        <div class="row"><span class="label">سيارة الإسعاف:</span><span class="value">${esc(mission.itemName)}</span></div>
-        <div class="row"><span class="label">السائق:</span><span class="value">${esc(mission.driverName)}</span></div>
-        <div class="row"><span class="label">الطاقم الطبي:</span><span class="value">${esc(mission.medicalStaffName)}</span></div>
-        <div class="row"><span class="label">المريض:</span><span class="value">${esc(mission.patientName)}</span></div>
-        <div class="row"><span class="label">صلة القرابة:</span><span class="value">${esc(mission.relationship || '-')}</span></div>
-        <div class="row"><span class="label">المرافق:</span><span class="value">${esc(mission.companionName || '-')} ${mission.companionRelation ? '(' + mission.companionRelation + ')' : ''}</span></div>
-        <div class="row"><span class="label">نوع النقل:</span><span class="value">${esc(mission.tripType)} ${mission.destinationState ? '→ ' + mission.destinationState : ''}</span></div>
-        <div class="row"><span class="label">الوجهة:</span><span class="value">${esc(mission.destination)}</span></div>
-        <div class="row"><span class="label">تاريخ المغادرة:</span><span class="value">${mission.departureDate}</span></div>
-        <div class="total">
-          <strong>💰 التكلفة الإجمالية: ${money(mission.totalCost)}</strong><br>
-          💵 المدفوع: ${money(mission.paidAmount)}<br>
-          📍 المتبقي: ${money(mission.remainingAmount)}
-        </div>
-        <div class="signatures">
-          <div class="sign">توقيع السائق</div>
-          <div class="sign">ختم الجمعية</div>
-        </div>
-      </div>
-      <script>window.print();<\/script>
-    </body>
-    </html>
-  `);
+  win.document.write(`<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تكليف بمهمة - ${safe(mission.missionNo)}</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"><\/script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"><\/script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"><\/script>
+<style>
+:root{--primary:#2986B0;--primary-light:#7ED6D1;--accent:#F59E0B;--gold-brown:#A86417;--ink:#222222;--muted:#596575;--line:#d9e3e8;--soft:#F5F5F5}
+*{box-sizing:border-box}body{margin:0;background:#eef3f6;font-family:'Cairo',Tahoma,Arial,sans-serif;color:var(--ink)}
+.toolbar{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line);padding:10px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}.btn{border:0;border-radius:10px;padding:9px 14px;font-family:Cairo;font-weight:800;cursor:pointer;color:#fff;background:linear-gradient(135deg,var(--primary),var(--primary-light))}.btn.gold{background:linear-gradient(135deg,var(--accent),var(--gold-brown))}.btn.dark{background:#222222}.btn:disabled{opacity:.6;cursor:wait}
+.page{width:210mm;height:297mm;background:#fff;margin:12px auto;padding:8mm 9mm;border:1px solid var(--line);box-shadow:0 18px 40px #0002;overflow:hidden;position:relative}.page:before{content:'';position:absolute;inset:0;border:4px solid transparent;border-image:linear-gradient(135deg,var(--primary),var(--primary-light),var(--accent)) 1;pointer-events:none}.report{height:100%;display:flex;flex-direction:column;gap:5px}.topline{height:4px;background:linear-gradient(90deg,var(--primary),#7ED6D1,var(--accent));border-radius:8px}
+.header{display:grid;grid-template-columns:1fr 90px 1fr;gap:8px;align-items:center;border-bottom:2px solid var(--primary);padding-bottom:6px;background:linear-gradient(90deg,#fff,#F5F5F5,#fff)}.official{font-size:9.2px;line-height:1.42;text-align:center}.brand{text-align:center}.brand h2{margin:1px 0;color:var(--primary);font-size:15px;font-weight:800}.brand p{margin:0;font-size:9.2px;font-weight:700}.logoBox{width:74px;height:74px;border:2px solid var(--primary);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:auto;background:#fbfdff;overflow:hidden}.logoBox img{width:100%;height:100%;object-fit:contain;padding:3px}
+.docTitle{text-align:center;margin:3px 0 1px}.docTitle h1{margin:0;font-size:16.5px;color:#fff;background:linear-gradient(135deg,var(--primary),var(--primary-light));display:inline-block;padding:5px 24px;border-radius:12px;box-shadow:0 6px 16px #2986B033}.legal{font-size:9.2px;line-height:1.38;border:1px solid #f0d99f;background:#fffaf0;border-radius:9px;padding:5px 8px}.legal b{color:var(--gold-brown)}
+.meta,.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}.box{border:1px solid var(--line);border-radius:8px;padding:4px 6px;min-height:32px;background:#fff;border-right:3px solid var(--primary-light)}.label{display:block;color:var(--muted);font-size:8px;font-weight:800}.value{font-size:9.8px;font-weight:800;line-height:1.24;min-height:15px}.section{border:1px solid var(--line);border-radius:9px;overflow:hidden}.section h3{margin:0;background:linear-gradient(90deg,#F5F5F5,#E9F7F8);color:var(--primary);font-size:10px;padding:3px 6px;border-bottom:1px solid var(--line)}.sectionBody{padding:5px}.grid2{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:repeat(3,1fr)}.span2{grid-column:span 2}.span4{grid-column:span 4}
+.checks{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}.check{border:1px solid var(--line);border-radius:7px;padding:2px 4px;font-size:9.2px;background:#fff}.checked{background:#e8f7fb;border-color:var(--primary);color:var(--primary);font-weight:800}
+table{width:100%;border-collapse:collapse;font-size:9.2px}th,td{border:1px solid var(--line);padding:3px 4px;text-align:center;vertical-align:middle}th{background:var(--soft);color:var(--primary)}.commitments{margin:0;padding:0 16px 0 0;font-size:9px;line-height:1.35}.bottom{display:grid;grid-template-columns:1fr 90px;gap:8px;align-items:end;margin-top:auto}.qrBox{border:1px solid var(--line);border-radius:10px;text-align:center;padding:5px;background:#fff}.note{font-size:8px;color:var(--muted);line-height:1.3}.signatures{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}.sign{text-align:center;border-top:1px dashed #94a3b8;padding-top:4px;font-weight:800;font-size:9.5px;min-height:34px}.stamp{font-size:8px;color:var(--muted)}.emailBox{display:none;background:#fff;border:1px solid var(--line);box-shadow:0 12px 35px #0002;border-radius:14px;max-width:650px;margin:10px auto;padding:12px}.emailBox input{width:100%;padding:10px;border:1px solid var(--line);border-radius:10px;font-family:Cairo;margin-top:6px}
+@page{size:A4;margin:0}@media print{html,body{width:210mm;height:297mm;background:#fff}.toolbar,.emailBox{display:none!important}.page{margin:0;border:0;box-shadow:none;width:210mm;height:297mm;padding:8mm 9mm;page-break-after:avoid}.btn{display:none!important}}@media(max-width:800px){.page{width:100%;height:auto;margin:0;padding:10px;overflow:visible}.header,.meta,.grid,.bottom,.signatures{grid-template-columns:1fr}.span2,.span4{grid-column:span 1}.checks{grid-template-columns:1fr}.toolbar{position:relative}}
+</style>
+</head>
+<body>
+<div class="toolbar no-print"><button class="btn" onclick="window.print()">🖨️ طباعة</button><button class="btn dark" onclick="downloadPdf()">⬇️ تنزيل PDF</button><button class="btn gold" onclick="showEmailBox()">📧 إرسال PDF عبر البريد</button></div>
+<div id="emailBox" class="emailBox no-print"><b>إرسال التكليف PDF عبر بريد الجمعية</b><p style="margin:6px 0;color:#596575">أدخل بريد المستلم، وسيتم إرسال النموذج الرسمي المختصر بصيغة PDF.</p><input id="emailTo" type="email" placeholder="example@email.com"><button id="sendBtn" class="btn gold" style="margin-top:8px" onclick="sendPdfByEmail()">إرسال الآن</button><div id="emailMsg" style="margin-top:8px;font-weight:700"></div></div>
+<div class="page" id="reportContainer"><div class="report">
+<div class="topline"></div>
+<div class="header">
+  <div class="official">الجمهورية الجزائرية الديمقراطية الشعبية<br>وزارة الداخلية والجماعات المحلية والتهيئة العمرانية<br>ولاية الوادي – دائرة قمار</div>
+  <div class="brand"><div class="logoBox" data-field="association.logo"><img src="${ASSOCIATION_LOGO_URL}" alt="شعار جمعية الجواهر بقمار"></div><h2 data-field="association.name">جمعية الجواهر بقمار</h2><p>جمعية ذات طابع اجتماعي، إنساني وخيري</p></div>
+  <div class="official"><b>بيانات الجمعية</b><br>رقم الاعتماد: <span data-field="association.approvalNo">${ASSOCIATION_APPROVAL_NO}</span><br>العنوان: <span data-field="association.address">قمار – ولاية الوادي</span><br>الهاتف: <span data-field="association.phone">${ASSOCIATION_PHONE}</span></div>
+</div>
+<div class="docTitle"><h1>تكليف بمهمة واستعمال سيارة إسعاف</h1></div>
+<div class="meta">
+  <div class="box"><span class="label">رقم التكليف</span><div class="value" data-field="mission.missionNo">${safe(mission.missionNo)}</div></div>
+  <div class="box"><span class="label">تاريخ الإصدار</span><div class="value" data-field="mission.date">${safe(mission.date || mission.departureDate)}</div></div>
+  <div class="box"><span class="label">الحالة</span><div class="value" data-field="mission.status">${safe(mission.status || 'نشط')}</div></div>
+  <div class="box"><span class="label">مرجع الحجز</span><div class="value" data-field="mission.sourceLoanId">${safe(mission.sourceLoanId)}</div></div>
+</div>
+<div class="legal"><b>السند القانوني والتنظيمي:</b> يحرر هذا التكليف وفق القانون رقم 12-06 المتعلق بالجمعيات، والقانون رقم 01-14 المتعلق بتنظيم حركة المرور عبر الطرق وسلامتها وأمنها، والنظامين الأساسي والداخلي للجمعية، وفي حدود الغرض الاجتماعي والإنساني للجمعية.</div>
+<div class="section"><h3>1) بيانات المهمة</h3><div class="sectionBody grid">
+  <div class="box"><span class="label">نوع المهمة</span><div class="value" data-field="mission.tripType">${safe(mission.tripType)}</div></div>
+  <div class="box"><span class="label">المستفيد / المريض</span><div class="value" data-field="mission.patientName">${safe(mission.patientName)}</div></div>
+  <div class="box"><span class="label">حالة المريض</span><div class="value" data-field="mission.patientCondition">${safe(mission.patientCondition)}</div></div>
+  <div class="box"><span class="label">صلة القرابة</span><div class="value" data-field="mission.relationship">${safe(mission.relationship)}</div></div>
+  <div class="box span2"><span class="label">نقطة الانطلاق</span><div class="value" data-field="mission.departurePlace">مقر الجمعية – قمار</div></div>
+  <div class="box span2"><span class="label">الوجهة / المؤسسة الصحية</span><div class="value" data-field="mission.destination">${safe(mission.destination)} ${mission.destinationState ? ' - ' + safe(mission.destinationState) : ''}</div></div>
+  <div class="box"><span class="label">تاريخ الانطلاق</span><div class="value" data-field="mission.departureDate">${safe(mission.departureDate)}</div></div>
+  <div class="box"><span class="label">العودة المتوقعة</span><div class="value" data-field="mission.expectedReturnDate">${safe(mission.expectedReturnDate)}</div></div>
+  <div class="box"><span class="label">المسافة</span><div class="value" data-field="mission.distanceKm">${safe(mission.distanceKm || 0)} كم</div></div>
+  <div class="box"><span class="label">التكلفة/المساهمة</span><div class="value" data-field="mission.totalCost">${moneySafe(mission.totalCost)}</div></div>
+</div></div>
+<div class="section"><h3>2) المركبة والطاقم المكلف</h3><div class="sectionBody"><table><thead><tr><th>العنصر</th><th>البيانات</th><th>ملاحظات الربط</th></tr></thead><tbody>
+<tr><td>سيارة الإسعاف</td><td data-field="mission.itemName">${safe(mission.itemName)} – رقم التسجيل: ${safe(mission.inventoryNo || mission.vehicleNumber)}</td><td data-field="dashboard.vehicleStatus">يربط بحالة الأسطول في لوحة التحكم</td></tr>
+<tr><td>السائق المكلف</td><td data-field="mission.driverName">${safe(mission.driverName)} – رخصة: ${safe(mission.driverLicense || mission.licenseNo)}</td><td data-field="mission.driverPhone">${safe(mission.driverPhone)}</td></tr>
+<tr><td>الطاقم الطبي</td><td data-field="mission.medicalStaffName">${safe(mission.medicalStaffName)}</td><td data-field="mission.medicalStaffPhone">${safe(mission.medicalStaffPhone)}</td></tr>
+<tr><td>المرافق</td><td data-field="mission.companionName">${safe(mission.companionName)} – ${safe(mission.companionRelation)}</td><td data-field="mission.companionPhone">${safe(mission.companionPhone)}</td></tr>
+</tbody></table></div></div>
+<div class="section"><h3>3) طبيعة الخدمة</h3><div class="sectionBody checks"><div class="check checked">☑ نقل مريض</div><div class="check ${mission.patientCondition==='طارئ'?'checked':''}">□ تدخل استعجالي</div><div class="check ${mission.patientCondition==='عناية مركزة'?'checked':''}">□ مرافقة طبية</div><div class="check">□ تحويل صحي / مهمة تضامنية</div></div></div>
+<div class="section"><h3>4) الالتزامات الأساسية</h3><div class="sectionBody"><ol class="commitments"><li>استعمال المركبة حصريًا في حدود المهمة المبينة أعلاه ووفق تعليمات إدارة الجمعية.</li><li>احترام قواعد المرور والسلامة الطرقية وحماية المريض والطاقم والمرافقين.</li><li>المحافظة على سيارة الإسعاف والعتاد الطبي والتبليغ الفوري عن كل عطب أو حادث أو مخالفة.</li><li>عدم نقل أي شخص أو عتاد غير مرتبط بالمهمة إلا بترخيص مسبق من المسؤول المخول.</li><li>تسليم المركبة بعد نهاية المهمة وملء سجل الحركة بما يثبت توقيت الانطلاق والعودة.</li></ol></div></div>
+<div class="bottom"><div><b>حرر بقمار في: </b><span data-field="mission.issueDate">${safe(mission.date || mission.departureDate)}</span><div class="note">يُبرز هذا التكليف عند الطلب لمصالح الأمن أو الرقابة المختصة. جميع الحقول الموسومة بـ data-field قابلة للربط المباشر مع Dashboard.</div><div class="signatures"><div class="sign">المكلف بالمهمة<br><span class="stamp">الإمضاء</span></div><div class="sign">مسؤول النقل/اللوجستيك<br><span class="stamp">الإمضاء</span></div><div class="sign">رئيس الجمعية<br><span class="stamp">الإمضاء والختم</span></div></div></div><div class="qrBox"><div id="qrcode" data-field="mission.dynamicQr"></div><div class="note">QR ديناميكي للتحقق: رقم المهمة، اسم الجمعية، رقم الاعتماد، المركبة والتكلفة</div></div></div>
+</div></div>
+<script>
+const MISSION_NO=${JSON.stringify(mission.missionNo || '')};
+const QR_TEXT=${JSON.stringify(qrText)};
+const AUTO_EMAIL=${autoEmail ? 'true' : 'false'};
+new QRCode(document.getElementById('qrcode'), {text: QR_TEXT, width: 78, height: 78, colorDark:'#222222', colorLight:'#ffffff', correctLevel: QRCode.CorrectLevel.H});
+function showEmailBox(){document.getElementById('emailBox').style.display='block';window.scrollTo({top:0,behavior:'smooth'});}
+async function makePdf(){const el=document.getElementById('reportContainer');const canvas=await html2canvas(el,{scale:2,useCORS:true,backgroundColor:'#ffffff'});const img=canvas.toDataURL('image/png');const pdf=new jspdf.jsPDF('p','mm','a4');pdf.addImage(img,'PNG',0,0,210,297);return pdf;}
+async function downloadPdf(){const pdf=await makePdf();pdf.save('mission-'+MISSION_NO+'.pdf');}
+async function sendPdfByEmail(){const to=document.getElementById('emailTo').value.trim();const msg=document.getElementById('emailMsg');const btn=document.getElementById('sendBtn');if(!to){msg.style.color='#b91c1c';msg.textContent='يرجى إدخال البريد الإلكتروني.';return;}btn.disabled=true;msg.style.color='#2986B0';msg.textContent='جاري إنشاء وإرسال PDF...';try{const pdf=await makePdf();const base64=pdf.output('datauristring').split(',')[1];await window.opener.apiCall('sendMissionPdfEmail',[MISSION_NO,base64,window.opener.sessionToken,to]);msg.style.color='#166534';msg.textContent='تم إرسال التقرير بنجاح.';}catch(e){msg.style.color='#b91c1c';msg.textContent='فشل الإرسال: '+(e.message||e);}finally{btn.disabled=false;}}
+if(AUTO_EMAIL){showEmailBox();}
+<\/script>
+</body></html>`);
   win.document.close();
 }
+
+
 
 // ==================== خدمات نقل الجثة ====================
 async function loadBurialServices() {
@@ -1862,12 +1432,12 @@ async function createBurialService() {
   
   try {
     await apiCall('createBurialService', [data, sessionToken]);
-    setMsg('burialMsg', '✓ تم إنشاء خدمة نقل الجثة بنجاح', 'success');
+    setMsg('burialMsg', ' تم إنشاء خدمة نقل الجثة بنجاح', 'success');
     clearBurialForm();
     loadBurialServices();
     refreshAllData();
   } catch (err) {
-    setMsg('burialMsg', '❌ ' + err.message, 'error');
+    setMsg('burialMsg', ' ' + err.message, 'error');
   }
 }
 
@@ -1894,19 +1464,12 @@ async function printBurialService(burialNo) {
 function printBurialReceipt(service) {
   const win = window.open('', '_blank');
   win.document.write(`
-    <!DOCTYPE html>
-    <html dir="rtl" lang="ar">
-    <head>
-      <meta charset="UTF-8">
-      <title>خدمة نقل جثة - ${service.burialNo}</title>
-      <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
-      <style>
-        body { font-family: 'Cairo', sans-serif; padding: 20px; margin: 0; }
+    <!DOCTYPE html><html dir="rtl" lang="ar"><head><meta charset="UTF-8"><title>خدمة نقل جثة - ${service.burialNo}</title><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet"><style>body { font-family: 'Cairo', sans-serif; padding: 20px; margin: 0; }
         .receipt { max-width: 800px; margin: auto; border: 2px solid #6b7280; border-radius: 16px; padding: 20px; }
         .header { text-align: center; border-bottom: 2px solid #6b7280; padding-bottom: 10px; margin-bottom: 20px; }
         .logo { width: 80px; height: 80px; border-radius: 50%; }
         .row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #e2e8f0; }
-        .label { font-weight: 700; color: #64748b; }
+        .label { font-weight: 700; color: #596575; }
         .value { font-weight: 600; }
         .total { background: #f3e8ff; padding: 12px; border-radius: 12px; margin-top: 16px; text-align: center; }
         .signatures { display: flex; justify-content: space-between; margin-top: 30px; }
@@ -1914,39 +1477,18 @@ function printBurialReceipt(service) {
         @media print {
           body { padding: 0; }
         }
-      </style>
-    </head>
-    <body>
-      <div class="receipt">
-        <div class="header">
-          <h1>خدمة نقل جثة</h1>
-          <p>جمعية الجواهر بقمار</p>
-          <p><strong>رقم الخدمة:</strong> ${service.burialNo}</p>
-        </div>
-        <div class="row"><span class="label">التاريخ:</span><span class="value">${service.date}</span></div>
-        <div class="row"><span class="label">سيارة الإسعاف:</span><span class="value">${esc(service.itemName)}</span></div>
-        <div class="row"><span class="label">السائق:</span><span class="value">${esc(service.driverName)}</span></div>
-        <div class="row"><span class="label">المتوفى:</span><span class="value">${esc(service.deceasedName)}</span></div>
-        <div class="row"><span class="label">سبب الوفاة:</span><span class="value">${esc(service.causeOfDeath || '-')}</span></div>
-        <div class="row"><span class="label">مكان الوفاة:</span><span class="value">${esc(service.placeOfDeath || '-')}</span></div>
-        <div class="row"><span class="label">مكان الدفن:</span><span class="value">${esc(service.burialPlace)}</span></div>
-        <div class="row"><span class="label">مقدم الطلب:</span><span class="value">${esc(service.applicantName)} (${esc(service.applicantRelation || '-')})</span></div>
-        <div class="row"><span class="label">نوع النقل:</span><span class="value">${esc(service.tripType)} ${service.state ? '→ ' + service.state : ''}</span></div>
-        <div class="row"><span class="label">المسافة:</span><span class="value">${service.distanceKm || 0} كم</span></div>
-        <div class="total">
-          <strong>💰 التكلفة الإجمالية: ${money(service.totalCost)}</strong><br>
-          💵 المدفوع: ${money(service.paidAmount)}<br>
-          📍 المتبقي: ${money(service.remainingAmount)}
-        </div>
-        <div class="signatures">
-          <div class="sign">توقيع السائق</div>
-          <div class="sign">ختم الجمعية</div>
-        </div>
-      </div>
-      <script>window.print();<\/script>
-    </body>
-    </html>
-  `);
+        @media (max-width: 700px){
+      body{font-size:14px}
+      .container,.main,.content{width:100%;padding:8px;margin:0}
+      .card{padding:12px;border-radius:14px;overflow-x:auto}
+      .form-grid,.grid{grid-template-columns:1fr!important;gap:10px}
+      input,select,textarea,button{font-size:14px;min-height:42px}
+      table{min-width:720px;font-size:12px}
+      .tabs,.nav,.sidebar{overflow-x:auto;white-space:nowrap}
+      .submit-btn{width:100%;padding:12px}
+    }
+</style></head><body><div class="receipt"><div class="header"><h1>خدمة نقل جثة</h1><p>جمعية الجواهر بقمار</p><p><strong>رقم الخدمة:</strong> ${service.burialNo}</p></div><div class="row"><span class="label">التاريخ:</span><span class="value">${service.date}</span></div><div class="row"><span class="label">سيارة الإسعاف:</span><span class="value">${esc(service.itemName)}</span></div><div class="row"><span class="label">السائق:</span><span class="value">${esc(service.driverName)}</span></div><div class="row"><span class="label">المتوفى:</span><span class="value">${esc(service.deceasedName)}</span></div><div class="row"><span class="label">سبب الوفاة:</span><span class="value">${esc(service.causeOfDeath || '-')}</span></div><div class="row"><span class="label">مكان الوفاة:</span><span class="value">${esc(service.placeOfDeath || '-')}</span></div><div class="row"><span class="label">مكان الدفن:</span><span class="value">${esc(service.burialPlace)}</span></div><div class="row"><span class="label">مقدم الطلب:</span><span class="value">${esc(service.applicantName)} (${esc(service.applicantRelation || '-')})</span></div><div class="row"><span class="label">نوع النقل:</span><span class="value">${esc(service.tripType)} ${service.state ? '→ ' + service.state : ''}</span></div><div class="row"><span class="label">المسافة:</span><span class="value">${service.distanceKm || 0} كم</span></div><div class="total"><strong> التكلفة الإجمالية: ${money(service.totalCost)}</strong><br>المدفوع: ${money(service.paidAmount)}<br>المتبقي: ${money(service.remainingAmount)}
+        </div><div class="signatures"><div class="sign">توقيع السائق</div><div class="sign">ختم الجمعية</div></div></div><script>window.print();<\/script></body></html>`);
   win.document.close();
 }
 
@@ -2017,12 +1559,12 @@ async function saveLoan() {
   
   try {
     await apiCall('addLoan', [data, sessionToken]);
-    setMsg('loanMsg', '✓ تم تسجيل الحجز بنجاح', 'success');
+    setMsg('loanMsg', ' تم تسجيل الحجز بنجاح', 'success');
     clearLoanForm();
     loadLoans();
     refreshAllData();
   } catch (err) {
-    setMsg('loanMsg', '❌ ' + err.message, 'error');
+    setMsg('loanMsg', ' ' + err.message, 'error');
   }
 }
 
@@ -2044,11 +1586,11 @@ async function returnLoanNow(loanId) {
   
   try {
     await apiCall('returnLoan', [loanId, returnDate, '', sessionToken]);
-    setMsg('loanMsg', '✓ تم تسجيل الإرجاع بنجاح', 'success');
+    setMsg('loanMsg', ' تم تسجيل الإرجاع بنجاح', 'success');
     loadLoans();
     refreshAllData();
   } catch (err) {
-    setMsg('loanMsg', '❌ ' + err.message, 'error');
+    setMsg('loanMsg', ' ' + err.message, 'error');
   }
 }
 
@@ -2065,23 +1607,11 @@ async function loadPricingRules() {
 function pricingRulesTableHtml(rules) {
   if (!rules || !rules.length) return '<p style="text-align:center; padding:20px;">لا توجد قواعد تسعير</p>';
   
-  return `<table>
-    <thead>
-      <tr><th>الخدمة</th><th>السعر الأساسي</th><th>السعر/كم</th><th>خدمات إضافية</th><th>ملاحظات</th>${canEdit() ? '<th></th>' : ''}</tr>
-    </thead>
-    <tbody>
-      ${rules.map(r => `
-        <tr>
-          <td>${esc(r.service)}</td>
-          <td>${money(r.basePrice)}</td>
-          <td>${money(r.pricePerKm)}</t
-                     <td>${money(r.extraServicesPrice)}</td>
-           <td>${esc(r.notes)}</td>
-          ${canEdit() ? `<td><button class="mini-btn mini-danger" onclick="deletePricingRule('${r.id}')">🗑️ حذف</button></td>` : ''}
-        </tr>
-      `).join('')}
-    </tbody>
-  </table>`;
+  return `<table><thead><tr><th>الخدمة</th><th>السعر الأساسي</th><th>السعر/كم</th><th>خدمات إضافية</th><th>ملاحظات</th>${canEdit() ? '<th></th>' : ''}</tr></thead><tbody>${rules.map(r => `
+        <tr><td>${esc(r.service)}</td><td>${money(r.basePrice)}</td><td>${money(r.pricePerKm)}</t
+                     <td>${money(r.extraServicesPrice)}</td><td>${esc(r.notes)}</td>${canEdit() ? `<td><button class="mini-btn mini-danger" onclick="deletePricingRule('${r.id}')">️ حذف</button></td>` : ''}
+        </tr>`).join('')}
+    </tbody></table>`;
 }
 
 async function addPricingRule() {
@@ -2100,11 +1630,11 @@ async function addPricingRule() {
   
   try {
     await apiCall('addPricingRule', [data, sessionToken]);
-    setMsg('pricingMsg', '✓ تم إضافة قاعدة التسعير بنجاح', 'success');
+    setMsg('pricingMsg', ' تم إضافة قاعدة التسعير بنجاح', 'success');
     clearPricingForm();
     loadPricingRules();
   } catch (err) {
-    setMsg('pricingMsg', '❌ ' + err.message, 'error');
+    setMsg('pricingMsg', ' ' + err.message, 'error');
   }
 }
 
@@ -2123,10 +1653,10 @@ async function deletePricingRule(id) {
   if (!confirm('هل أنت متأكد من حذف قاعدة التسعير هذه؟')) return;
   try {
     await apiCall('deletePricingRule', [id, sessionToken]);
-    setMsg('pricingMsg', '✓ تم حذف القاعدة', 'success');
+    setMsg('pricingMsg', ' تم حذف القاعدة', 'success');
     loadPricingRules();
   } catch (err) {
-    setMsg('pricingMsg', '❌ ' + err.message, 'error');
+    setMsg('pricingMsg', ' ' + err.message, 'error');
   }
 }
 
@@ -2141,24 +1671,9 @@ async function loadInventory() {
 function auditsTableHtml(audits) {
   if (!audits || !audits.length) return '<p style="text-align:center; padding:20px;">لا توجد عمليات جرد مسجلة</p>';
   
-  return `<table>
-    <thead>
-      <tr><th>التاريخ</th><th>رقم الجرد</th><th>السيارة</th><th>الحالة المسجلة</th><th>الحالة الفعلية</th><th>النتيجة</th><th>ملاحظات</th></tr>
-    </thead>
-    <tbody>
-      ${audits.map(a => `
-        <tr>
-          <td>${a.auditDate || '-'}</td>
-          <td>${esc(a.inventoryNo)}</td>
-          <td>${esc(a.itemName)}</td>
-          <td>${esc(a.registeredCondition)}</td>
-          <td>${esc(a.actualCondition)}</td>
-          <td><span class="badge ${a.result === 'مطابق' ? 'badge-success' : 'badge-danger'}">${esc(a.result)}</span></td>
-          <td>${esc(a.notes)}</td>
-        </tr>
-      `).join('')}
-    </tbody>
-  </table>`;
+  return `<table><thead><tr><th>التاريخ</th><th>رقم الجرد</th><th>السيارة</th><th>الحالة المسجلة</th><th>الحالة الفعلية</th><th>النتيجة</th><th>ملاحظات</th></tr></thead><tbody>${audits.map(a => `
+        <tr><td>${a.auditDate || '-'}</td><td>${esc(a.inventoryNo)}</td><td>${esc(a.itemName)}</td><td>${esc(a.registeredCondition)}</td><td>${esc(a.actualCondition)}</td><td><span class="badge ${a.result === 'مطابق' ? 'badge-success' : 'badge-danger'}">${esc(a.result)}</span></td><td>${esc(a.notes)}</td></tr>`).join('')}
+    </tbody></table>`;
 }
 
 async function saveAudit() {
@@ -2181,11 +1696,11 @@ async function saveAudit() {
     const result = await apiCall('addInventoryAudit', [data, sessionToken]);
     currentReport = result;
     loadInventory();
-    setMsg('auditMsg', '✓ تم تسجيل الجرد بنجاح', 'success');
+    setMsg('auditMsg', ' تم تسجيل الجرد بنجاح', 'success');
     clearAuditForm();
     refreshAllData();
   } catch (err) {
-    setMsg('auditMsg', '❌ ' + err.message, 'error');
+    setMsg('auditMsg', ' ' + err.message, 'error');
   }
 }
 
@@ -2208,31 +1723,32 @@ async function loadRequests() {
   }
 }
 
+
+async function setupTelegramBot() {
+  try {
+    const result = await apiCall('setupTelegramWebhook', [APPS_SCRIPT_WEB_APP_URL, sessionToken]);
+    if (result && result.ok === false) throw new Error(result.description || 'تعذر تشغيل webhook');
+    setMsg('requestsMsg', ' تم تشغيل Webhook بوت تلجرام بنجاح', 'success');
+  } catch (err) {
+    setMsg('requestsMsg', ' ' + err.message, 'error');
+  }
+}
+
 function requestsTableHtml(requests) {
-  if (!requests || !requests.length) return '<p style="text-align:center; padding:20px;">لا توجد طلبات معلقة</p>';
-  
-  return `<tr>
-    <thead>
-      <tr><th>رقم الطلب</th><th>السيارة</th><th>طالب الحجز</th><th>المريض/المتوفى</th><th>نوع الخدمة</th><th>التاريخ</th><th>الحالة</th><th>${canEdit() ? 'الإجراء' : ''}</th></tr>
-    </thead>
-    <tbody>
-      ${requests.map(r => `
-        <tr>
-          <td>${esc(r.requestNo)}</td>
-          <td>${esc(r.itemName)}</td>
-          <td>${esc(r.borrower)}</td>
-          <td>${esc(r.patientName || r.deceasedName || '-')}</td>
-          <td>${r.serviceType === 'burial' ? '<span class="badge badge-burial">⚰️ نقل جثة</span>' : '<span class="badge badge-primary">🚑 نقل طبي</span>'}</td>
-          <td>${r.loanDate || '-'}</td>
-          <td><span class="badge badge-warning">${esc(r.status)}</span></td>
-          ${canEdit() ? `<td>
-            <button class="mini-btn mini-success" onclick="approveRequest('${r.requestNo}')">✅ تأكيد</button>
-            <button class="mini-btn mini-danger" onclick="rejectRequest('${r.requestNo}')">❌ رفض</button>
-          </td>` : ''}
-        </tr>
-      `).join('')}
-    </tbody>
-  </table>`;
+  if (!requests || !requests.length) return '<p style="text-align:center; padding:20px;">لا توجد طلبات موقع مسجلة</p>';
+  const statusBadge = r => r.status === 'قيد الانتظار' ? 'badge-warning' : (r.status === 'تم التأكيد' ? 'badge-success' : 'badge-danger');
+  const actionCell = r => {
+    if (!canEdit()) return '';
+    if (r.status !== 'قيد الانتظار') return `<td><span class="badge badge-success">تمت المعالجة وتحديث الحالة</span></td>`;
+    return `<td>
+      <button class="mini-btn mini-success" onclick="approveRequest('${r.requestNo}')">✅ تأكيد من الموقع</button>
+      <button class="mini-btn mini-danger" onclick="rejectRequest('${r.requestNo}')">❌ رفض</button>
+    </td>`;
+  };
+  return `<table><thead><tr><th>رقم الطلب</th><th>السيارة</th><th>طالب الحجز</th><th>المريض/المتوفى</th><th>نوع الخدمة</th><th>التاريخ</th><th>الحالة</th><th>${canEdit() ? 'الإجراء' : ''}</th></tr></thead><tbody>${requests.map(r => `
+        <tr><td>${esc(r.requestNo)}</td><td>${esc(r.itemName)}</td><td>${esc(r.borrower)}</td><td>${esc(r.patientName || r.deceasedName || '-')}</td><td>${r.serviceType === 'burial' ? '<span class="badge badge-burial">️ نقل موتى / جثة</span>' : '<span class="badge badge-primary"> نقل مرضى / طبي</span>'}</td><td>${r.loanDate || '-'}</td><td><span class="badge ${statusBadge(r)}">${esc(r.status)}</span></td>${actionCell(r)}
+        </tr>`).join('')}
+    </tbody></table>`;
 }
 
 async function approveRequest(requestNo) {
@@ -2242,9 +1758,9 @@ async function approveRequest(requestNo) {
     currentReport = result;
     loadRequests();
     refreshAllData();
-    setMsg('requestsMsg', '✓ تم تأكيد الطلب بنجاح', 'success');
+    setMsg('requestsMsg', ' تم تأكيد الطلب بنجاح', 'success');
   } catch (err) {
-    setMsg('requestsMsg', '❌ ' + err.message, 'error');
+    setMsg('requestsMsg', ' ' + err.message, 'error');
   }
 }
 
@@ -2253,9 +1769,9 @@ async function rejectRequest(requestNo) {
   try {
     await apiCall('rejectExternalRequest', [requestNo, sessionToken]);
     loadRequests();
-    setMsg('requestsMsg', '✓ تم رفض الطلب', 'success');
+    setMsg('requestsMsg', ' تم رفض الطلب', 'success');
   } catch (err) {
-    setMsg('requestsMsg', '❌ ' + err.message, 'error');
+    setMsg('requestsMsg', ' ' + err.message, 'error');
   }
 }
 
@@ -2272,23 +1788,9 @@ async function loadLogs() {
 function logsTableHtml(logs) {
   if (!logs || !logs.length) return '<p style="text-align:center; padding:20px;">لا توجد عمليات مسجلة</p>';
   
-  return `<table>
-    <thead>
-      <tr><th>التاريخ</th><th>العملية</th><th>المنفذ</th><th>الدور</th><th>المرجع</th><th>التفاصيل</th></tr>
-    </thead>
-    <tbody>
-      ${logs.slice(0, 100).map(l => `
-        <tr>
-          <td>${l.date || '-'}</td>
-          <td>${esc(l.action)}</td>
-          <td>${esc(l.actor)}</td>
-          <td>${esc(l.role || '-')}</td>
-          <td>${esc(l.ref || '-')}</td>
-          <td>${esc(l.details)}</td>
-        </tr>
-      `).join('')}
-    </tbody>
-  </table>`;
+  return `<table><thead><tr><th>التاريخ</th><th>العملية</th><th>المنفذ</th><th>الدور</th><th>المرجع</th><th>التفاصيل</th></tr></thead><tbody>${logs.slice(0, 100).map(l => `
+        <tr><td>${l.date || '-'}</td><td>${esc(l.action)}</td><td>${esc(l.actor)}</td><td>${esc(l.role || '-')}</td><td>${esc(l.ref || '-')}</td><td>${esc(l.details)}</td></tr>`).join('')}
+    </tbody></table>`;
 }
 
 // ==================== إدارة الأدمن ====================
@@ -2305,22 +1807,9 @@ async function loadAdmins() {
 function adminsTableHtml(admins) {
   if (!admins || !admins.length) return '<p style="text-align:center; padding:20px;">لا توجد حسابات أدمن</p>';
   
-  return `</table>
-    <thead>
-      <tr><th>الاسم</th><th>اسم المستخدم</th><th>الصلاحية</th><th>الحالة</th><th></th></tr>
-    </thead>
-    <tbody>
-      ${admins.map(a => `
-        <tr>
-          <td>${esc(a.name)}</td>
-          <td>${esc(a.username)}</td>
-          <td>${a.roleLabel || a.role}</td>
-          <td><span class="badge ${a.active ? 'badge-success' : 'badge-danger'}">${a.active ? 'نشط' : 'غير نشط'}</span></td>
-          <td><button class="mini-btn mini-danger" onclick="deleteAdminUser('${a.id}')" ${a.username === currentAdmin?.username ? 'disabled' : ''}>🗑️ حذف</button></td>
-        </tr>
-      `).join('')}
-    </tbody>
-  </table>`;
+  return `</table><thead><tr><th>الاسم</th><th>اسم المستخدم</th><th>الصلاحية</th><th>الحالة</th><th></th></tr></thead><tbody>${admins.map(a => `
+        <tr><td>${esc(a.name)}</td><td>${esc(a.username)}</td><td>${a.roleLabel || a.role}</td><td><span class="badge ${a.active ? 'badge-success' : 'badge-danger'}">${a.active ? 'نشط' : 'غير نشط'}</span></td><td><button class="mini-btn mini-danger" onclick="deleteAdminUser('${a.id}')" ${a.username === currentAdmin?.username ? 'disabled' : ''}>️ حذف</button></td></tr>`).join('')}
+    </tbody></table>`;
 }
 
 async function addAdminUser() {
@@ -2345,11 +1834,11 @@ async function addAdminUser() {
   
   try {
     await apiCall('addAdmin', [data, sessionToken]);
-    setMsg('adminMsg', '✓ تم إضافة الأدمن بنجاح', 'success');
+    setMsg('adminMsg', ' تم إضافة الأدمن بنجاح', 'success');
     clearAdminForm();
     loadAdmins();
   } catch (err) {
-    setMsg('adminMsg', '❌ ' + err.message, 'error');
+    setMsg('adminMsg', ' ' + err.message, 'error');
   }
 }
 
@@ -2366,10 +1855,10 @@ async function deleteAdminUser(id) {
   
   try {
     await apiCall('deleteAdmin', [id, sessionToken]);
-    setMsg('adminMsg', '✓ تم حذف الحساب', 'success');
+    setMsg('adminMsg', ' تم حذف الحساب', 'success');
     loadAdmins();
   } catch (err) {
-    setMsg('adminMsg', '❌ ' + err.message, 'error');
+    setMsg('adminMsg', ' ' + err.message, 'error');
   }
 }
 
@@ -2402,98 +1891,67 @@ function printTableOnly(type) {
   
   const win = window.open('', '_blank');
   win.document.write(`
-    <!DOCTYPE html>
-    <html dir="rtl" lang="ar">
-    <head>
-      <meta charset="UTF-8">
-      <title>${t.title} - جمعية الجواهر بقمار</title>
-      <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
-      <style>
-        body { font-family: 'Cairo', sans-serif; padding: 20px; margin: 0; }
-        .header { text-align: center; border-bottom: 3px solid #0f766e; padding-bottom: 10px; margin-bottom: 20px; }
+    <!DOCTYPE html><html dir="rtl" lang="ar"><head><meta charset="UTF-8"><title>${t.title} - جمعية الجواهر بقمار</title><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet"><style>body { font-family: 'Cairo', sans-serif; padding: 20px; margin: 0; }
+        .header { text-align: center; border-bottom: 3px solid #2986B0; padding-bottom: 10px; margin-bottom: 20px; }
         .logo { width: 70px; height: 70px; border-radius: 50%; }
-        h1 { color: #0f766e; margin: 10px 0 0; }
-        .date { color: #64748b; font-size: 12px; margin-top: 5px; }
+        h1 { color: #2986B0; margin: 10px 0 0; }
+        .date { color: #596575; font-size: 12px; margin-top: 5px; }
         table { width: 100%; border-collapse: collapse; margin-top: 15px; }
         th, td { border: 1px solid #e2e8f0; padding: 8px; text-align: center; font-size: 12px; }
-        th { background: #0f766e; color: white; }
-        .footer { text-align: center; margin-top: 20px; font-size: 10px; color: #64748b; }
+        th { background: #2986B0; color: white; }
+        .footer { text-align: center; margin-top: 20px; font-size: 10px; color: #596575; }
         @media print {
           body { padding: 0; }
           .no-print { display: none; }
         }
-      </style>
-    </head>
-    <body>
-      <div class="header">
-        <img class="logo" src="https://drive.google.com/thumbnail?id=1mN39uinRmOQGj04B5OfC9ZTPtlXyF1mb&sz=256">
-        <h1>جمعية الجواهر بقمار</h1>
-        <p>${t.title}</p>
-        <div class="date">تاريخ التقرير: ${new Date().toLocaleString('ar-DZ')}</div>
-      </div>
-      ${t.render(t.data)}
-      <div class="footer">تم إنشاء التقرير بواسطة النظام المتكامل لإدارة الخدمات الإسعافية</div>
-      <script>window.print();<\/script>
-    </body>
-    </html>
-  `);
+        @media (max-width: 700px){
+      body{font-size:14px}
+      .container,.main,.content{width:100%;padding:8px;margin:0}
+      .card{padding:12px;border-radius:14px;overflow-x:auto}
+      .form-grid,.grid{grid-template-columns:1fr!important;gap:10px}
+      input,select,textarea,button{font-size:14px;min-height:42px}
+      table{min-width:720px;font-size:12px}
+      .tabs,.nav,.sidebar{overflow-x:auto;white-space:nowrap}
+      .submit-btn{width:100%;padding:12px}
+    }
+</style></head><body><div class="header"><img class="logo" src="https://drive.google.com/thumbnail?id=1mN39uinRmOQGj04B5OfC9ZTPtlXyF1mb&sz=256"><h1>جمعية الجواهر بقمار</h1><p>${t.title}</p><div class="date">تاريخ التقرير: ${new Date().toLocaleString('ar-DZ')}</div></div>${t.render(t.data)}
+      <div class="footer">تم إنشاء التقرير بواسطة النظام المتكامل لإدارة الخدمات الإسعافية</div><script>window.print();<\/script></body></html>`);
   win.document.close();
 }
 
 function equipmentPrintTable(data) {
   if (!data || !data.length) return '<p>لا توجد بيانات</p>';
-  return `<table>
-    <thead><tr><th>رقم اللوحة</th><th>الاسم</th><th>النوع</th><th>الحالة</th><th>الموقع</th><th>القيمة</th></tr></thead>
-    <tbody>${data.map(e => `<tr><td>${esc(e.inventoryNo)}</td><td>${esc(e.name)}</td><td>${esc(e.type || '-')}</td><td>${e.condition}</td><td>${esc(e.location || '-')}</td><td>${money(e.value)}</td></tr>`).join('')}</tbody>
-  </table>`;
+  return `<table><thead><tr><th>رقم اللوحة</th><th>الاسم</th><th>النوع</th><th>الحالة</th><th>الموقع</th><th>القيمة</th></tr></thead><tbody>${data.map(e => `<tr><td>${esc(e.inventoryNo)}</td><td>${esc(e.name)}</td><td>${esc(e.type || '-')}</td><td>${e.condition}</td><td>${esc(e.location || '-')}</td><td>${money(e.value)}</td></tr>`).join('')}</tbody></table>`;
 }
 
 function loansPrintTable(data) {
   if (!data || !data.length) return '<p>لا توجد بيانات</p>';
-  return `<table>
-    <thead><tr><th>رقم الجرد</th><th>السيارة</th><th>المستعير</th><th>المريض/المتوفى</th><th>نوع الخدمة</th><th>التاريخ</th><th>الحالة</th></tr></thead>
-    <tbody>${data.map(l => `<tr><td>${esc(l.inventoryNo)}</td><td>${esc(l.itemName)}</td><td>${esc(l.borrower)}</td><td>${esc(l.patientName || l.deceasedName || '-')}</td><td>${l.serviceType === 'burial' ? 'نقل جثة' : 'نقل طبي'}</td><td>${l.loanDate || '-'}</td><td>${l.status}</td></tr>`).join('')}</tbody>
-  </table>`;
+  return `<table><thead><tr><th>رقم الجرد</th><th>السيارة</th><th>المستعير</th><th>المريض/المتوفى</th><th>نوع الخدمة</th><th>التاريخ</th><th>الحالة</th></tr></thead><tbody>${data.map(l => `<tr><td>${esc(l.inventoryNo)}</td><td>${esc(l.itemName)}</td><td>${esc(l.borrower)}</td><td>${esc(l.patientName || l.deceasedName || '-')}</td><td>${l.serviceType === 'burial' ? 'نقل جثة' : 'نقل طبي'}</td><td>${l.loanDate || '-'}</td><td>${l.status}</td></tr>`).join('')}</tbody></table>`;
 }
 
 function auditsPrintTable(data) {
   if (!data || !data.length) return '<p>لا توجد بيانات</p>';
-  return `<table>
-    <thead><tr><th>التاريخ</th><th>السيارة</th><th>الحالة المسجلة</th><th>الحالة الفعلية</th><th>النتيجة</th></tr></thead>
-    <tbody>${data.map(a => `<tr><td>${a.auditDate || '-'}</td><td>${esc(a.itemName)}</td><td>${esc(a.registeredCondition)}</td><td>${esc(a.actualCondition)}</td><td>${a.result}</td></tr>`).join('')}</tbody>
-  </table>`;
+  return `<table><thead><tr><th>التاريخ</th><th>السيارة</th><th>الحالة المسجلة</th><th>الحالة الفعلية</th><th>النتيجة</th></tr></thead><tbody>${data.map(a => `<tr><td>${a.auditDate || '-'}</td><td>${esc(a.itemName)}</td><td>${esc(a.registeredCondition)}</td><td>${esc(a.actualCondition)}</td><td>${a.result}</td></tr>`).join('')}</tbody></table>`;
 }
 
 function missionsPrintTable(data) {
   if (!data || !data.length) return '<p>لا توجد بيانات</p>';
-  return `<table>
-    <thead><tr><th>رقم التكليف</th><th>التاريخ</th><th>السيارة</th><th>السائق</th><th>المريض</th><th>التكلفة</th><th>الحالة</th></tr></thead>
-    <tbody>${data.map(m => `<tr><td>${esc(m.missionNo)}</td><td>${m.date || '-'}</td><td>${esc(m.itemName)}</td><td>${esc(m.driverName)}</td><td>${esc(m.patientName)}</td><td>${money(m.totalCost)}</td><td>${m.status}</td></tr>`).join('')}</tbody>
-  </table>`;
+  return `<table><thead><tr><th>رقم التكليف</th><th>التاريخ</th><th>السيارة</th><th>السائق</th><th>المريض</th><th>التكلفة</th><th>الحالة</th></tr></thead><tbody>${data.map(m => `<tr><td>${esc(m.missionNo)}</td><td>${m.date || '-'}</td><td>${esc(m.itemName)}</td><td>${esc(m.driverName)}</td><td>${esc(m.patientName)}</td><td>${money(m.totalCost)}</td><td>${m.status}</td></tr>`).join('')}</tbody></table>`;
 }
 
 function burialPrintTable(data) {
   if (!data || !data.length) return '<p>لا توجد بيانات</p>';
-  return `<table>
-    <thead><tr><th>رقم الخدمة</th><th>التاريخ</th><th>السيارة</th><th>السائق</th><th>المتوفى</th><th>التكلفة</th><th>الحالة</th></tr></thead>
-    <tbody>${data.map(s => `<tr><td>${esc(s.burialNo)}</td><td>${s.date || '-'}</td><td>${esc(s.itemName)}</td><td>${esc(s.driverName)}</td><td>${esc(s.deceasedName)}</td><td>${money(s.totalCost)}</td><td>${s.status}</td></tr>`).join('')}</tbody>
-  </table>`;
+  return `<table><thead><tr><th>رقم الخدمة</th><th>التاريخ</th><th>السيارة</th><th>السائق</th><th>المتوفى</th><th>التكلفة</th><th>الحالة</th></tr></thead><tbody>${data.map(s => `<tr><td>${esc(s.burialNo)}</td><td>${s.date || '-'}</td><td>${esc(s.itemName)}</td><td>${esc(s.driverName)}</td><td>${esc(s.deceasedName)}</td><td>${money(s.totalCost)}</td><td>${s.status}</td></tr>`).join('')}</tbody></table>`;
 }
 
 function driversPrintTable(data) {
   if (!data || !data.length) return '<p>لا توجد بيانات</p>';
-  return `<table>
-    <thead><tr><th>الاسم</th><th>رقم الرخصة</th><th>الهاتف</th><th>التخصص</th><th>سنوات الخبرة</th><th>الحالة</th></tr></thead>
-    <tbody>${data.map(d => `<tr><td>${esc(d.name)}</td><td>${esc(d.licenseNo)}</td><td>${esc(d.phone)}</td><td>${esc(d.specialization || '-')}</td><td>${d.experienceYears || 0}</td><td>${d.status}</td></tr>`).join('')}</tbody>
-  </table>`;
+  return `<table><thead><tr><th>الاسم</th><th>رقم الرخصة</th><th>الهاتف</th><th>التخصص</th><th>سنوات الخبرة</th><th>الحالة</th></tr></thead><tbody>${data.map(d => `<tr><td>${esc(d.name)}</td><td>${esc(d.licenseNo)}</td><td>${esc(d.phone)}</td><td>${esc(d.specialization || '-')}</td><td>${d.experienceYears || 0}</td><td>${d.status}</td></tr>`).join('')}</tbody></table>`;
 }
 
 function staffPrintTable(data) {
   if (!data || !data.length) return '<p>لا توجد بيانات</p>';
-  return `<table>
-    <thead><tr><th>الاسم</th><th>التخصص</th><th>الهاتف</th><th>رقم التسجيل</th><th>المؤهلات</th><th>الحالة</th></tr></thead>
-    <tbody>${data.map(s => `<tr><td>${esc(s.name)}</td><td>${esc(s.specialty)}</td><td>${esc(s.phone)}</td><td>${esc(s.registrationNo || '-')}</td><td>${esc(s.qualifications || '-')}</td><td>${s.status}</td></tr>`).join('')}</tbody>
-  </table>`;
+  return `<table><thead><tr><th>الاسم</th><th>التخصص</th><th>الهاتف</th><th>رقم التسجيل</th><th>المؤهلات</th><th>الحالة</th></tr></thead><tbody>${data.map(s => `<tr><td>${esc(s.name)}</td><td>${esc(s.specialty)}</td><td>${esc(s.phone)}</td><td>${esc(s.registrationNo || '-')}</td><td>${esc(s.qualifications || '-')}</td><td>${s.status}</td></tr>`).join('')}</tbody></table>`;
 }
 
 // ==================== التهيئة الأولية ====================
