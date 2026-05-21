@@ -889,7 +889,7 @@ async function refreshAllData() {
 function updateSyncStatus() {
   const statusEl = document.getElementById('syncStatus');
   if (statusEl) {
-    statusEl.innerHTML = ' آخر تحديث: ' + new Date().toLocaleString('ar-DZ');
+    statusEl.innerHTML = '  نشط: ' + new Date().toLocaleString('ar-DZ');
   }
 }
 
@@ -4200,8 +4200,8 @@ function requestsTableHtml(requests) {
     if (!canEdit()) return '';
     if (r.status !== 'قيد الانتظار') return `<td><span class="badge badge-success">تمت المعالجة وتحديث الحالة</span></td>`;
     return `<td>
-      <button class="mini-btn mini-success" onclick="approveRequest('${r.requestNo}')">✅ تأكيد من الموقع</button>
-      <button class="mini-btn mini-danger" onclick="rejectRequest('${r.requestNo}')">❌ رفض</button>
+      <button class="mini-btn mini-success" onclick="approveRequest('${r.requestNo}')"> تأكيد  </button>
+      <button class="mini-btn mini-danger" onclick="rejectRequest('${r.requestNo}')"> رفض</button>
     </td>`;
   };
   return `<table><thead><tr><th>رقم الطلب</th><th>السيارة</th><th>طالب الحجز</th><th>المريض/المتوفى</th><th>هوية المريض/المتوفى</th><th>المرافق</th><th>نوع الخدمة</th><th>التاريخ</th><th>الحالة</th><th>${canEdit() ? 'الإجراء' : ''}</th></tr></thead><tbody>${requests.map(r => `
