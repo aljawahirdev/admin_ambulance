@@ -1,8 +1,11 @@
 
+
+
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<!-- Optimized: repeated embedded logo moved to external cached image file. --><base target="_top"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>النظام المتكامل لإدارة الخدمات الإسعافية والنقل الطبي - لوحة التحكم</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'"><noscript><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript><style>:root {
+<!-- Optimized: repeated embedded logo moved to external cached image file. --><base target="_top"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>النظام المتكامل لإدارة الخدمات الإسعافية والنقل الطبي - لوحة التحكم</title><link rel="dns-prefetch" href="https://script.google.com"><link rel="dns-prefetch" href="https://script.googleusercontent.com"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'"><noscript><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript><style>:root {
       --primary: #2986B0;
       --primary-light: #7ED6D1;
       --primary-dark: #1F6F91;
@@ -575,9 +578,9 @@
 </style>
 </head>
 <body><!-- شاشة تسجيل الدخول -->
-<div id="loginScreen" class="login-screen"><div class="login-card"><img class="logo" src="logo_jaouhar.jpg" loading="eager" decoding="async" fetchpriority="high"><h1> جمعية الجواهر بقمار</h1><p style="color: #596575; margin-bottom: 20px;">النظام المتكامل لإدارة الخدمات الإسعافية والنقل الطبي</p><input id="loginUsername" placeholder="اسم المستخدم" autocomplete="username"><input id="loginPassword" type="password" placeholder="كلمة المرور" autocomplete="current-password" onkeydown="if(event.key==='Enter')login()"><button onclick="login()"> تسجيل الدخول</button><div id="loginMsg"></div><div style="margin-top: 20px; font-size: 12px; color: #94a3b8;"> : <strong></strong> / <strong></strong></div></div>
+<div id="loginScreen" class="login-screen"><div class="login-card"><img class="logo" src="https://drive.google.com/thumbnail?id=1mN39uinRmOQGj04B5OfC9ZTPtlXyF1mb&sz=256" loading="eager" decoding="async" fetchpriority="high"><h1> جمعية الجواهر بقمار</h1><p style="color: #596575; margin-bottom: 20px;">النظام المتكامل لإدارة الخدمات الإسعافية والنقل الطبي</p><input id="loginUsername" placeholder="اسم المستخدم" autocomplete="username"><input id="loginPassword" type="password" placeholder="كلمة المرور" autocomplete="current-password" onkeydown="if(event.key==='Enter')login()"><button onclick="login()"> تسجيل الدخول</button><div id="loginMsg"></div><div style="margin-top: 20px; font-size: 12px; color: #94a3b8;"> : <strong></strong> / <strong></strong></div></div>
 </div><!-- واجهة الإدارة -->
-<div id="appShell" class="app-shell"><!-- القائمة الجانبية --><div class="sidebar"><img class="logo" src="logo_jaouhar.jpg" loading="lazy" decoding="async"><h2>جمعية الجواهر</h2><div class="subtitle">النظام المتكامل للخدمات الإسعافية</div><div class="admin-badge" id="adminBadge">جاري التحميل...</div><button class="current" onclick="showTab('dashboard',this)"><span></span> لوحة التحكم
+<div id="appShell" class="app-shell"><!-- القائمة الجانبية --><div class="sidebar"><img class="logo" src="https://drive.google.com/thumbnail?id=1mN39uinRmOQGj04B5OfC9ZTPtlXyF1mb&sz=256" loading="lazy" decoding="async"><h2>جمعية الجواهر</h2><div class="subtitle">النظام المتكامل للخدمات الإسعافية</div><div class="admin-badge" id="adminBadge">جاري التحميل...</div><button class="current" onclick="showTab('dashboard',this)"><span></span> لوحة التحكم
     </button><button onclick="showTab('equipment',this)"><span></span> سيارات الإسعاف
     </button><button onclick="showTab('drivers',this); loadDrivers()"><span>‍️</span> السائقين
     </button><button onclick="showTab('medicalStaff',this); loadMedicalStaff()"><span>‍️</span> الطاقم الطبي
@@ -591,10 +594,10 @@
     </button><button onclick="showTab('logs',this); loadLogs()"><span></span> سجل العمليات
     </button><button class="super-only" onclick="showTab('admins',this); loadAdmins()"><span></span> إدارة الأدمن
     </button><button onclick="logout()"><span></span> تسجيل الخروج
-    </button></div><!-- المحتوى الرئيسي --><div class="main"><div class="topbar"><div><h1> نظام إدارة الخدمات الإسعافية والنقل الطبي</h1><div class="status" id="syncStatus"> النظام جاهز للعمل</div></div><button class="submit-btn secondary-btn" style="width: auto; padding: 10px 20px;" onclick="refreshAllData()"> تحديث الكل</button></div><!-- ==================== لوحة التحكم ==================== --><div id="dashboard" class="content active"><div class="stats-grid" id="statsGrid"></div><div class="card"><h2> حالة الأسطول</h2><canvas id="fleetChart" style="max-height: 280px; width: 100%;"></canvas></div><div class="box no-print"><h2>️ تقارير سريعة</h2><div style="display: flex; gap: 10px; flex-wrap: wrap;"><button class="submit-btn secondary-btn" style="width: auto;" onclick="printSection('dashboard')"> طباعة الملخص</button><button class="submit-btn secondary-btn" style="width: auto;" onclick="printTableOnly('equipment')"> طباعة سجل السيارات</button><button class="submit-btn secondary-btn" style="width: auto;" onclick="printTableOnly('activeLoans')"> طباعة الحجوزات النشطة</button><button class="submit-btn secondary-btn" style="width: auto;" onclick="printTableOnly('missions')"> طباعة تكاليف المهمات</button><button class="submit-btn secondary-btn" style="width: auto;" onclick="printTableOnly('burialServices')">️ طباعة خدمات نقل الجثة</button></div></div><div class="card"><h2> آخر الحجوزات النشطة</h2><div id="dashboardLoans" class="table-wrapper"></div></div><div class="card"><h2> آخر تكاليف ومهمات نقل المرضى ونقل الموتى</h2><div id="dashboardMissions" class="table-wrapper"></div></div><div class="card"><h2> سجل سيارات الإسعاف</h2><div id="dashboardEquipment" class="table-wrapper"></div></div><div class="card"><h2>‍️ السائقون</h2><div id="dashboardDrivers" class="table-wrapper"></div></div><div class="card"><h2>‍️ الطاقم الطبي</h2><div id="dashboardMedicalStaff" class="table-wrapper"></div></div><div class="card"><h2>️ خدمات نقل الجثة</h2><div id="dashboardBurialServices" class="table-wrapper"></div></div><div class="card"><h2> طلبات الحجز قيد الانتظار</h2><div id="dashboardPendingRequests" class="table-wrapper"></div></div></div><!-- ==================== سيارات الإسعاف ==================== --><div id="equipment" class="content"><div class="card"><h2> إضافة / تعديل سيارة إسعاف</h2><div id="eqEditNote" class="edit-note">️ وضع التعديل مفعل</div><div class="form-grid"><input id="eqInventoryNo" placeholder="رقم اللوحة / الجرد *"><input id="eqName" placeholder="اسم / نوع السيارة *"><input id="eqCategory" list="categoryList" placeholder="الصنف"><datalist id="categoryList"></datalist><select id="eqAmbulanceType"><option value="سيارة إسعاف عادية"> سيارة إسعاف عادية</option><option value="سيارة إسعاف عناية مركزة"> سيارة إسعاف عناية مركزة</option><option value="سيارة نقل الجثث">️ سيارة نقل الجثث</option><option value="حافلة صغيرة"> حافلة صغيرة</option></select><input id="eqCapacity" placeholder="سعة التحميل"><select id="eqEquippedForBurial"><option value="لا">مجهزة لنقل الجثث؟ لا</option><option value="نعم">مجهزة لنقل الجثث؟ نعم</option></select><input id="eqQuantity" type="number" placeholder="الكمية" value="1"><select id="eqCondition"><option value="متوفر"> متوفرة</option><option value="محجوز"> محجوزة</option><option value="معطل"> معطلة</option><option value="تالف"> تالفة</option></select><input id="eqLocation" placeholder="المكان / المستودع"><input id="eqAcquiredDate" type="date"><input id="eqValue" type="number" placeholder="القيمة بالدج"><input id="eqNotes" placeholder="ملاحظات"></div><button id="eqSaveBtn" class="submit-btn" onclick="saveEquipment()"> حفظ السيارة</button><button id="eqCancelBtn" class="submit-btn secondary-btn" style="display:none" onclick="cancelEquipmentEdit()"> إلغاء التعديل</button><div id="eqMsg"></div></div><div class="card"><h2> قائمة سيارات الإسعاف</h2><div id="equipmentTable" class="table-wrapper"></div></div></div><!-- ==================== السائقين ==================== --><div id="drivers" class="content"><div class="sub-tabs"><div class="sub-tab active" onclick="showDriverSubTab('list')"> قائمة السائقين</div><div class="sub-tab" onclick="showDriverSubTab('add')"> إضافة سائق جديد</div></div><div id="driverListTab" class="sub-content active"><div class="card"><h2> قائمة السائقين</h2><div id="driversTable" class="table-wrapper"></div></div></div><div id="driverAddTab" class="sub-content"><div class="card"><h2> إضافة سائق جديد</h2><div class="form-grid"><input id="driverName" placeholder="الاسم الكامل *"><input id="driverLicense" placeholder="رقم الرخصة *"><input id="driverPhone" placeholder="رقم الهاتف *"><input id="driverEmergencyPhone" placeholder="رقم الطوارئ"><input id="driverAddress" placeholder="العنوان"><input id="driverBirthDate" type="date"><input id="driverLicenseExpiryDate" type="date"><input id="driverSpecialization" placeholder="التخصص"><input id="driverExperience" type="number" placeholder="سنوات الخبرة"><select id="driverStatus"><option value="نشط"> نشط</option><option value="غير نشط"> غير نشط</option><option value="في إجازة"> في إجازة</option></select><textarea id="driverNotes" placeholder="ملاحظات"></textarea></div><button class="submit-btn" onclick="addDriver()"> إضافة سائق</button><div id="driverMsg"></div></div></div></div><!-- ==================== الطاقم الطبي ==================== --><div id="medicalStaff" class="content"><div class="sub-tabs"><div class="sub-tab active" onclick="showStaffSubTab('list')"> قائمة الطاقم الطبي</div><div class="sub-tab" onclick="showStaffSubTab('add')"> إضافة عضو جديد</div></div><div id="staffListTab" class="sub-content active"><div class="card"><h2> قائمة الطاقم الطبي</h2><div id="medicalStaffTable" class="table-wrapper"></div></div></div><div id="staffAddTab" class="sub-content"><div class="card"><h2> إضافة عضو طاقم طبي</h2><div class="form-grid"><input id="staffName" placeholder="الاسم الكامل *"><select id="staffSpecialty"><option value="طبيب">‍️ طبيب</option><option value="ممرض"> ممرض</option><option value="مسعف"> مسعف</option><option value="فني"> فني</option></select><input id="staffPhone" placeholder="رقم الهاتف *"><input id="staffEmergencyPhone" placeholder="رقم الطوارئ"><input id="staffRegistrationNo" placeholder="رقم التسجيل المهني"><input id="staffRegistrationAuthority" placeholder="جهة التسجيل"><input id="StaffBirthDate" type="date"><input id="staffExperience" type="number" placeholder="سنوات الخبرة"><input id="staffQualifications" placeholder="المؤهلات"><select id="staffStatus"><option value="نشط"> نشط</option><option value="غير نشط"> غير نشط</option></select><textarea id="staffNotes" placeholder="ملاحظات"></textarea></div><button class="submit-btn" onclick="addMedicalStaff()"> إضافة عضو</button><div id="staffMsg"></div></div></div></div><!-- ==================== التكاليف ومهمات نقل المرضى ونقل الموتى ==================== --><div id="missions" class="content"><div class="card"><h2> تسخير سيارة الإسعاف لأنشطة ومهام الجمعية</h2><div class="form-grid"><select id="assocMissionItem" required></select><select id="assocMissionDriver" required></select><div class="multi-select" id="assocMissionStaffDropdown"><button type="button" class="multi-select-toggle" id="assocMissionStaffToggle" onclick="toggleAssocMissionStaffDropdown(event)">اختر الطاقم الطبي</button><div class="multi-select-menu" id="assocMissionStaffMenu"></div></div><select id="assocMissionStaff" multiple onchange="handleAssocMissionStaffSelection()" title="يمكن اختيار أكثر من عضو من الطاقم الطبي أو اختيار لا يوجد طاقم طبي" style="display:none"></select><input id="assocMissionTitle" placeholder="عنوان النشاط / المهمة داخل الجمعية *" required><input id="assocMissionOrganizer" placeholder="المسؤول أو العضو المكلف"><input id="assocMissionMembers" placeholder="السائق وأعضاء الجمعية المستغلون للمركبة"><select id="assocMissionType" required><option value="نشاط داخل الجمعية">نشاط داخل الجمعية</option><option value="مهمة إدارية للجمعية">مهمة إدارية للجمعية</option><option value="مهمة تضامنية">مهمة تضامنية</option><option value="صيانة أو تجهيز">صيانة أو تجهيز</option></select><input id="assocMissionDestination" placeholder="مكان النشاط / الوجهة"><input id="assocMissionDepartureDate" type="date" required><input id="assocMissionExpectedReturnDate" type="date"><textarea id="assocMissionPurpose" placeholder="الغرض من التسخير أو تفاصيل المهمة"></textarea><textarea id="assocMissionNotes" placeholder="ملاحظات"></textarea></div><button class="submit-btn warning-btn" onclick="createAssociationMission()"> إنشاء تكليف تسخير</button><div id="assocMissionMsg"></div></div><div class="card"><h2> إنشاء تكليف مهمة جديدة: نقل المرضى أو نقل الموتى</h2><div class="form-grid"><select id="missionLoan" onchange="fillMissionFromLoan()"><option value="">استدعاء حجز موجود للتكليف</option></select><select id="missionItem" required onchange="updateMissionEstimate()"></select><select id="missionDriver" required></select><div class="multi-select" id="missionStaffDropdown"><button type="button" class="multi-select-toggle" id="missionStaffToggle" onclick="toggleMissionStaffDropdown(event)">اختر الطاقم الطبي</button><div class="multi-select-menu" id="missionStaffMenu"></div></div><select id="missionStaff" multiple onchange="handleMissionStaffSelection()" title="يمكن اختيار أكثر من عضو من الطاقم الطبي أو اختيار لا يوجد طاقم طبي" style="display:none"></select><input id="missionPatientName" placeholder="اسم المريض *" required><input id="missionRelationship" placeholder="صلة القرابة"><select id="missionPatientCondition"><option value="مستقر"> مستقر</option><option value="طارئ"> طارئ</option><option value="عناية مركزة"> عناية مركزة</option></select><input id="missionCompanionName" placeholder="اسم المرافق"><input id="missionCompanionPhone" placeholder="هاتف المرافق"><input id="missionCompanionRelation" placeholder="صلة المرافق"><select id="missionTripType" required onchange="toggleMissionState(); updateMissionEstimate()"><option value="">نوع النقل</option><option value="داخل الولاية"> داخل الولاية</option><option value="خارج الولاية"> خارج الولاية</option></select><div id="missionStateDiv" style="display:none"><input id="missionDestinationState" placeholder="الولاية المتجه إليها" onchange="updateMissionEstimate()"></div><div id="missionDistanceDiv" style="display:none"><input id="missionDistanceKm" type="number" placeholder="المسافة (كم)" onchange="updateMissionEstimate()"></div><input id="missionDestination" placeholder="الوجهة / المستشفى"><input id="missionDepartureDate" type="date" required><input id="missionExpectedReturnDate" type="date"><select id="missionExtraServices" onchange="updateMissionEstimate()"><option value="0">خدمات إضافية</option><option value="500">+ أكسجين (500 دج)</option><option value="400">+ كرسي متحرك (400 دج)</option><option value="600">+ ممرض مرافق (600 دج)</option></select><input id="missionPaidAmount" type="number" placeholder="المبلغ المدفوع" value="0"><textarea id="missionNotes" placeholder="ملاحظات"></textarea></div><div id="missionCostPreview" class="info-msg" style="display:none"> <strong>التكلفة التقديرية:</strong> <span id="missionEstimatedCost">0</span> دج</div><button class="submit-btn" onclick="createMission()"> إنشاء التكليف</button><div id="missionMsg"></div></div><div class="card"><h2> قائمة التكاليف ومهمات نقل المرضى ونقل الموتى</h2><div id="missionsTable" class="table-wrapper"></div></div></div><!-- ==================== خدمات نقل الجثة ==================== --><div id="burialServices" class="content"><div class="card"><h2>️ إنشاء خدمة نقل جثة جديدة</h2><div class="form-grid"><select id="burialItem" required onchange="updateBurialEstimate()"></select><select id="burialDriver" required></select><select id="burialStaff"></select><input id="burialDeceasedName" placeholder="اسم المتوفى *" required><input id="burialCauseOfDeath" placeholder="سبب الوفاة"><input id="burialPlaceOfDeath" placeholder="مكان الوفاة"><input id="burialBurialPlace" placeholder="مكان الدفن *" required><input id="burialApplicantName" placeholder="اسم مقدم الطلب"><input id="burialApplicantRelation" placeholder="صلة مقدم الطلب بالمتوفى"><input id="burialDateOfDeath" type="date"><input id="burialDate" type="date"><select id="burialTripType" required onchange="toggleBurialState(); updateBurialEstimate()"><option value="">نوع النقل</option><option value="داخل الولاية">️ داخل الولاية</option><option value="خارج الولاية">️ خارج الولاية</option></select><div id="burialStateDiv" style="display:none"><input id="burialDestinationState" placeholder="الولاية المتجه إليها" onchange="updateBurialEstimate()"></div><div id="burialDistanceDiv" style="display:none"><input id="burialDistanceKm" type="number" placeholder="المسافة (كم)" onchange="updateBurialEstimate()"></div><input id="burialPaidAmount" type="number" placeholder="المبلغ المدفوع" value="0"><textarea id="burialNotes" placeholder="ملاحظات"></textarea></div><div id="burialCostPreview" class="info-msg" style="display:none"> <strong>التكلفة التقديرية لنقل الجثة:</strong> <span id="burialEstimatedCost">0</span> دج</div><button class="submit-btn warning-btn" onclick="createBurialService()">️ إنشاء خدمة نقل جثة</button><div id="burialMsg"></div></div><div class="card"><h2> قائمة خدمات نقل الجثة</h2><div id="burialServicesTable" class="table-wrapper"></div></div></div><!-- ==================== الحجوزات ==================== --><div id="loans" class="content"><div class="card"><h2> تسجيل حجز جديد من لوحة التحكم</h2><p style="color:#596575;margin-top:0">يمكن للمسؤولين تسجيل حجز مباشر مع بيانات المريض/المتوفى والمرافق والهوية والصور.</p><div class="form-grid"><select id="loanItem"></select><select id="loanServiceType" onchange="toggleLoanServiceFields()"><option value="medical"> نقل طبي</option><option value="burial">️ نقل جثة / متوفى</option></select><input id="loanBorrower" placeholder="اسم طالب الحجز / مقدم الطلب *"><input id="loanContact" placeholder="رقم الهاتف *"><input id="loanCity" placeholder="المدينة / البلدية"><input id="loanDate" type="date"><input id="loanExpected" type="date"><div style="grid-column:1/-1;font-weight:800;color:#2986B0;border-bottom:1px solid #e2e8f0;padding:8px 0">هوية طالب الحجز / مقدم الطلب</div><select id="loanIdentityType"><option value="">نوع الهوية</option><option>بطاقة التعريف الوطنية</option><option>رخصة سياقة</option><option>جواز سفر</option><option>أخرى</option></select><input id="loanIdentityNo" placeholder="رقم هوية طالب الحجز"><input id="loanIdentityIssuer" placeholder="جهة إصدار هوية طالب الحجز"><input id="loanIdentityIssueDate" type="date"><div id="loanMedicalFields" style="display:contents"><div style="grid-column:1/-1;font-weight:800;color:#2986B0;border-bottom:1px solid #e2e8f0;padding:8px 0">معلومات المريض</div><input id="loanPatientName" placeholder="الاسم الكامل للمريض"><input id="loanRelationship" placeholder="صلة القرابة"></div><div id="loanBurialFields" style="display:none"><div style="grid-column:1/-1;font-weight:800;color:#6b7280;border-bottom:1px solid #e2e8f0;padding:8px 0">معلومات المتوفى</div><input id="loanDeceasedName" placeholder="الاسم الكامل للمتوفى"><input id="loanCauseOfDeath" placeholder="سبب الوفاة"><input id="loanPlaceOfDeath" placeholder="مكان الوفاة"><input id="loanBurialPlace" placeholder="مكان الدفن"></div><div style="grid-column:1/-1;font-weight:800;color:#2986B0;border-bottom:1px solid #e2e8f0;padding:8px 0"><span id="loanPersonTitle">هوية المريض</span></div><select id="loanPersonIdentityType"><option value="">نوع الهوية</option><option>بطاقة التعريف الوطنية</option><option>رخصة سياقة</option><option>جواز سفر</option><option>أخرى</option></select><input id="loanPersonIdentityNo" placeholder="رقم الهوية"><input id="loanPersonIdentityIssuer" placeholder="جهة الإصدار"><input id="loanPersonIdentityIssueDate" type="date"><label style="grid-column:span 2;color:#596575;font-weight:700">صورة الهوية الأمامية<input id="loanPersonIdFrontImage" type="file" accept="image/*" style="margin-top:6px"></label><label style="grid-column:span 2;color:#596575;font-weight:700">صورة الهوية الخلفية<input id="loanPersonIdBackImage" type="file" accept="image/*" style="margin-top:6px"></label><div style="grid-column:1/-1;font-weight:800;color:#2986B0;border-bottom:1px solid #e2e8f0;padding:8px 0">معلومات المرافق</div><input id="loanCompanionName" placeholder="الاسم الكامل للمرافق"><input id="loanCompanionPhone" placeholder="هاتف المرافق"><input id="loanCompanionRelation" placeholder="صلة المرافق"><select id="loanCompanionIdentityType"><option value="">نوع هوية المرافق</option><option>بطاقة التعريف الوطنية</option><option>رخصة سياقة</option><option>جواز سفر</option><option>أخرى</option></select><input id="loanCompanionIdentityNo" placeholder="رقم هوية المرافق"><input id="loanCompanionIdentityIssuer" placeholder="جهة إصدار هوية المرافق"><input id="loanCompanionIdentityIssueDate" type="date"><label style="grid-column:span 2;color:#596575;font-weight:700">صورة هوية المرافق الأمامية<input id="loanCompanionIdFrontImage" type="file" accept="image/*" style="margin-top:6px"></label><label style="grid-column:span 2;color:#596575;font-weight:700">صورة هوية المرافق الخلفية<input id="loanCompanionIdBackImage" type="file" accept="image/*" style="margin-top:6px"></label><textarea id="loanNotes" placeholder="ملاحظات" style="grid-column:1/-1"></textarea></div><button class="submit-btn" onclick="saveLoan()"> حفظ الحجز</button><div id="loanMsg"></div></div><div class="card"><h2> الحجوزات النشطة</h2><div id="activeLoansTable" class="table-wrapper"></div></div><div class="card"><h2> سجل الحجوزات السابقة</h2><div id="allLoansTable" class="table-wrapper"></div></div></div><!-- ==================== التسعير ==================== --><div id="pricing" class="content"><div class="card"><h2> إدارة قواعد التسعير</h2><div class="form-grid"><input id="pricingService" placeholder="اسم الخدمة *"><input id="pricingBasePrice" type="number" placeholder="السعر الأساسي (دج) *"><input id="pricingPricePerKm" type="number" placeholder="السعر لكل كيلومتر"><input id="pricingExtraPrice" type="number" placeholder="سعر الخدمات الإضافية"><textarea id="pricingNotes" placeholder="ملاحظات"></textarea></div><button class="submit-btn" onclick="addPricingRule()"> إضافة قاعدة تسعير</button><div id="pricingMsg"></div></div><div class="card"><h2> قواعد التسعير الحالية</h2><div id="pricingRulesTable" class="table-wrapper"></div></div></div><!-- ==================== الجرد الدوري ==================== --><div id="inventory" class="content"><div class="card"><h2> تسجيل عملية جرد</h2><div class="form-grid"><select id="auditItem"></select><input id="auditDate" type="date"><select id="auditCondition"><option value="متوفر"> متوفرة</option><option value="محجوز"> محجوزة</option><option value="معطل"> معطلة</option><option value="تالف"> تالفة</option></select><input id="auditLocation" placeholder="المكان أثناء الجرد"><select id="auditResult"><option> مطابق</option><option>️ اختلاف حالة</option><option> اختلاف مكان</option><option> مفقود</option></select><select id="auditUpdate"><option value="false">لا تحدث حالة السيارة</option><option value="true">تحديث حالة السيارة</option></select><textarea id="auditNotes" placeholder="ملاحظات"></textarea></div><button class="submit-btn" onclick="saveAudit()"> حفظ الجرد</button><div id="auditMsg"></div></div><div class="card"><h2> سجل عمليات الجرد</h2><div id="auditsTable" class="table-wrapper"></div></div></div><!-- ==================== طلبات الموقع ==================== --><div id="requests" class="content"><div class="card"><h2> طلبات الحجز من الموقع الخارجي</h2><p style="color: #596575; margin-bottom: 16px;">يمكن للأدمن تأكيد أو رفض الطلب. عند التأكيد، يتحول الطلب إلى حجز نشط إلى غاية الإرجاع مع السماح بتعدد الحجوزات.</p><button class="submit-btn secondary-btn" style="width: auto;" onclick="loadRequests()"> تحديث الطلبات</button><button class="submit-btn secondary-btn super-only" style="width: auto;" onclick="setupTelegramBot()"> تشغيل بوت تلجرام</button><div id="requestsTable" class="table-wrapper" style="margin-top: 20px;"></div><div id="requestsMsg"></div></div></div><!-- ==================== التقارير ==================== --><div id="reports" class="content"><div class="card"><h2> التقارير والطباعة</h2><div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px;"><button class="submit-btn secondary-btn" onclick="printTableOnly('equipment')"> سجل السيارات</button><button class="submit-btn secondary-btn" onclick="printTableOnly('loans')"> سجل الحجوزات</button><button class="submit-btn secondary-btn" onclick="printTableOnly('activeLoans')"> الحجوزات النشطة</button><button class="submit-btn secondary-btn" onclick="printTableOnly('audits')"> سجل الجرد</button><button class="submit-btn secondary-btn" onclick="printTableOnly('missions')"> التكاليف الطبية</button><button class="submit-btn secondary-btn" onclick="printTableOnly('burialServices')">️ خدمات نقل الجثة</button><button class="submit-btn secondary-btn" onclick="printTableOnly('drivers')">‍️ السائقين</button><button class="submit-btn secondary-btn" onclick="printTableOnly('medicalStaff')">‍️ الطاقم الطبي</button></div><div id="reportArea"></div></div></div><!-- ==================== سجل العمليات ==================== --><div id="logs" class="content"><div class="card"><h2> سجل جميع العمليات</h2><button class="submit-btn secondary-btn" style="width: auto;" onclick="loadLogs()"> تحديث السجل</button><div id="logsTable" class="table-wrapper" style="margin-top: 20px;"></div><div id="logsMsg"></div></div></div><!-- ==================== إدارة الأدمن ==================== --><div id="admins" class="content super-only"><div class="card"><h2> إضافة أدمن جديد</h2><div class="form-grid"><input id="adminName" placeholder="اسم الأدمن *"><input id="adminUsername" placeholder="اسم المستخدم *"><input id="adminPassword" type="password" placeholder="كلمة المرور *"><select id="adminRole"><option value="super"> أدمن كامل الصلاحيات</option><option value="editor">️ محرر</option><option value="viewer">️ مشاهد فقط</option></select></div><button class="submit-btn" onclick="addAdminUser()"> إضافة أدمن</button><div id="adminMsg"></div></div><div class="card"><h2> قائمة الأدمن</h2><div id="adminsTable" class="table-wrapper"></div></div></div></div>
+    </button></div><!-- المحتوى الرئيسي --><div class="main"><div class="topbar"><div><h1> نظام إدارة الخدمات الإسعافية والنقل الطبي</h1><div class="status" id="syncStatus"> النظام جاهز للعمل</div></div><button class="submit-btn secondary-btn" style="width: auto; padding: 10px 20px;" onclick="refreshAllData()"> تحديث الكل</button></div><!-- ==================== لوحة التحكم ==================== --><div id="dashboard" class="content active"><div class="stats-grid" id="statsGrid"></div><div class="card"><h2> حالة الأسطول</h2><canvas id="fleetChart" style="max-height: 280px; width: 100%;"></canvas></div><div class="box no-print"><h2>️ تقارير سريعة</h2><div style="display: flex; gap: 10px; flex-wrap: wrap;"><button class="submit-btn secondary-btn" style="width: auto;" onclick="printSection('dashboard')"> طباعة الملخص</button><button class="submit-btn secondary-btn" style="width: auto;" onclick="printTableOnly('equipment')"> طباعة سجل السيارات</button><button class="submit-btn secondary-btn" style="width: auto;" onclick="printTableOnly('activeLoans')"> طباعة الحجوزات النشطة</button><button class="submit-btn secondary-btn" style="width: auto;" onclick="printTableOnly('missions')"> طباعة تكاليف المهمات</button><button class="submit-btn secondary-btn" style="width: auto;" onclick="printTableOnly('burialServices')">️ طباعة خدمات نقل الجثة</button></div></div><div class="card"><h2> آخر الحجوزات النشطة</h2><div id="dashboardLoans" class="table-wrapper"></div></div><div class="card"><h2> آخر تكاليف ومهمات نقل المرضى ونقل الموتى</h2><div id="dashboardMissions" class="table-wrapper"></div></div><div class="card"><h2> سجل سيارات الإسعاف</h2><div id="dashboardEquipment" class="table-wrapper"></div></div><div class="card"><h2>‍️ السائقون</h2><div id="dashboardDrivers" class="table-wrapper"></div></div><div class="card"><h2>‍️ الطاقم الطبي</h2><div id="dashboardMedicalStaff" class="table-wrapper"></div></div><div class="card"><h2>️ خدمات نقل الجثة</h2><div id="dashboardBurialServices" class="table-wrapper"></div></div><div class="card"><h2> طلبات الحجز قيد الانتظار</h2><div id="dashboardPendingRequests" class="table-wrapper"></div></div></div><!-- ==================== سيارات الإسعاف ==================== --><div id="equipment" class="content"><div class="card"><h2> إضافة / تعديل سيارة إسعاف</h2><div id="eqEditNote" class="edit-note">️ وضع التعديل مفعل</div><div class="form-grid"><input id="eqInventoryNo" placeholder="رقم اللوحة / الجرد *"><input id="eqName" placeholder="اسم / نوع السيارة *"><input id="eqCategory" list="categoryList" placeholder="الصنف"><datalist id="categoryList"></datalist><select id="eqAmbulanceType"><option value="سيارة إسعاف عادية"> سيارة إسعاف عادية</option><option value="سيارة إسعاف عناية مركزة"> سيارة إسعاف عناية مركزة</option><option value="سيارة نقل الجثث">️ سيارة نقل الجثث</option><option value="حافلة صغيرة"> حافلة صغيرة</option></select><input id="eqCapacity" placeholder="سعة التحميل"><select id="eqEquippedForBurial"><option value="لا">مجهزة لنقل الجثث؟ لا</option><option value="نعم">مجهزة لنقل الجثث؟ نعم</option></select><input id="eqQuantity" type="number" placeholder="الكمية" value="1"><select id="eqCondition"><option value="متوفر"> متوفرة</option><option value="محجوز"> محجوزة</option><option value="معطل"> معطلة</option><option value="تالف"> تالفة</option></select><input id="eqLocation" placeholder="المكان / المستودع"><input id="eqAcquiredDate" type="date"><input id="eqValue" type="number" placeholder="القيمة بالدج"><input id="eqNotes" placeholder="ملاحظات"></div><button id="eqSaveBtn" class="submit-btn" onclick="saveEquipment()"> حفظ السيارة</button><button id="eqCancelBtn" class="submit-btn secondary-btn" style="display:none" onclick="cancelEquipmentEdit()"> إلغاء التعديل</button><div id="eqMsg"></div></div><div class="card"><h2> قائمة سيارات الإسعاف</h2><div id="equipmentTable" class="table-wrapper"></div></div></div><!-- ==================== السائقين ==================== --><div id="drivers" class="content"><div class="sub-tabs"><div class="sub-tab active" onclick="showDriverSubTab('list')"> قائمة السائقين</div><div class="sub-tab" onclick="showDriverSubTab('add')"> إضافة سائق جديد</div></div><div id="driverListTab" class="sub-content active"><div class="card"><h2> قائمة السائقين</h2><div id="driversTable" class="table-wrapper"></div></div></div><div id="driverAddTab" class="sub-content"><div class="card"><h2> إضافة سائق جديد</h2><div class="form-grid"><input id="driverName" placeholder="الاسم الكامل *"><input id="driverLicense" placeholder="رقم الرخصة *"><input id="driverPhone" placeholder="رقم الهاتف *"><input id="driverEmergencyPhone" placeholder="رقم الطوارئ"><input id="driverAddress" placeholder="العنوان"><input id="driverBirthDate" type="date"><input id="driverLicenseExpiryDate" type="date"><input id="driverSpecialization" placeholder="التخصص"><input id="driverExperience" type="number" placeholder="سنوات الخبرة"><select id="driverStatus"><option value="نشط"> نشط</option><option value="غير نشط"> غير نشط</option><option value="في إجازة"> في إجازة</option></select><textarea id="driverNotes" placeholder="ملاحظات"></textarea></div><button class="submit-btn" onclick="addDriver()"> إضافة سائق</button><div id="driverMsg"></div></div></div></div><!-- ==================== الطاقم الطبي ==================== --><div id="medicalStaff" class="content"><div class="sub-tabs"><div class="sub-tab active" onclick="showStaffSubTab('list')"> قائمة الطاقم الطبي</div><div class="sub-tab" onclick="showStaffSubTab('add')"> إضافة عضو جديد</div></div><div id="staffListTab" class="sub-content active"><div class="card"><h2> قائمة الطاقم الطبي</h2><div id="medicalStaffTable" class="table-wrapper"></div></div></div><div id="staffAddTab" class="sub-content"><div class="card"><h2> إضافة عضو طاقم طبي</h2><div class="form-grid"><input id="staffName" placeholder="الاسم الكامل *"><select id="staffSpecialty"><option value="طبيب">‍️ طبيب</option><option value="ممرض"> ممرض</option><option value="مسعف"> مسعف</option><option value="فني"> فني</option></select><input id="staffPhone" placeholder="رقم الهاتف *"><input id="staffEmergencyPhone" placeholder="رقم الطوارئ"><input id="staffRegistrationNo" placeholder="رقم التسجيل المهني"><input id="staffRegistrationAuthority" placeholder="جهة التسجيل"><input id="StaffBirthDate" type="date"><input id="staffExperience" type="number" placeholder="سنوات الخبرة"><input id="staffQualifications" placeholder="المؤهلات"><select id="staffStatus"><option value="نشط"> نشط</option><option value="غير نشط"> غير نشط</option></select><textarea id="staffNotes" placeholder="ملاحظات"></textarea></div><button class="submit-btn" onclick="addMedicalStaff()"> إضافة عضو</button><div id="staffMsg"></div></div></div></div><!-- ==================== التكاليف ومهمات نقل المرضى ونقل الموتى ==================== --><div id="missions" class="content"><div class="card"><h2> تسخير سيارة الإسعاف لأنشطة ومهام الجمعية</h2><div class="form-grid"><select id="assocMissionItem" required></select><select id="assocMissionDriver" required></select><div class="multi-select" id="assocMissionStaffDropdown"><button type="button" class="multi-select-toggle" id="assocMissionStaffToggle" onclick="toggleAssocMissionStaffDropdown(event)">اختر الطاقم الطبي</button><div class="multi-select-menu" id="assocMissionStaffMenu"></div></div><select id="assocMissionStaff" multiple onchange="handleAssocMissionStaffSelection()" title="يمكن اختيار أكثر من عضو من الطاقم الطبي أو اختيار لا يوجد طاقم طبي" style="display:none"></select><input id="assocMissionTitle" placeholder="عنوان النشاط / المهمة داخل الجمعية *" required><input id="assocMissionOrganizer" placeholder="المسؤول أو العضو المكلف"><input id="assocMissionMembers" placeholder="السائق وأعضاء الجمعية المستغلون للمركبة"><select id="assocMissionType" required><option value="نشاط داخل الجمعية">نشاط داخل الجمعية</option><option value="مهمة إدارية للجمعية">مهمة إدارية للجمعية</option><option value="مهمة تضامنية">مهمة تضامنية</option><option value="صيانة أو تجهيز">صيانة أو تجهيز</option></select><input id="assocMissionDestination" placeholder="مكان النشاط / الوجهة"><input id="assocMissionDepartureDate" type="date" required><input id="assocMissionExpectedReturnDate" type="date"><textarea id="assocMissionPurpose" placeholder="الغرض من التسخير أو تفاصيل المهمة"></textarea><textarea id="assocMissionNotes" placeholder="ملاحظات"></textarea></div><button class="submit-btn warning-btn" onclick="createAssociationMission()"> إنشاء تكليف تسخير</button><div id="assocMissionMsg"></div></div><div class="card"><h2> إنشاء تكليف مهمة جديدة: نقل المرضى أو نقل الموتى</h2><div class="form-grid"><select id="missionLoan" onchange="fillMissionFromLoan()"><option value="">استدعاء حجز موجود للتكليف</option></select><select id="missionServiceType" onchange="toggleMissionServiceFields(); updateMissionEstimate()"><option value="medical">نقل مرضى / طبي</option><option value="burial">نقل موتى / جثة</option></select><select id="missionItem" required onchange="updateMissionEstimate()"></select><select id="missionDriver" required></select><div class="multi-select" id="missionStaffDropdown"><button type="button" class="multi-select-toggle" id="missionStaffToggle" onclick="toggleMissionStaffDropdown(event)">اختر الطاقم الطبي</button><div class="multi-select-menu" id="missionStaffMenu"></div></div><select id="missionStaff" multiple onchange="handleMissionStaffSelection()" title="يمكن اختيار أكثر من عضو من الطاقم الطبي أو اختيار لا يوجد طاقم طبي" style="display:none"></select><input id="missionPatientName" placeholder="اسم المريض / المتوفى *" required><input id="missionRelationship" placeholder="صلة القرابة / صلة مقدم الطلب"><select id="missionPatientCondition"><option value="مستقر"> مستقر</option><option value="طارئ"> طارئ</option><option value="عناية مركزة"> عناية مركزة</option><option value="متوفى"> متوفى</option></select><div id="missionBurialFields" style="display:none"><input id="missionCauseOfDeath" placeholder="سبب الوفاة"><input id="missionPlaceOfDeath" placeholder="مكان الوفاة"><input id="missionBurialPlace" placeholder="مكان الدفن"><input id="missionApplicantName" placeholder="اسم مقدم الطلب"><input id="missionApplicantRelation" placeholder="صلة مقدم الطلب بالمتوفى"><input id="missionDateOfDeath" type="date" title="تاريخ الوفاة"></div><input id="missionCompanionName" placeholder="اسم المرافق"><input id="missionCompanionPhone" placeholder="هاتف المرافق"><input id="missionCompanionRelation" placeholder="صلة المرافق"><select id="missionTripType" required onchange="toggleMissionState(); updateMissionEstimate()"><option value="">نوع النقل</option><option value="داخل الولاية"> داخل الولاية</option><option value="خارج الولاية"> خارج الولاية</option></select><div id="missionStateDiv" style="display:none"><input id="missionDestinationState" placeholder="الولاية المتجه إليها" onchange="updateMissionEstimate()"></div><div id="missionDistanceDiv" style="display:none"><input id="missionDistanceKm" type="number" placeholder="المسافة (كم)" onchange="updateMissionEstimate()"></div><input id="missionDestination" placeholder="الوجهة / المستشفى"><input id="missionDepartureDate" type="date" required><input id="missionExpectedReturnDate" type="date"><select id="missionExtraServices" onchange="updateMissionEstimate()"><option value="0">خدمات إضافية للمرضى</option><option value="500">+ أكسجين (500 دج)</option><option value="400">+ كرسي متحرك (400 دج)</option><option value="600">+ ممرض مرافق (600 دج)</option></select><select id="missionBurialExtraServices" multiple size="4" onchange="updateMissionEstimate()" title="يمكن اختيار أكثر من خدمة إضافية مدفوعة لنقل الموتى" style="display:none"><option value="5000">+ تابوت (5000 دج)</option><option value="3000">+ كفن (3000 دج)</option><option value="1500">+ كيس حفظ الجثمان (1500 دج)</option><option value="2000">+ حامل / نقالة خاصة (2000 دج)</option></select><input id="missionPaidAmount" type="number" placeholder="المبلغ المدفوع" value="0"><textarea id="missionNotes" placeholder="ملاحظات"></textarea></div><div id="missionCostPreview" class="info-msg" style="display:none"> <strong>التكلفة التقديرية:</strong> <span id="missionEstimatedCost">0</span> دج</div><button class="submit-btn" onclick="createMission()"> إنشاء التكليف</button><div id="missionMsg"></div></div><div class="card"><h2> قائمة التكاليف ومهمات نقل المرضى ونقل الموتى</h2><div id="missionsTable" class="table-wrapper"></div></div></div><!-- ==================== خدمات نقل الجثة ==================== --><div id="burialServices" class="content"><div class="card"><h2>️ إنشاء خدمة نقل جثة جديدة</h2><div class="form-grid"><select id="burialItem" required onchange="updateBurialEstimate()"></select><select id="burialDriver" required></select><select id="burialStaff"></select><input id="burialDeceasedName" placeholder="اسم المتوفى *" required><input id="burialCauseOfDeath" placeholder="سبب الوفاة"><input id="burialPlaceOfDeath" placeholder="مكان الوفاة"><input id="burialBurialPlace" placeholder="مكان الدفن *" required><input id="burialApplicantName" placeholder="اسم مقدم الطلب"><input id="burialApplicantRelation" placeholder="صلة مقدم الطلب بالمتوفى"><input id="burialDateOfDeath" type="date"><input id="burialDate" type="date"><select id="burialTripType" required onchange="toggleBurialState(); updateBurialEstimate()"><option value="">نوع النقل</option><option value="داخل الولاية">️ داخل الولاية</option><option value="خارج الولاية">️ خارج الولاية</option></select><div id="burialStateDiv" style="display:none"><input id="burialDestinationState" placeholder="الولاية المتجه إليها" onchange="updateBurialEstimate()"></div><div id="burialDistanceDiv" style="display:none"><input id="burialDistanceKm" type="number" placeholder="المسافة (كم)" onchange="updateBurialEstimate()"></div><select id="burialExtraServices" multiple size="4" onchange="updateBurialEstimate()" title="يمكن اختيار أكثر من خدمة إضافية مدفوعة لنقل الموتى"><option value="5000">+ تابوت (5000 دج)</option><option value="3000">+ كفن (3000 دج)</option><option value="1500">+ كيس حفظ الجثمان (1500 دج)</option><option value="2000">+ حامل / نقالة خاصة (2000 دج)</option></select><input id="burialPaidAmount" type="number" placeholder="المبلغ المدفوع" value="0"><textarea id="burialNotes" placeholder="ملاحظات"></textarea></div><div id="burialCostPreview" class="info-msg" style="display:none"> <strong>التكلفة التقديرية لنقل الجثة:</strong> <span id="burialEstimatedCost">0</span> دج</div><button class="submit-btn warning-btn" onclick="createBurialService()">️ إنشاء خدمة نقل جثة</button><div id="burialMsg"></div></div><div class="card"><h2> قائمة خدمات نقل الجثة</h2><div id="burialServicesTable" class="table-wrapper"></div></div></div><!-- ==================== الحجوزات ==================== --><div id="loans" class="content"><div class="card"><h2> تسجيل حجز جديد من لوحة التحكم</h2><p style="color:#596575;margin-top:0">يمكن للمسؤولين تسجيل حجز مباشر مع بيانات المريض/المتوفى والمرافق والهوية والصور.</p><div class="form-grid"><select id="loanItem"></select><select id="loanServiceType" onchange="toggleLoanServiceFields()"><option value="medical"> نقل طبي</option><option value="burial">️ نقل جثة / متوفى</option></select><input id="loanBorrower" placeholder="اسم طالب الحجز / مقدم الطلب *"><input id="loanContact" placeholder="رقم الهاتف *"><input id="loanCity" placeholder="المدينة / البلدية"><input id="loanDate" type="date"><input id="loanExpected" type="date"><div style="grid-column:1/-1;font-weight:800;color:#2986B0;border-bottom:1px solid #e2e8f0;padding:8px 0">هوية طالب الحجز / مقدم الطلب</div><select id="loanIdentityType"><option value="">نوع الهوية</option><option>بطاقة التعريف الوطنية</option><option>رخصة سياقة</option><option>جواز سفر</option><option>أخرى</option></select><input id="loanIdentityNo" placeholder="رقم هوية طالب الحجز"><input id="loanIdentityIssuer" placeholder="جهة إصدار هوية طالب الحجز"><input id="loanIdentityIssueDate" type="date"><div id="loanMedicalFields" style="display:contents"><div style="grid-column:1/-1;font-weight:800;color:#2986B0;border-bottom:1px solid #e2e8f0;padding:8px 0">معلومات المريض</div><input id="loanPatientName" placeholder="الاسم الكامل للمريض"><input id="loanRelationship" placeholder="صلة القرابة"></div><div id="loanBurialFields" style="display:none"><div style="grid-column:1/-1;font-weight:800;color:#6b7280;border-bottom:1px solid #e2e8f0;padding:8px 0">معلومات المتوفى</div><input id="loanDeceasedName" placeholder="الاسم الكامل للمتوفى"><input id="loanCauseOfDeath" placeholder="سبب الوفاة"><input id="loanPlaceOfDeath" placeholder="مكان الوفاة"><input id="loanBurialPlace" placeholder="مكان الدفن"></div><div style="grid-column:1/-1;font-weight:800;color:#2986B0;border-bottom:1px solid #e2e8f0;padding:8px 0"><span id="loanPersonTitle">هوية المريض</span></div><select id="loanPersonIdentityType"><option value="">نوع الهوية</option><option>بطاقة التعريف الوطنية</option><option>رخصة سياقة</option><option>جواز سفر</option><option>أخرى</option></select><input id="loanPersonIdentityNo" placeholder="رقم الهوية"><input id="loanPersonIdentityIssuer" placeholder="جهة الإصدار"><input id="loanPersonIdentityIssueDate" type="date"><label style="grid-column:span 2;color:#596575;font-weight:700">صورة الهوية الأمامية<input id="loanPersonIdFrontImage" type="file" accept="image/*" style="margin-top:6px"></label><label style="grid-column:span 2;color:#596575;font-weight:700">صورة الهوية الخلفية<input id="loanPersonIdBackImage" type="file" accept="image/*" style="margin-top:6px"></label><div style="grid-column:1/-1;font-weight:800;color:#2986B0;border-bottom:1px solid #e2e8f0;padding:8px 0">معلومات المرافق</div><input id="loanCompanionName" placeholder="الاسم الكامل للمرافق"><input id="loanCompanionPhone" placeholder="هاتف المرافق"><input id="loanCompanionRelation" placeholder="صلة المرافق"><select id="loanCompanionIdentityType"><option value="">نوع هوية المرافق</option><option>بطاقة التعريف الوطنية</option><option>رخصة سياقة</option><option>جواز سفر</option><option>أخرى</option></select><input id="loanCompanionIdentityNo" placeholder="رقم هوية المرافق"><input id="loanCompanionIdentityIssuer" placeholder="جهة إصدار هوية المرافق"><input id="loanCompanionIdentityIssueDate" type="date"><label style="grid-column:span 2;color:#596575;font-weight:700">صورة هوية المرافق الأمامية<input id="loanCompanionIdFrontImage" type="file" accept="image/*" style="margin-top:6px"></label><label style="grid-column:span 2;color:#596575;font-weight:700">صورة هوية المرافق الخلفية<input id="loanCompanionIdBackImage" type="file" accept="image/*" style="margin-top:6px"></label><textarea id="loanNotes" placeholder="ملاحظات" style="grid-column:1/-1"></textarea></div><button class="submit-btn" onclick="saveLoan()"> حفظ الحجز</button><div id="loanMsg"></div></div><div class="card"><h2> الحجوزات النشطة</h2><div id="activeLoansTable" class="table-wrapper"></div></div><div class="card"><h2> سجل الحجوزات السابقة</h2><div id="allLoansTable" class="table-wrapper"></div></div></div><!-- ==================== التسعير ==================== --><div id="pricing" class="content"><div class="card"><h2> إدارة قواعد التسعير</h2><div class="form-grid"><input id="pricingService" placeholder="اسم الخدمة *"><input id="pricingBasePrice" type="number" placeholder="السعر الأساسي (دج) *"><input id="pricingPricePerKm" type="number" placeholder="السعر لكل كيلومتر"><input id="pricingExtraPrice" type="number" placeholder="سعر الخدمات الإضافية"><textarea id="pricingNotes" placeholder="ملاحظات"></textarea></div><button class="submit-btn" onclick="addPricingRule()"> إضافة قاعدة تسعير</button><div id="pricingMsg"></div></div><div class="card"><h2> قواعد التسعير الحالية</h2><div id="pricingRulesTable" class="table-wrapper"></div></div></div><!-- ==================== الجرد الدوري ==================== --><div id="inventory" class="content"><div class="card"><h2> تسجيل عملية جرد</h2><div class="form-grid"><select id="auditItem"></select><input id="auditDate" type="date"><select id="auditCondition"><option value="متوفر"> متوفرة</option><option value="محجوز"> محجوزة</option><option value="معطل"> معطلة</option><option value="تالف"> تالفة</option></select><input id="auditLocation" placeholder="المكان أثناء الجرد"><select id="auditResult"><option> مطابق</option><option>️ اختلاف حالة</option><option> اختلاف مكان</option><option> مفقود</option></select><select id="auditUpdate"><option value="false">لا تحدث حالة السيارة</option><option value="true">تحديث حالة السيارة</option></select><textarea id="auditNotes" placeholder="ملاحظات"></textarea></div><button class="submit-btn" onclick="saveAudit()"> حفظ الجرد</button><div id="auditMsg"></div></div><div class="card"><h2> سجل عمليات الجرد</h2><div id="auditsTable" class="table-wrapper"></div></div></div><!-- ==================== طلبات الموقع ==================== --><div id="requests" class="content"><div class="card"><h2> طلبات الحجز من الموقع الخارجي</h2><p style="color: #596575; margin-bottom: 16px;">يمكن للأدمن تأكيد أو رفض الطلب. عند التأكيد، يتحول الطلب إلى حجز نشط إلى غاية الإرجاع مع السماح بتعدد الحجوزات.</p><button class="submit-btn secondary-btn" style="width: auto;" onclick="loadRequests()"> تحديث الطلبات</button><button class="submit-btn secondary-btn super-only" style="width: auto;" onclick="setupTelegramBot()"> تشغيل بوت تلجرام</button><div id="requestsTable" class="table-wrapper" style="margin-top: 20px;"></div><div id="requestsMsg"></div></div></div><!-- ==================== التقارير ==================== --><div id="reports" class="content"><div class="card"><h2> التقارير والطباعة</h2><div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px;"><button class="submit-btn secondary-btn" onclick="printTableOnly('equipment')"> سجل السيارات</button><button class="submit-btn secondary-btn" onclick="printTableOnly('loans')"> سجل الحجوزات</button><button class="submit-btn secondary-btn" onclick="printTableOnly('activeLoans')"> الحجوزات النشطة</button><button class="submit-btn secondary-btn" onclick="printTableOnly('audits')"> سجل الجرد</button><button class="submit-btn secondary-btn" onclick="printTableOnly('missions')"> التكاليف الطبية</button><button class="submit-btn secondary-btn" onclick="printTableOnly('burialServices')">️ خدمات نقل الجثة</button><button class="submit-btn secondary-btn" onclick="printTableOnly('drivers')">‍️ السائقين</button><button class="submit-btn secondary-btn" onclick="printTableOnly('medicalStaff')">‍️ الطاقم الطبي</button></div><div id="reportArea"></div></div></div><!-- ==================== سجل العمليات ==================== --><div id="logs" class="content"><div class="card"><h2> سجل جميع العمليات</h2><button class="submit-btn secondary-btn" style="width: auto;" onclick="loadLogs()"> تحديث السجل</button><div id="logsTable" class="table-wrapper" style="margin-top: 20px;"></div><div id="logsMsg"></div></div></div><!-- ==================== إدارة الأدمن ==================== --><div id="admins" class="content super-only"><div class="card"><h2> إضافة أدمن جديد</h2><div class="form-grid"><input id="adminName" placeholder="اسم الأدمن *"><input id="adminUsername" placeholder="اسم المستخدم *"><input id="adminPassword" type="password" placeholder="كلمة المرور *"><select id="adminRole"><option value="super"> أدمن كامل الصلاحيات</option><option value="editor">️ محرر</option><option value="viewer">️ مشاهد فقط</option></select></div><button class="submit-btn" onclick="addAdminUser()"> إضافة أدمن</button><div id="adminMsg"></div></div><div class="card"><h2> قائمة الأدمن</h2><div id="adminsTable" class="table-wrapper"></div></div></div></div>
 </div><script>
 // ==================== الإعدادات الأساسية ====================
-const APPS_SCRIPT_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbzuwyyBYMQESoKwB_5Vy1Y0Tm5jgLWe5V5VF4A07xqVQymjjKkPN1D_QnvSs0hVZN_Z4Q/exec';
+const APPS_SCRIPT_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbx9FRe5teF2ZT_0ckYdxwIdZJKvwfGlYPAsBl20piDCPeFdVSgghWBD2sXmqnKrOTCgPw/exec';
 
 let sessionToken = localStorage.getItem('equipment_session_token') || '';
 let currentAdmin = JSON.parse(localStorage.getItem('equipment_current_admin') || 'null');
@@ -638,6 +641,28 @@ function stripOptionDetails(text) {
   return String(text || '').replace(/\s*\([^)]*\)\s*$/, '').trim();
 }
 
+function selectedExtraServicesTotal(selectId) {
+  const select = document.getElementById(selectId);
+  if (!select) return 0;
+  return Array.from(select.selectedOptions || [])
+    .reduce((sum, option) => sum + (parseFloat(option.value) || 0), 0);
+}
+
+function selectedExtraServicesLabels(selectId) {
+  const select = document.getElementById(selectId);
+  if (!select) return '';
+  return Array.from(select.selectedOptions || [])
+    .filter(option => (parseFloat(option.value) || 0) > 0)
+    .map(option => option.text.replace(/^\+\s*/, '').trim())
+    .join('، ');
+}
+
+function clearSelectedOptions(selectId) {
+  const select = document.getElementById(selectId);
+  if (!select) return;
+  Array.from(select.options || []).forEach(option => { option.selected = false; });
+}
+
 function canEdit() {
   return currentAdmin && (currentAdmin.role === 'super' || currentAdmin.role === 'editor');
 }
@@ -657,18 +682,80 @@ function setMsg(elementId, message, type) {
 }
 
 // ==================== دوال API ====================
-async function apiCall(action, args) {
+const API_TIMEOUT_MS = 45000;
+const API_CHUNK_SIZE = 1200;
+const API_CHUNK_PARALLEL = 4;
+
+function apiJsonpRaw_(params, timeoutMs = API_TIMEOUT_MS) {
   if (!APPS_SCRIPT_WEB_APP_URL || APPS_SCRIPT_WEB_APP_URL.includes('YOUR_SCRIPT_ID')) {
-    throw new Error('️ يرجى وضع رابط Google Apps Script الصحيح');
+    return Promise.reject(new Error('يرجى وضع رابط Google Apps Script الصحيح'));
   }
-  const response = await fetch(APPS_SCRIPT_WEB_APP_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-    body: JSON.stringify({ action: action, args: args || [] })
+
+  return new Promise((resolve, reject) => {
+    const callbackName = '__gs_cb_' + Date.now() + '_' + Math.random().toString(36).slice(2);
+    const script = document.createElement('script');
+    let finished = false;
+
+    const cleanup = () => {
+      if (finished) return;
+      finished = true;
+      clearTimeout(timer);
+      try { delete window[callbackName]; } catch (e) { window[callbackName] = undefined; }
+      if (script.parentNode) script.parentNode.removeChild(script);
+    };
+
+    const timer = setTimeout(() => {
+      cleanup();
+      reject(new Error('انتهت مهلة الاتصال مع Google Apps Script'));
+    }, timeoutMs);
+
+    window[callbackName] = (result) => {
+      cleanup();
+      resolve(result || {});
+    };
+
+    script.onerror = () => {
+      cleanup();
+      reject(new Error('تعذر الاتصال مع Google Apps Script من GitHub Pages'));
+    };
+
+    const query = Object.assign({}, params || {}, { api: '1', callback: callbackName, _t: Date.now() });
+    const qs = Object.keys(query).map(k => encodeURIComponent(k) + '=' + encodeURIComponent(query[k] == null ? '' : String(query[k]))).join('&');
+    script.async = true;
+    script.src = APPS_SCRIPT_WEB_APP_URL + (APPS_SCRIPT_WEB_APP_URL.includes('?') ? '&' : '?') + qs;
+    document.head.appendChild(script);
   });
-  const result = await response.json();
+}
+
+async function apiCall(action, args) {
+  const safeArgs = Array.isArray(args) ? args : [];
+  const payload = JSON.stringify({ action: action, args: safeArgs });
+  const result = payload.length > API_CHUNK_SIZE
+    ? await apiCallChunked_(payload)
+    : await apiJsonpRaw_({ action: action, args: JSON.stringify(safeArgs) });
+
   if (!result.ok) throw new Error(result.error || 'حدث خطأ غير متوقع');
   return result.data;
+}
+
+async function apiCallChunked_(payload) {
+  const requestId = 'REQ-' + Date.now() + '-' + Math.random().toString(36).slice(2);
+  const chunks = [];
+  for (let i = 0; i < payload.length; i += API_CHUNK_SIZE) chunks.push(payload.slice(i, i + API_CHUNK_SIZE));
+
+  let result = await apiJsonpRaw_({ action: '__chunkStart', args: JSON.stringify([requestId, chunks.length]) });
+  if (!result.ok) throw new Error(result.error || 'تعذر بدء إرسال البيانات الكبيرة');
+
+  for (let i = 0; i < chunks.length; i += API_CHUNK_PARALLEL) {
+    const batch = chunks.slice(i, i + API_CHUNK_PARALLEL).map((chunk, offset) => {
+      return apiJsonpRaw_({ action: '__chunkAppend', args: JSON.stringify([requestId, i + offset, chunk]) });
+    });
+    const responses = await Promise.all(batch);
+    const failed = responses.find(r => !r || !r.ok);
+    if (failed) throw new Error(failed.error || 'تعذر إرسال جزء من البيانات');
+  }
+
+  return await apiJsonpRaw_({ action: '__chunkCommit', args: JSON.stringify([requestId]) }, 120000);
 }
 
 async function readImageAsDataUrl(inputId, maxWidth = 1000, quality = 0.75) {
@@ -719,6 +806,7 @@ async function login() {
     document.getElementById('loginScreen').style.display = 'none';
     document.getElementById('appShell').style.display = 'block';
     applyRoleUI();
+    showCachedReport_();
     refreshAllData().then(() => loadDriverAndStaffOptions()).catch(err => {
       console.error('خطأ في التحميل بعد تسجيل الدخول:', err);
       const statusEl = document.getElementById('syncStatus');
@@ -754,10 +842,38 @@ function applyRoleUI() {
 }
 
 // ==================== تحديث البيانات ====================
+const REPORT_CACHE_KEY = 'equipment_report_cache_github_v1';
+
+function saveReportCache_(report) {
+  try {
+    localStorage.setItem(REPORT_CACHE_KEY, JSON.stringify({ savedAt: Date.now(), report: report }));
+  } catch (e) {}
+}
+
+function showCachedReport_() {
+  try {
+    if (currentReport) return false;
+    const cached = JSON.parse(localStorage.getItem(REPORT_CACHE_KEY) || 'null');
+    if (!cached || !cached.report) return false;
+    currentReport = cached.report;
+    renderDashboard(currentReport);
+    fillSelects(currentReport.equipment || []);
+    cachedDrivers = Array.isArray(currentReport.drivers) ? currentReport.drivers : [];
+    cachedMedicalStaff = Array.isArray(currentReport.medicalStaff) ? currentReport.medicalStaff : [];
+    fillDriverAndStaffOptions(cachedDrivers, cachedMedicalStaff);
+    const statusEl = document.getElementById('syncStatus');
+    if (statusEl) statusEl.innerHTML = 'عرض سريع من النسخة المخزنة، جاري المزامنة...';
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
 async function refreshAllData() {
   try {
     const report = await apiCall('getEquipmentReport', [sessionToken]);
     currentReport = report;
+    saveReportCache_(report);
     renderDashboard(report);
     fillSelects(report.equipment);
     if (Array.isArray(report.drivers)) cachedDrivers = report.drivers;
@@ -863,19 +979,48 @@ function medicalStaffNamesForRecord(record) {
   return firstValue(record.medicalStaffName, record.staffName, record.medicalStaff, joinNonEmpty(list.map(member => member.name || member.fullName)), '-');
 }
 
+function missionRecordServiceType(record) {
+  const text = normalizeLookupText(firstValue(record?.serviceType, record?.missionServiceType, record?.transportType, record?.notes));
+  if (text === 'burial' || text.includes('نقل جثة') || text.includes('نقل موت') || text.includes('متوف') || text.includes('جثمان')) return 'burial';
+  if (text === 'association' || text.includes('مهمة داخلية') || text.includes('تسخير سيارة')) return 'association';
+  return 'medical';
+}
+
+function missionRecordPersonName(record) {
+  return missionRecordServiceType(record) === 'burial'
+    ? firstValue(record.deceasedName, record.patientName, parseMissionFieldFromNotes(record.notes, ['اسم المتوفى', 'المتوفى']), '-')
+    : firstValue(record.patientName, record.deceasedName, '-');
+}
+
+function missionRecordServiceBadge(record) {
+  const type = missionRecordServiceType(record);
+  if (type === 'burial') return '<span class="badge badge-burial">نقل موتى / جثة</span>';
+  if (type === 'association') return '<span class="badge badge-warning">تسخير داخلي</span>';
+  return '<span class="badge badge-primary">نقل مرضى / طبي</span>';
+}
+
 function missionsTableHtml(missions) {
-  if (!missions || !missions.length) return '<p style="text-align:center; padding:20px;">لا توجد تكاليف طبية</p>';
+  if (!missions || !missions.length) return '<p style="text-align:center; padding:20px;">لا توجد تكاليف ومهمات</p>';
   
-  return `<table><thead><tr><th>رقم التكليف</th><th>التاريخ</th><th>السيارة</th><th>السائق</th><th>الطاقم الطبي</th><th>المريض</th><th>نوع النقل</th><th>التكلفة</th><th>الحالة</th><th></th></tr></thead><tbody>${missions.map(m => `
-        <tr><td>${esc(m.missionNo)}</td><td>${m.date || '-'}</td><td>${esc(m.itemName)}</td><td>${esc(m.driverName)}</td><td>${esc(medicalStaffNamesForRecord(m))}</td><td>${esc(m.patientName)}</td><td>${esc(m.tripType)}</td><td>${money(m.totalCost)}</td><td><span class="badge ${m.status === 'قيد التنفيذ' ? 'badge-warning' : 'badge-success'}">${esc(m.status)}</span></td><td><button class="mini-btn mini-primary" onclick="printMission('${m.missionNo}')">🖨️ طباعة</button><button class="mini-btn" style="background:#F59E0B;color:#fff;margin-inline-start:6px" onclick="emailMission('${m.missionNo}')">📧 PDF</button></td></tr>`).join('')}
+  return `<table><thead><tr><th>رقم التكليف</th><th>التاريخ</th><th>السيارة</th><th>السائق</th><th>الطاقم الطبي</th><th>المريض/المتوفى</th><th>نوع التكليف</th><th>نوع النقل</th><th>التكلفة</th><th>الحالة</th><th></th></tr></thead><tbody>${missions.map(m => `
+        <tr><td>${esc(m.missionNo)}</td><td>${m.date || '-'}</td><td>${esc(m.itemName)}</td><td>${esc(m.driverName)}</td><td>${esc(medicalStaffNamesForRecord(m))}</td><td>${esc(missionRecordPersonName(m))}</td><td>${missionRecordServiceBadge(m)}</td><td>${esc(m.tripType)}</td><td>${money(m.totalCost)}</td><td><span class="badge ${m.status === 'قيد التنفيذ' ? 'badge-warning' : 'badge-success'}">${esc(m.status)}</span></td><td><button class="mini-btn mini-primary" onclick="printMission('${m.missionNo}')">🖨️ طباعة</button><button class="mini-btn" style="background:#F59E0B;color:#fff;margin-inline-start:6px" onclick="emailMission('${m.missionNo}')">📧 PDF</button></td></tr>`).join('')}
     </tbody></table>`;
+}
+
+function burialExtraServicesTextForRecord(record) {
+  return firstValue(
+    record?.extraServicesLabel,
+    record?.burialExtraServicesLabel,
+    parseMissionFieldFromNotes(record?.notes, ['الخدمات الإضافية المدفوعة']),
+    '-'
+  );
 }
 
 function burialServicesTableHtml(services) {
   if (!services || !services.length) return '<p style="text-align:center; padding:20px;">لا توجد خدمات نقل جثة</p>';
-  
-  return `<table><thead><tr><th>رقم الخدمة</th><th>التاريخ</th><th>السيارة</th><th>السائق</th><th>الطاقم الطبي</th><th>المتوفى</th><th>نوع النقل</th><th>التكلفة</th><th>الحالة</th><th></th></tr></thead><tbody>${services.map(s => `
-        <tr><td>${esc(s.burialNo)}</td><td>${s.date || '-'}</td><td>${esc(s.itemName)}</td><td>${esc(s.driverName)}</td><td>${esc(s.medicalStaffName || s.staffName || s.medicalStaff || '-')}</td><td>${esc(s.deceasedName)}</td><td>${esc(s.tripType)}</td><td>${money(s.totalCost)}</td><td><span class="badge ${s.status === 'قيد التنفيذ' ? 'badge-warning' : 'badge-success'}">${esc(s.status)}</span></td><td><button class="mini-btn mini-primary" onclick="printBurialService('${s.burialNo}')">️ طباعة</button></td></tr>`).join('')}
+
+  return `<table><thead><tr><th>رقم الخدمة</th><th>التاريخ</th><th>السيارة</th><th>السائق</th><th>الطاقم الطبي</th><th>المتوفى</th><th>نوع النقل</th><th>خدمات إضافية</th><th>التكلفة</th><th>الحالة</th><th></th></tr></thead><tbody>${services.map(s => `
+        <tr><td>${esc(s.burialNo)}</td><td>${s.date || '-'}</td><td>${esc(s.itemName)}</td><td>${esc(s.driverName)}</td><td>${esc(s.medicalStaffName || s.staffName || s.medicalStaff || '-')}</td><td>${esc(s.deceasedName)}</td><td>${esc(s.tripType)}</td><td>${esc(burialExtraServicesTextForRecord(s))}</td><td>${money(s.totalCost)}</td><td><span class="badge ${s.status === 'قيد التنفيذ' ? 'badge-warning' : 'badge-success'}">${esc(s.status)}</span></td><td><button class="mini-btn mini-primary" onclick="printBurialService('${s.burialNo}')">️ طباعة</button></td></tr>`).join('')}
     </tbody></table>`;
 }
 
@@ -966,18 +1111,67 @@ function fillSelects(equipment) {
 }
 
 
+function getMissionServiceType() {
+  const select = document.getElementById('missionServiceType');
+  return select ? (select.value || 'medical') : 'medical';
+}
+
+function toggleMissionServiceFields() {
+  const serviceType = getMissionServiceType();
+  const isBurial = serviceType === 'burial';
+  const burialFields = document.getElementById('missionBurialFields');
+  const patientInput = document.getElementById('missionPatientName');
+  const relationInput = document.getElementById('missionRelationship');
+  const conditionSelect = document.getElementById('missionPatientCondition');
+  const destinationInput = document.getElementById('missionDestination');
+  const medicalExtraServices = document.getElementById('missionExtraServices');
+  const burialExtraServices = document.getElementById('missionBurialExtraServices');
+  if (burialFields) burialFields.style.display = isBurial ? 'contents' : 'none';
+  if (patientInput) patientInput.placeholder = isBurial ? 'اسم المتوفى *' : 'اسم المريض *';
+  if (relationInput) relationInput.placeholder = isBurial ? 'صلة مقدم الطلب بالمتوفى' : 'صلة القرابة';
+  if (destinationInput) destinationInput.placeholder = isBurial ? 'وجهة النقل / مكان الدفن' : 'الوجهة / المستشفى';
+  if (conditionSelect) {
+    conditionSelect.disabled = isBurial;
+    if (isBurial) conditionSelect.value = 'متوفى';
+    else if (conditionSelect.value === 'متوفى') conditionSelect.value = 'مستقر';
+  }
+  if (medicalExtraServices) {
+    medicalExtraServices.style.display = isBurial ? 'none' : '';
+    medicalExtraServices.disabled = isBurial;
+    if (isBurial) medicalExtraServices.value = '0';
+  }
+  if (burialExtraServices) {
+    burialExtraServices.style.display = isBurial ? '' : 'none';
+    burialExtraServices.disabled = !isBurial;
+    if (!isBurial) clearSelectedOptions('missionBurialExtraServices');
+  }
+  ['missionBurialPlace'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.required = isBurial;
+  });
+}
+
+
+function selectedMissionLoan() {
+  const loanId = document.getElementById('missionLoan')?.value;
+  if (!loanId || !currentReport) return null;
+  return (currentReport.activeLoans || []).find(l => String(l.id) === String(loanId)) || null;
+}
+
 function fillMissionLoanOptions(report) {
   const select = document.getElementById('missionLoan');
   if (!select || !report) return;
   const loans = (report.activeLoans || []);
-  select.innerHTML = '<option value="">استدعاء حجز موجود للتكليف</option>' + loans.map(l =>`<option value="${esc(l.id)}">${esc(l.id)} - ${esc(l.borrower)} - ${esc(l.patientName || l.deceasedName || '-')} - ${esc(l.loanDate || '')}</option>`
-  ).join('');
+  select.innerHTML = '<option value="">استدعاء حجز موجود للتكليف</option>' + loans.map(l => {
+    const typeLabel = l.serviceType === 'burial' ? 'نقل موتى' : 'نقل مرضى';
+    const personName = l.serviceType === 'burial' ? (l.deceasedName || l.patientName || '-') : (l.patientName || l.deceasedName || '-');
+    const ref = l.requestNo || l.loanNo || l.id;
+    return `<option value="${esc(l.id)}">${esc(ref)} - ${esc(typeLabel)} - ${esc(l.borrower)} - ${esc(personName)} - ${esc(l.loanDate || '')}</option>`;
+  }).join('');
 }
 
 function fillMissionFromLoan() {
-  const loanId = document.getElementById('missionLoan')?.value;
-  if (!loanId || !currentReport) return;
-  const loan = (currentReport.activeLoans || []).find(l => String(l.id) === String(loanId));
+  const loan = selectedMissionLoan();
   if (!loan) return;
   const setVal = (id, val) => { const el = document.getElementById(id); if (el && val !== undefined && val !== null) el.value = val; };
   const notes = loan.notes || '';
@@ -986,23 +1180,42 @@ function fillMissionFromLoan() {
     return m ? m[1].trim() : '';
   };
 
+  const isBurial = loan.serviceType === 'burial';
+  setVal('missionServiceType', isBurial ? 'burial' : 'medical');
+  toggleMissionServiceFields();
   setVal('missionItem', loan.itemId || '');
-  setVal('missionPatientName', loan.patientName || loan.deceasedName || '');
-  setVal('missionRelationship', loan.relationship || loan.applicantRelation || '');
-  setVal('missionPatientCondition', noteVal('حالة المريض') || loan.patientCondition || 'مستقر');
+  setVal('missionPatientName', isBurial ? (loan.deceasedName || loan.patientName || '') : (loan.patientName || loan.deceasedName || ''));
+  setVal('missionRelationship', loan.relationship || loan.applicantRelation || loan.companionRelation || '');
+  setVal('missionPatientCondition', isBurial ? 'متوفى' : (noteVal('حالة المريض') || loan.patientCondition || 'مستقر'));
+  setVal('missionCauseOfDeath', loan.causeOfDeath || noteVal('سبب الوفاة'));
+  setVal('missionPlaceOfDeath', loan.placeOfDeath || noteVal('مكان الوفاة'));
+  setVal('missionBurialPlace', loan.burialPlace || noteVal('مكان الدفن'));
+  setVal('missionApplicantName', loan.applicantName || loan.borrower || noteVal('مقدم الطلب'));
+  setVal('missionApplicantRelation', loan.applicantRelation || loan.companionRelation || noteVal('صلة مقدم الطلب'));
+  setVal('missionDateOfDeath', loan.dateOfDeath || noteVal('تاريخ الوفاة'));
   setVal('missionCompanionName', loan.companionName || noteVal('المرافق').replace(/\s*\([^)]*\)\s*$/, ''));
   setVal('missionCompanionPhone', loan.companionPhone || noteVal('هاتف المرافق'));
   setVal('missionCompanionRelation', loan.companionRelation || (noteVal('المرافق').match(/\(([^)]*)\)/) || [,''])[1]);
   setVal('missionTripType', loan.tripType || noteVal('نوع النقل'));
   setVal('missionDestinationState', loan.destinationState || noteVal('الولاية المتجه إليها'));
   setVal('missionDistanceKm', loan.distanceKm || noteVal('المسافة التقريبية') || noteVal('المسافة'));
-  setVal('missionDestination', loan.destination || noteVal('الوجهة'));
+  setVal('missionDestination', loan.destination || (isBurial ? (loan.burialPlace || noteVal('مكان الدفن')) : noteVal('الوجهة')));
   setVal('missionDepartureDate', loan.loanDate || '');
   setVal('missionExpectedReturnDate', loan.expectedReturnDate || loan.loanDate || '');
 
   toggleMissionState();
   const missionNotes = document.getElementById('missionNotes');
-  if (missionNotes) missionNotes.value = `استدعاء من الحجز: ${loan.id}\nطالب الحجز: ${loan.borrower || ''}\nالهاتف/الجهة: ${loan.contact || ''}\nنوع الخدمة: ${loan.serviceType === 'burial' ? 'نقل جثة' : 'نقل طبي'}\n${loan.notes || ''}`.trim();
+  if (missionNotes) {
+    const burialLines = isBurial ? [
+      `اسم المتوفى: ${loan.deceasedName || loan.patientName || ''}`,
+      `سبب الوفاة: ${loan.causeOfDeath || noteVal('سبب الوفاة') || ''}`,
+      `مكان الوفاة: ${loan.placeOfDeath || noteVal('مكان الوفاة') || ''}`,
+      `مكان الدفن: ${loan.burialPlace || noteVal('مكان الدفن') || ''}`,
+      `مقدم الطلب: ${loan.applicantName || loan.borrower || ''}`,
+      `صلة مقدم الطلب: ${loan.applicantRelation || loan.companionRelation || ''}`
+    ].filter(line => !line.endsWith(': ')).join('\n') : '';
+    missionNotes.value = `استدعاء من الحجز: ${loan.id}\nطالب الحجز: ${loan.borrower || ''}\nالهاتف/الجهة: ${loan.contact || ''}\nنوع الخدمة: ${isBurial ? 'نقل جثة' : 'نقل طبي'}\n${burialLines}\n${loan.notes || ''}`.trim();
+  }
   updateMissionEstimate();
 }
 
@@ -1597,6 +1810,10 @@ function fillDriverAndStaffOptions(drivers, staff) {
 
 async function loadDriverAndStaffOptions() {
   try {
+    if (cachedDrivers.length || cachedMedicalStaff.length) {
+      fillDriverAndStaffOptions(cachedDrivers, cachedMedicalStaff);
+      return;
+    }
     const [drivers, staff] = await Promise.all([
       apiCall('listDrivers', [sessionToken]),
       apiCall('listMedicalStaff', [sessionToken])
@@ -1632,12 +1849,15 @@ async function updateMissionEstimate() {
   const tripType = document.getElementById('missionTripType').value;
   const destinationState = document.getElementById('missionDestinationState')?.value || '';
   const distanceKm = parseFloat(document.getElementById('missionDistanceKm')?.value) || 0;
-  const extraServices = parseFloat(document.getElementById('missionExtraServices')?.value) || 0;
+  const isBurial = getMissionServiceType() === 'burial';
+  const extraServices = isBurial
+    ? selectedExtraServicesTotal('missionBurialExtraServices')
+    : (parseFloat(document.getElementById('missionExtraServices')?.value) || 0);
   
   if (!tripType) return;
   
   try {
-    const result = await apiCall('calculateTripCost', [tripType, destinationState, distanceKm, extraServices, sessionToken, 'medical']);
+    const result = await apiCall('calculateTripCost', [tripType, destinationState, distanceKm, extraServices, sessionToken, isBurial ? 'burial' : 'medical']);
     const preview = document.getElementById('missionCostPreview');
     const costSpan = document.getElementById('missionEstimatedCost');
     if (preview && costSpan) {
@@ -1777,12 +1997,28 @@ async function createMission() {
     ? 'الطاقم الطبي المختار: لا يوجد طاقم طبي'
     : ('الطاقم الطبي المختار:\n' + selectedMissionStaff.detailsText);
   const missionUserNotes = document.getElementById('missionNotes').value;
+  const serviceType = getMissionServiceType();
+  const isBurial = serviceType === 'burial';
   const medicalStaffId = selectedMissionStaff.hasNoMedicalStaff ? '' : (selectedMissionStaff.ids[0] || '');
   const selectedDriver = findById(cachedDrivers, driverId);
   const selectedStaff = selectedMissionStaff.members[0] || null;
   const sourceLoanId = document.getElementById('missionLoan')?.value || '';
   const selectedLoan = findById(currentReport?.activeLoans || [], sourceLoanId);
   const sourceLoanRef = selectedLoan?.requestNo || selectedLoan?.loanNo || selectedLoan?.id || sourceLoanId || '';
+  const personName = document.getElementById('missionPatientName').value;
+  const missionBurialExtraServicesPrice = selectedExtraServicesTotal('missionBurialExtraServices');
+  const missionBurialExtraServicesText = selectedExtraServicesLabels('missionBurialExtraServices');
+  const burialDetailsBlock = isBurial ? [
+    'نوع الخدمة: نقل جثة',
+    'اسم المتوفى: ' + personName,
+    'سبب الوفاة: ' + (document.getElementById('missionCauseOfDeath')?.value || ''),
+    'مكان الوفاة: ' + (document.getElementById('missionPlaceOfDeath')?.value || ''),
+    'مكان الدفن: ' + (document.getElementById('missionBurialPlace')?.value || ''),
+    'مقدم الطلب: ' + (document.getElementById('missionApplicantName')?.value || ''),
+    'صلة مقدم الطلب: ' + (document.getElementById('missionApplicantRelation')?.value || ''),
+    'تاريخ الوفاة: ' + (document.getElementById('missionDateOfDeath')?.value || ''),
+    'الخدمات الإضافية المدفوعة: ' + missionBurialExtraServicesText
+  ].filter(line => !line.endsWith(': ')).join('\n') : 'نوع الخدمة: نقل طبي';
 
   const data = {
     itemId: document.getElementById('missionItem').value,
@@ -1807,22 +2043,33 @@ async function createMission() {
     medicalStaffRegistrationNo: selectedMissionStaff.registrations,
     medicalStaffPhone: selectedMissionStaff.phones,
     medicalStaffDetailsText: selectedMissionStaff.detailsText,
-    patientName: document.getElementById('missionPatientName').value,
+    patientName: personName,
+    deceasedName: isBurial ? personName : '',
     relationship: document.getElementById('missionRelationship').value,
-    patientCondition: document.getElementById('missionPatientCondition').value,
+    patientCondition: isBurial ? 'متوفى' : document.getElementById('missionPatientCondition').value,
+    causeOfDeath: document.getElementById('missionCauseOfDeath')?.value || selectedLoan?.causeOfDeath || '',
+    placeOfDeath: document.getElementById('missionPlaceOfDeath')?.value || selectedLoan?.placeOfDeath || '',
+    burialPlace: document.getElementById('missionBurialPlace')?.value || selectedLoan?.burialPlace || '',
+    applicantName: document.getElementById('missionApplicantName')?.value || selectedLoan?.applicantName || selectedLoan?.borrower || '',
+    applicantRelation: document.getElementById('missionApplicantRelation')?.value || selectedLoan?.applicantRelation || '',
+    dateOfDeath: document.getElementById('missionDateOfDeath')?.value || selectedLoan?.dateOfDeath || '',
     companionName: document.getElementById('missionCompanionName').value,
     companionPhone: document.getElementById('missionCompanionPhone').value,
     companionRelation: document.getElementById('missionCompanionRelation').value,
     tripType: document.getElementById('missionTripType').value,
     destinationState: document.getElementById('missionDestinationState')?.value || '',
     distanceKm: parseFloat(document.getElementById('missionDistanceKm')?.value) || 0,
-    destination: document.getElementById('missionDestination').value,
+    destination: document.getElementById('missionDestination').value || (isBurial ? (document.getElementById('missionBurialPlace')?.value || '') : ''),
     departureDate: document.getElementById('missionDepartureDate').value,
     expectedReturnDate: document.getElementById('missionExpectedReturnDate').value,
-    extraServicesPrice: parseFloat(document.getElementById('missionExtraServices').value) || 0,
+    extraServicesPrice: isBurial ? missionBurialExtraServicesPrice : (parseFloat(document.getElementById('missionExtraServices').value) || 0),
+    extraServicesLabel: isBurial ? missionBurialExtraServicesText : selectedExtraServicesLabels('missionExtraServices'),
+    burialExtraServicesPrice: isBurial ? missionBurialExtraServicesPrice : 0,
+    burialExtraServicesLabel: isBurial ? missionBurialExtraServicesText : '',
     paidAmount: parseFloat(document.getElementById('missionPaidAmount').value) || 0,
-    notes: [missionUserNotes, medicalStaffNotesBlock].filter(Boolean).join('\n\n'),
-    serviceType: 'medical',
+    notes: [missionUserNotes, burialDetailsBlock, medicalStaffNotesBlock].filter(Boolean).join('\n\n'),
+    serviceType: serviceType,
+    missionServiceType: serviceType,
     sourceLoanId: sourceLoanId,
     sourceLoanRef: sourceLoanRef,
     bookingReference: sourceLoanRef,
@@ -1835,10 +2082,14 @@ async function createMission() {
     setMsg('missionMsg', 'يرجى ملء جميع الحقول الإجبارية', 'error');
     return;
   }
+  if (isBurial && !data.burialPlace) {
+    setMsg('missionMsg', 'يرجى إدخال مكان الدفن لتكليف نقل المتوفى', 'error');
+    return;
+  }
   
   try {
     await apiCall('createMission', [data, sessionToken]);
-    setMsg('missionMsg', ' تم إنشاء التكليف بنجاح', 'success');
+    setMsg('missionMsg', isBurial ? ' تم إنشاء تكليف نقل المتوفى بنجاح' : ' تم إنشاء التكليف بنجاح', 'success');
     clearMissionForm();
     loadMissions();
     refreshAllData();
@@ -1848,16 +2099,20 @@ async function createMission() {
 }
 
 function clearMissionForm() {
-  const fields = ['missionPatientName', 'missionRelationship', 'missionCompanionName', 'missionCompanionPhone', 'missionCompanionRelation', 'missionDestination', 'missionNotes'];
+  const fields = ['missionPatientName', 'missionRelationship', 'missionCauseOfDeath', 'missionPlaceOfDeath', 'missionBurialPlace', 'missionApplicantName', 'missionApplicantRelation', 'missionDateOfDeath', 'missionCompanionName', 'missionCompanionPhone', 'missionCompanionRelation', 'missionDestination', 'missionNotes'];
   fields.forEach(id => {
     const el = document.getElementById(id);
     if (el) el.value = '';
   });
+  const serviceSelect = document.getElementById('missionServiceType');
+  if (serviceSelect) serviceSelect.value = 'medical';
   document.getElementById('missionPaidAmount').value = '0';
+  clearSelectedOptions('missionBurialExtraServices');
   document.getElementById('missionDepartureDate').value = today();
   const missionStaffSelect = document.getElementById('missionStaff');
   if (missionStaffSelect) Array.from(missionStaffSelect.options).forEach(option => option.selected = false);
   updateMissionStaffDropdownState();
+  toggleMissionServiceFields();
   document.getElementById('missionCostPreview').style.display = 'none';
 }
 
@@ -2003,21 +2258,37 @@ function enrichMissionForPrint(mission) {
   const staff = missionStaffList[0] || findByIdOrName(cachedMedicalStaff, mission.medicalStaffId, mission.medicalStaffName || mission.staffName) || {};
   const hasNoMedicalStaff = mission.noMedicalStaff === true || mission.medicalStaffId === NO_MEDICAL_STAFF_VALUE || normalizeLookupText(mission.medicalStaffName).includes('لا يوجد طاقم طبي');
   const noteRef = parseMissionFieldFromNotes(mission.notes, ['استدعاء من الحجز', 'مرجع الحجز', 'رقم الحجز', 'رقم الطلب']);
-  const noteDestination = parseMissionFieldFromNotes(mission.notes, ['الوجهة', 'المؤسسة الصحية', 'المستشفى']);
+  const noteDestination = parseMissionFieldFromNotes(mission.notes, ['الوجهة', 'المؤسسة الصحية', 'المستشفى', 'مكان الدفن']);
   const noteState = parseMissionFieldFromNotes(mission.notes, ['الولاية المتجه إليها', 'الولاية']);
+  const noteServiceType = parseMissionFieldFromNotes(mission.notes, ['نوع الخدمة', 'نوع التكليف']);
+  const serviceLookupText = normalizeLookupText(firstValue(mission.serviceType, mission.missionServiceType, sourceLoan.serviceType, noteServiceType, mission.notes));
+  const isBurialMission = serviceLookupText === 'burial' || serviceLookupText.includes('نقل جثة') || serviceLookupText.includes('نقل موت') || serviceLookupText.includes('متوف') || serviceLookupText.includes('جثمان');
   const staffNames = hasNoMedicalStaff ? 'لا يوجد طاقم طبي' : joinNonEmpty(missionStaffList.map(member => member.name || member.fullName));
   const staffSpecialties = hasNoMedicalStaff ? '' : joinNonEmpty(missionStaffList.map(member => member.specialty));
   const staffRegistrations = hasNoMedicalStaff ? '' : joinNonEmpty(missionStaffList.map(member => member.registrationNo || member.medicalRegistrationNo || member.staffRegistrationNo));
   const staffPhones = hasNoMedicalStaff ? '' : joinNonEmpty(missionStaffList.map(member => member.phone));
   const staffDetailsText = hasNoMedicalStaff ? 'لا يوجد طاقم طبي' : firstValue(mission.medicalStaffDetailsText, joinNonEmpty(missionStaffList.map(missionStaffDetailsLine), '\n'));
+  const deceasedName = firstValue(mission.deceasedName, isBurialMission ? mission.patientName : '', sourceLoan.deceasedName, parseMissionFieldFromNotes(mission.notes, ['اسم المتوفى', 'المتوفى']));
+  const burialPlace = firstValue(mission.burialPlace, sourceLoan.burialPlace, parseMissionFieldFromNotes(mission.notes, ['مكان الدفن']));
 
   return {
     ...mission,
+    serviceType: isBurialMission ? 'burial' : firstValue(mission.serviceType, mission.missionServiceType, sourceLoan.serviceType, 'medical'),
+    missionServiceType: isBurialMission ? 'burial' : firstValue(mission.missionServiceType, mission.serviceType, sourceLoan.serviceType, 'medical'),
+    deceasedName: deceasedName,
+    causeOfDeath: firstValue(mission.causeOfDeath, sourceLoan.causeOfDeath, parseMissionFieldFromNotes(mission.notes, ['سبب الوفاة'])),
+    placeOfDeath: firstValue(mission.placeOfDeath, sourceLoan.placeOfDeath, parseMissionFieldFromNotes(mission.notes, ['مكان الوفاة'])),
+    burialPlace: burialPlace,
+    applicantName: firstValue(mission.applicantName, sourceLoan.applicantName, sourceLoan.borrower, parseMissionFieldFromNotes(mission.notes, ['مقدم الطلب'])),
+    applicantRelation: firstValue(mission.applicantRelation, sourceLoan.applicantRelation, parseMissionFieldFromNotes(mission.notes, ['صلة مقدم الطلب'])),
+    dateOfDeath: firstValue(mission.dateOfDeath, sourceLoan.dateOfDeath, parseMissionFieldFromNotes(mission.notes, ['تاريخ الوفاة'])),
+    patientName: isBurialMission ? firstValue(deceasedName, mission.patientName) : firstValue(mission.patientName, sourceLoan.patientName),
+    patientCondition: isBurialMission ? 'متوفى' : firstValue(mission.patientCondition, sourceLoan.patientCondition),
     medicalStaffList: missionStaffList,
     noMedicalStaff: hasNoMedicalStaff,
     sourceLoanRef: firstValue(mission.sourceLoanRef, mission.bookingReference, mission.sourceLoanId, mission.loanId, mission.requestNo, sourceLoan.requestNo, sourceLoan.loanNo, sourceLoan.id, noteRef),
     bookingReference: firstValue(mission.bookingReference, mission.sourceLoanRef, sourceLoan.requestNo, sourceLoan.loanNo, sourceLoan.id, noteRef),
-    destination: firstValue(mission.destination, sourceLoan.destination, noteDestination),
+    destination: firstValue(mission.destination, isBurialMission ? burialPlace : '', sourceLoan.destination, noteDestination),
     destinationState: firstValue(mission.destinationState, mission.state, sourceLoan.destinationState, sourceLoan.state, noteState),
     driverName: firstValue(mission.driverName, driver.name),
     driverLicense: firstValue(mission.driverLicense, mission.driverLicenseNo, mission.licenseNo, driver.licenseNo),
@@ -2087,15 +2358,21 @@ function openMissionOfficialReport(mission, autoEmail) {
   const medicalStaffDetailsText = hasNoMedicalStaff ? 'لا يوجد طاقم طبي' : firstValue(mission.medicalStaffDetailsText, joinNonEmpty(missionStaffList.map(missionStaffDetailsLine), '\n'), medicalStaffNameText);
   const medicalStaffPrintHtml = detailsHtmlFromText(medicalStaffDetailsText);
   const isAssociationMission = mission.serviceType === 'association' || mission.missionCategory === 'association' || normalizeLookupText(mission.notes).includes('تسخير سيارة الاسعاف') || normalizeLookupText(mission.notes).includes('تسخير سيارة الإسعاف');
-  const reportTitleText = isAssociationMission ? 'تكليف بتسخير سيارة إسعاف لمهمة داخل الجمعية' : 'تكليف بمهمة واستعمال سيارة إسعاف';
-  const beneficiaryLabelText = isAssociationMission ? 'النشاط / المهمة' : 'المستفيد / المريض';
-  const conditionLabelText = isAssociationMission ? 'طبيعة الاستعمال' : 'حالة المريض';
-  const relationLabelText = isAssociationMission ? 'المسؤول المكلف' : 'صلة القرابة';
-  const destinationLabelText = isAssociationMission ? 'مكان النشاط / الوجهة' : 'الوجهة / المؤسسة الصحية';
+  const isBurialMission = mission.serviceType === 'burial' || mission.missionServiceType === 'burial' || normalizeLookupText(mission.notes).includes('نقل جثة') || normalizeLookupText(mission.notes).includes('نقل موت') || normalizeLookupText(mission.patientCondition).includes('متوف');
+  const reportTitleText = isAssociationMission ? 'تكليف بتسخير سيارة إسعاف لمهمة داخل الجمعية' : (isBurialMission ? 'تكليف بمهمة نقل متوفى واستعمال سيارة إسعاف' : 'تكليف بمهمة واستعمال سيارة إسعاف');
+  const beneficiaryLabelText = isAssociationMission ? 'النشاط / المهمة' : (isBurialMission ? 'المتوفى' : 'المستفيد / المريض');
+  const conditionLabelText = isAssociationMission ? 'طبيعة الاستعمال' : (isBurialMission ? 'حالة النقل' : 'حالة المريض');
+  const relationLabelText = isAssociationMission ? 'المسؤول المكلف' : (isBurialMission ? 'صلة مقدم الطلب بالمتوفى' : 'صلة القرابة');
+  const destinationLabelText = isAssociationMission ? 'مكان النشاط / الوجهة' : (isBurialMission ? 'مكان الدفن / الوجهة' : 'الوجهة / المؤسسة الصحية');
   const staffLabelText = isAssociationMission ? 'الأعضاء المستغلون للمركبة' : 'الطاقم الطبي';
   const serviceChecksHtml = isAssociationMission
-    ? '<div class="check checked">☑ نشاط/مهمة داخل الجمعية</div><div class="check checked">☑ تسخير سيارة إسعاف</div><div class="check">□ نقل مريض</div><div class="check">□ تحويل صحي</div>'
-    : `<div class="check checked">☑ نقل مريض</div><div class="check ${mission.patientCondition==='طارئ'?'checked':''}">□ تدخل استعجالي</div><div class="check ${mission.patientCondition==='عناية مركزة'?'checked':''}">□ مرافقة طبية</div><div class="check">□ تحويل صحي / مهمة تضامنية</div>`;
+    ? '<div class="check checked">☑ نشاط/مهمة داخل الجمعية</div><div class="check checked">☑ تسخير سيارة إسعاف</div><div class="check">□ نقل مريض</div><div class="check">□ نقل متوفى</div>'
+    : (isBurialMission
+      ? `<div class="check checked">☑ نقل متوفى / جثة</div><div class="check checked">☑ سيارة مجهزة للنقل</div><div class="check">□ نقل داخل الولاية</div><div class="check ${mission.tripType==='خارج الولاية'?'checked':''}">□ نقل خارج الولاية</div>`
+      : `<div class="check checked">☑ نقل مريض</div><div class="check ${mission.patientCondition==='طارئ'?'checked':''}">□ تدخل استعجالي</div><div class="check ${mission.patientCondition==='عناية مركزة'?'checked':''}">□ مرافقة طبية</div><div class="check">□ تحويل صحي / مهمة تضامنية</div>`);
+  const commitmentsHtml = isBurialMission
+    ? '<ol class="commitments"><li>استعمال المركبة حصريًا في حدود مهمة نقل المتوفى المبينة أعلاه ووفق تعليمات إدارة الجمعية.</li><li>احترام قواعد المرور والسلامة الطرقية والمحافظة على حرمة المتوفى وسلامة المرافقين.</li><li>المحافظة على سيارة الإسعاف أو سيارة نقل الجثث والعتاد المخصص للنقل والتبليغ الفوري عن كل عطب أو حادث.</li><li>عدم نقل أي شخص أو عتاد غير مرتبط بالمهمة إلا بترخيص مسبق من المسؤول المخول.</li><li>تسليم المركبة بعد نهاية المهمة وملء سجل الحركة بما يثبت توقيت الانطلاق والعودة.</li></ol>'
+    : '<ol class="commitments"><li>استعمال المركبة حصريًا في حدود المهمة المبينة أعلاه ووفق تعليمات إدارة الجمعية.</li><li>احترام قواعد المرور والسلامة الطرقية وحماية المريض والطاقم والمرافقين.</li><li>المحافظة على سيارة الإسعاف والعتاد الطبي والتبليغ الفوري عن كل عطب أو حادث أو مخالفة.</li><li>عدم نقل أي شخص أو عتاد غير مرتبط بالمهمة إلا بترخيص مسبق من المسؤول المخول.</li><li>تسليم المركبة بعد نهاية المهمة وملء سجل الحركة بما يثبت توقيت الانطلاق والعودة.</li></ol>';
   const qrText = [
     dashboardUrl,
     'ASSOCIATION=جمعية الجواهر بقمار',
@@ -3428,7 +3705,7 @@ table{width:100%;border-collapse:collapse;font-size:9.2px}th,td{border:1px solid
 <tr><td>المرافق</td><td data-field="mission.companionName">${safe(mission.companionName)} – ${safe(mission.companionRelation)}</td><td data-field="mission.companionPhone">${safe(mission.companionPhone)}</td></tr>
 </tbody></table></div></div>
 <div class="section"><h3>3) طبيعة الخدمة</h3><div class="sectionBody checks">${serviceChecksHtml}</div></div>
-<div class="section"><h3>4) الالتزامات الأساسية</h3><div class="sectionBody"><ol class="commitments"><li>استعمال المركبة حصريًا في حدود المهمة المبينة أعلاه ووفق تعليمات إدارة الجمعية.</li><li>احترام قواعد المرور والسلامة الطرقية وحماية المريض والطاقم والمرافقين.</li><li>المحافظة على سيارة الإسعاف والعتاد الطبي والتبليغ الفوري عن كل عطب أو حادث أو مخالفة.</li><li>عدم نقل أي شخص أو عتاد غير مرتبط بالمهمة إلا بترخيص مسبق من المسؤول المخول.</li><li>تسليم المركبة بعد نهاية المهمة وملء سجل الحركة بما يثبت توقيت الانطلاق والعودة.</li></ol></div></div>
+<div class="section"><h3>4) الالتزامات الأساسية</h3><div class="sectionBody">${commitmentsHtml}</div></div>
 <div class="bottom"><div><b>حرر بقمار في: </b><span data-field="mission.issueDate">${safe(mission.date || mission.departureDate)}</span><div class="note">يُبرز هذا التكليف عند الطلب لمصالح الأمن أو الرقابة المختصة. جميع الحقول الموسومة بـ data-field قابلة للربط المباشر مع Dashboard.</div><div class="signatures"><div class="sign">المكلف بالمهمة<br><span class="stamp">الإمضاء</span></div><div class="sign">مسؤول النقل/اللوجستيك<br><span class="stamp">الإمضاء</span></div><div class="sign">رئيس الجمعية<br><span class="stamp">الإمضاء والختم</span></div></div></div><div class="qrBox" title="QR ديناميكي: جمعية الجواهر بقمار / Association Al-Djawahir Guemar + رقم الطلب/التكليف + الحساب الذي قام بالطباعة"><div id="qrcode" data-field="mission.dynamicQr" aria-label="QR Code"></div></div></div>
 </div></div>
 <script>
@@ -3491,11 +3768,12 @@ async function updateBurialEstimate() {
   const tripType = document.getElementById('burialTripType').value;
   const destinationState = document.getElementById('burialDestinationState')?.value || '';
   const distanceKm = parseFloat(document.getElementById('burialDistanceKm')?.value) || 0;
+  const extraServices = selectedExtraServicesTotal('burialExtraServices');
   
   if (!tripType) return;
   
   try {
-    const result = await apiCall('calculateTripCost', [tripType, destinationState, distanceKm, 0, sessionToken, 'burial']);
+    const result = await apiCall('calculateTripCost', [tripType, destinationState, distanceKm, extraServices, sessionToken, 'burial']);
     const preview = document.getElementById('burialCostPreview');
     const costSpan = document.getElementById('burialEstimatedCost');
     if (preview && costSpan) {
@@ -3512,6 +3790,8 @@ async function createBurialService() {
   const medicalStaffId = document.getElementById('burialStaff').value;
   const selectedDriver = findById(cachedDrivers, driverId);
   const selectedStaff = findById(cachedMedicalStaff, medicalStaffId);
+  const burialExtraServicesPrice = selectedExtraServicesTotal('burialExtraServices');
+  const burialExtraServicesText = selectedExtraServicesLabels('burialExtraServices');
 
   const data = {
     itemId: document.getElementById('burialItem').value,
@@ -3536,8 +3816,15 @@ async function createBurialService() {
     destinationState: document.getElementById('burialDestinationState')?.value || '',
     distanceKm: parseFloat(document.getElementById('burialDistanceKm')?.value) || 0,
     state: document.getElementById('burialDestinationState')?.value || '',
+    extraServicesPrice: burialExtraServicesPrice,
+    extraServicesLabel: burialExtraServicesText,
+    burialExtraServicesPrice: burialExtraServicesPrice,
+    burialExtraServicesLabel: burialExtraServicesText,
     paidAmount: parseFloat(document.getElementById('burialPaidAmount').value) || 0,
-    notes: document.getElementById('burialNotes').value
+    notes: [
+      document.getElementById('burialNotes').value,
+      burialExtraServicesText ? ('الخدمات الإضافية المدفوعة: ' + burialExtraServicesText) : ''
+    ].filter(Boolean).join('\n')
   };
   
   if (!data.itemId || !data.driverId || !data.deceasedName || !data.burialPlace) {
@@ -3563,6 +3850,7 @@ function clearBurialForm() {
     if (el) el.value = '';
   });
   document.getElementById('burialPaidAmount').value = '0';
+  clearSelectedOptions('burialExtraServices');
   document.getElementById('burialCostPreview').style.display = 'none';
 }
 
@@ -3602,7 +3890,7 @@ function printBurialReceipt(service) {
       .tabs,.nav,.sidebar{overflow-x:auto;white-space:nowrap}
       .submit-btn{width:100%;padding:12px}
     }
-</style></head><body><div class="receipt"><div class="header"><img class="logo" src="data:image/jpeg;base64,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" loading="eager" decoding="async" alt="شعار جمعية الجواهر بقمار"><h1>خدمة نقل جثة</h1><p>جمعية الجواهر بقمار</p><p><strong>رقم الخدمة:</strong> ${service.burialNo}</p></div><div class="row"><span class="label">التاريخ:</span><span class="value">${service.date}</span></div><div class="row"><span class="label">سيارة الإسعاف:</span><span class="value">${esc(service.itemName)}</span></div><div class="row"><span class="label">السائق:</span><span class="value">${esc(service.driverName)} - رخصة: ${esc(service.driverLicense || service.driverLicenseNo || '-')} - هاتف: ${esc(service.driverPhone || '-')}</span></div><div class="row"><span class="label">الطاقم الطبي:</span><span class="value">${esc(service.medicalStaffName || '-')} - ${esc(service.medicalStaffSpecialty || '-')} - هاتف: ${esc(service.medicalStaffPhone || '-')}</span></div><div class="row"><span class="label">المتوفى:</span><span class="value">${esc(service.deceasedName)}</span></div><div class="row"><span class="label">سبب الوفاة:</span><span class="value">${esc(service.causeOfDeath || '-')}</span></div><div class="row"><span class="label">مكان الوفاة:</span><span class="value">${esc(service.placeOfDeath || '-')}</span></div><div class="row"><span class="label">مكان الدفن:</span><span class="value">${esc(service.burialPlace)}</span></div><div class="row"><span class="label">مقدم الطلب:</span><span class="value">${esc(service.applicantName)} (${esc(service.applicantRelation || '-')})</span></div><div class="row"><span class="label">نوع النقل:</span><span class="value">${esc(service.tripType)} ${service.state ? '→ ' + service.state : ''}</span></div><div class="row"><span class="label">المسافة:</span><span class="value">${service.distanceKm || 0} كم</span></div><div class="total"><strong> التكلفة الإجمالية: ${money(service.totalCost)}</strong><br>المدفوع: ${money(service.paidAmount)}<br>المتبقي: ${money(service.remainingAmount)}
+</style></head><body><div class="receipt"><div class="header"><img class="logo" src="data:image/jpeg;base64,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" loading="eager" decoding="async" alt="شعار جمعية الجواهر بقمار"><h1>خدمة نقل جثة</h1><p>جمعية الجواهر بقمار</p><p><strong>رقم الخدمة:</strong> ${service.burialNo}</p></div><div class="row"><span class="label">التاريخ:</span><span class="value">${service.date}</span></div><div class="row"><span class="label">سيارة الإسعاف:</span><span class="value">${esc(service.itemName)}</span></div><div class="row"><span class="label">السائق:</span><span class="value">${esc(service.driverName)} - رخصة: ${esc(service.driverLicense || service.driverLicenseNo || '-')} - هاتف: ${esc(service.driverPhone || '-')}</span></div><div class="row"><span class="label">الطاقم الطبي:</span><span class="value">${esc(service.medicalStaffName || '-')} - ${esc(service.medicalStaffSpecialty || '-')} - هاتف: ${esc(service.medicalStaffPhone || '-')}</span></div><div class="row"><span class="label">المتوفى:</span><span class="value">${esc(service.deceasedName)}</span></div><div class="row"><span class="label">سبب الوفاة:</span><span class="value">${esc(service.causeOfDeath || '-')}</span></div><div class="row"><span class="label">مكان الوفاة:</span><span class="value">${esc(service.placeOfDeath || '-')}</span></div><div class="row"><span class="label">مكان الدفن:</span><span class="value">${esc(service.burialPlace)}</span></div><div class="row"><span class="label">مقدم الطلب:</span><span class="value">${esc(service.applicantName)} (${esc(service.applicantRelation || '-')})</span></div><div class="row"><span class="label">نوع النقل:</span><span class="value">${esc(service.tripType)} ${service.state ? '→ ' + service.state : ''}</span></div><div class="row"><span class="label">المسافة:</span><span class="value">${service.distanceKm || 0} كم</span></div><div class="row"><span class="label">الخدمات الإضافية:</span><span class="value">${esc(burialExtraServicesTextForRecord(service))}</span></div><div class="total"><strong> التكلفة الإجمالية: ${money(service.totalCost)}</strong><br>المدفوع: ${money(service.paidAmount)}<br>المتبقي: ${money(service.remainingAmount)}
         </div><div class="signatures"><div class="sign">توقيع السائق</div><div class="sign">ختم الجمعية</div></div></div><script>window.print();<\/script>
 </body></html>`);
   win.document.close();
@@ -4130,11 +4418,13 @@ async function init() {
   document.getElementById('loanDate').value = today();
   document.getElementById('auditDate').value = today();
   document.getElementById('missionDepartureDate').value = today();
+  toggleMissionServiceFields();
   
   if (sessionToken && currentAdmin) {
     document.getElementById('loginScreen').style.display = 'none';
     document.getElementById('appShell').style.display = 'block';
     applyRoleUI();
+    showCachedReport_();
     refreshAllData().then(() => loadDriverAndStaffOptions()).catch(err => {
       console.error('خطأ في التحميل الأولي:', err);
       const statusEl = document.getElementById('syncStatus');
